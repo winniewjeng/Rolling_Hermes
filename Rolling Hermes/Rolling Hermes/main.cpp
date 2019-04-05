@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include "Node.hpp"
 using namespace std;
 
 int main(int argc, const char * argv[]) {

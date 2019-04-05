@@ -19,7 +19,7 @@ public:
     baseNode& operator= (const baseNode& other);
     
     virtual void copyContent(void* otherData) = 0;
-    
+    virtual void deleteData() = 0;
     // Accessor
     const void* viewData()const {return data;}
     // Mutator
@@ -32,9 +32,7 @@ baseNode::~baseNode() {
     data = nullptr;
 }
 
-baseNode::baseNode(const baseNode& other) {
-    copyContent(other.data);
-}
+baseNode::baseNode(const baseNode& other) {}
 
 baseNode& baseNode::operator= (const baseNode& other) {
     if (this == &other)
