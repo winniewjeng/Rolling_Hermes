@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include "Node.hpp"
+#include "ArrayBasedPriorityQueue.hpp"
 using namespace std;
 
 int main(int argc, const char * argv[]) {

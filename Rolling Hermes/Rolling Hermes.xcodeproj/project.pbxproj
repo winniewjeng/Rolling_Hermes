@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		EB9D69DD2256CDF60014D6A4 /* baseNode.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = baseNode.hpp; sourceTree = "<group>"; };
 		EB9D69E02256CF160014D6A4 /* Node.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Node.hpp; sourceTree = "<group>"; };
+		EBB75F67225C2B0700DA3332 /* ArrayBasedPriorityQueue.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ArrayBasedPriorityQueue.hpp; sourceTree = "<group>"; };
 		EBC3406E2255A84300381151 /* Rolling Hermes */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Rolling Hermes"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC340712255A84300381151 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,6 +63,7 @@
 				EBC340712255A84300381151 /* main.cpp */,
 				EB9D69DD2256CDF60014D6A4 /* baseNode.hpp */,
 				EB9D69E02256CF160014D6A4 /* Node.hpp */,
+				EBB75F67225C2B0700DA3332 /* ArrayBasedPriorityQueue.hpp */,
 			);
 			path = "Rolling Hermes";
 			sourceTree = "<group>";
