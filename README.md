@@ -1,8 +1,7 @@
-# THIS PAGE SHOULD REMAIN CONFIDENTIAL <BR/>UNTIL ARP 8, 2019
-## ~Operation: Rolling Hermes~
+## Project: Rolling Hermes
 
 ### Front
-**Project:** `Operation: Rolling Hermes`<br/>
+**Project:** `Rolling Hermes`<br/>
 **Author:** `Winnie Jeng, Zijian Zhao`<br/>
 **Initiation Date:** `APR ~[DATA DELETED]~, 2019`<br/>
 **Last Update:** `APR 3, 2019`<br/>
