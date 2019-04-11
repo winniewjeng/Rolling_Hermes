@@ -7,7 +7,7 @@
 **Last Update:** `APR 3, 2019`<br/>
 
 ### Description
-**_Reverse Polish notation (RPN)_**, is a mathematical notation in which operators follow their operands. It is a method for representing expressions in which the operator symbol is placed after the arguments being operated on. This project is basically a class that converts expressions written in Polish Notation into its corresponding Reverse Polish Notation form and compute the value. Written in C++ and based on (Queue and Stack Class Rebuild).
+**_Reverse Polish notation (RPN)_**, 
 
 ### A Brief Explanation in RPN
 ```
