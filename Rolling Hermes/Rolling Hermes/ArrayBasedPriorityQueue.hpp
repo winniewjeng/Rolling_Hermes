@@ -46,7 +46,7 @@ public:
     // Return type: Boolean
     // Paramaters: None.
     
-    bool empty() const {return size == 0;};
+    const bool empty() const {return size == 0;};
     // Function: empty
     // Description: see if the array is empty.
     // Return type: Boolean
