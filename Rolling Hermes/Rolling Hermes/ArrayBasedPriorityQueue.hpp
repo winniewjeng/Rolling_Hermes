@@ -15,15 +15,20 @@ template <class Data, class Priority>
 struct element {
     Data data;
     Priority priority;
+    element(Data d, Priority p): data(d), priority(p){}
 };
 
 template <class Data, class Priority>
 element<Data, Priority>* copyOther(element<Data, Priority>* other, unsigned int capacity);
 
 
+
+
 template <class Data, class Priority>
 class arrPriorityQueue {
 private:
+    element<Data, Priority>* autoInsert(element<Data, Priority>* head, Priority p, int size);
+    
     element<Data, Priority>* head;
     unsigned int size;
     unsigned int capacity;
@@ -49,6 +54,8 @@ public:
     void push(Data d, Priority p);
     Data& pop();
     
+    unsigned int ZiDongPaiXu(Priority p, unsigned int size);
+    void insertBefore(element<Data, Priority>* beforeThis, const element<Data, Priority>& token);
     
 //    arrPriorityQueue<Data,Priority>& operator>>(Data &d);
 //    arrPriorityQueue<Data,Priority>& operator<<(const node<Data,Priority> &n);
@@ -61,6 +68,7 @@ arrPriorityQueue<Data, Priority>::arrPriorityQueue(unsigned int _cap): capacity(
     size = 0;
 }
 
+// Destructor
 template <class Data, class Priority>
 arrPriorityQueue<Data, Priority>::~arrPriorityQueue() {
     clear();
@@ -95,12 +103,19 @@ void arrPriorityQueue<Data, Priority>::clear() {
 
 template <class Data, class Priority>
 void arrPriorityQueue<Data, Priority>::resize(unsigned int s) {
-    
+    if (s < 2)
+        throw PQ_BAD_SIZE;
+    capacity = s;
+    element<Data, Priority>* temp = copyOther(head, capacity);
+    delete [] head;
+    head = temp;
 }
 
 template <class Data, class Priority>
 void arrPriorityQueue<Data, Priority>::push(Data d, Priority p) {
-    
+    if (full())
+        throw PQ_FULL;
+    insertBefore(autoInsert(head, p, size++), element<Data, Priority>(d, p));
 }
 
 template <class Data, class Priority>
@@ -112,13 +127,40 @@ Data& arrPriorityQueue<Data, Priority>::pop() {
     element<Data, Priority>* end = head + size - 1;
     Data temp = head -> data;
     
-    while (walker < end) *walker = *(++walker);
+    while (walker < end)
+        *walker = *(++walker);
     
     return temp;
 }
 
+template <class Data, class Priority>
+void arrPriorityQueue<Data, Priority>::insertBefore(element<Data, Priority>* beforeThis, const element<Data, Priority>& token) {
+    element<Data, Priority>* walker = head + size;
+    while (walker != beforeThis + 1) {
+        *walker = *(walker - 1);
+        walker --;
+    }
+    *walker = token;
+}
+
+template <class Data, class Priority>
+element<Data, Priority>* arrPriorityQueue<Data, Priority>::autoInsert(element<Data, Priority>* head, Priority p, int size) {
+    if (size == 1)
+        return (*head > p)? (head+1):(head);
+    
+    if (*(head + size/2) > p)
+        head = autoInsert(head + size/2 + 1, p, size/2);
+    else if (*(head + size/2) < p)
+        head = autoInsert(head, p, size/2);
+    else {
+        while (*(head + size/2) == p) head ++;
+        return head + size/2;
+    }
+    return head;
+}
 
 
+// Function
 
 template <class Data, class Priority>
 element<Data, Priority>* copyOther(element<Data, Priority>* other, unsigned int capacity) {
