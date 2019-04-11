@@ -13,7 +13,7 @@ int* func(int* head, int p, int size);
 static int con = 0;
 int main(int argc, const char * argv[]) {
     
-    int head[] = {2,2};
+    int head[] = {10,10,9,9,9,8,8,8,8,8,6,4,3,3,0,0};
     
     int* walker = func(head,1, 2);
     cout << "insert before:" << *walker << endl;
@@ -34,7 +34,7 @@ int* func(int* head, int p, int size) {
         head = func(head, p, size/2);
     else {
         while (*(head++ + size/2) == p)
-        return head + size/2;
+            return head + size/2;
     }
     
     return head;
