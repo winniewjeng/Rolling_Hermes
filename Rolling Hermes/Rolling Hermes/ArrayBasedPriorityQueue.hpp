@@ -54,10 +54,10 @@ public:
     
     // Accessors
     unsigned int getSize() const {return size;};
-    // Function:
-    // Description:
-    // Return type:
-    // Paramaters:
+    // Function: get array size.
+    // Description: accessor, return the private member: size
+    // Return type: unsigned int
+    // Paramaters: None
     
     unsigned int getCapacity() const {return capacity;};
     // Function:
