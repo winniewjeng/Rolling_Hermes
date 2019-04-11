@@ -23,7 +23,6 @@ element<Data, Priority>* copyOther(element<Data, Priority>* other, unsigned int 
 
 
 
-
 template <class Data, class Priority>
 class arrPriorityQueue {
 private:
@@ -40,25 +39,90 @@ public:
     arrPriorityQueue<Data, Priority>& operator= (const arrPriorityQueue<Data, Priority>& other);
     
     // Booleans
+    
     bool full() const {return size == capacity;};
+    // Function: full
+    // Description: Accessor, see if the array is full.
+    // Return type: Boolean
+    // Paramaters: None.
+    
     bool empty() const {return size == 0;};
+    // Function: empty
+    // Description: see if the array is empty.
+    // Return type: Boolean
+    // Paramaters: None
     
     // Accessors
     unsigned int getSize() const {return size;};
+    // Function:
+    // Description:
+    // Return type:
+    // Paramaters:
+    
     unsigned int getCapacity() const {return capacity;};
+    // Function:
+    // Description:
+    // Return type:
+    // Paramaters:
+    
     const Data& peek() const {return head[size-1].data;};
+    // Function:
+    // Description:
+    // Return type:
+    // Paramaters:
     
     // Mutators
     void clear();
+    // Function:
+    // Description:
+    // Return type:
+    // Paramaters:
+    
     void resize(unsigned int s);
+    // Function:
+    // Description:
+    // Return type:
+    // Paramaters:
+    
     void push(Data d, Priority p);
+    // Function:
+    // Description:
+    // Return type:
+    // Paramaters:
+    
     Data& pop();
+    // Function:
+    // Description:
+    // Return type:
+    // Paramaters:
     
-    unsigned int ZiDongPaiXu(Priority p, unsigned int size);
     void insertBefore(element<Data, Priority>* beforeThis, const element<Data, Priority>& token);
+    // Function:
+    // Description:
+    // Return type:
+    // Paramaters:
     
-//    arrPriorityQueue<Data,Priority>& operator>>(Data &d);
-//    arrPriorityQueue<Data,Priority>& operator<<(const node<Data,Priority> &n);
+    arrPriorityQueue<Data,Priority>& operator>>(Data &d);
+    // Function:
+    // Description:
+    // Return type:
+    // Paramaters:
+    
+    arrPriorityQueue<Data,Priority>& operator<<(const element<Data, Priority>& e);
+    // Function:
+    // Description:
+    // Return type:
+    // Paramaters:
+    
+    
+    // iostream
+    template<typename D,typename P>
+    friend
+    std::ostream& operator<<(std::ostream &out, const arrPriorityQueue<D,P> &q);
+    
+    template<typename D,typename P>
+    friend
+    std::istream& operator>>(std::istream &in, arrPriorityQueue<D,P> &q);
 //
 };
 
@@ -143,6 +207,8 @@ void arrPriorityQueue<Data, Priority>::insertBefore(element<Data, Priority>* bef
     *walker = token;
 }
 
+// Rursive function,
+// it can look for the correct position to insert the element.
 template <class Data, class Priority>
 element<Data, Priority>* arrPriorityQueue<Data, Priority>::autoInsert(element<Data, Priority>* head, Priority p, int size) {
     if (size == 1)
@@ -157,6 +223,45 @@ element<Data, Priority>* arrPriorityQueue<Data, Priority>::autoInsert(element<Da
         return head + size/2;
     }
     return head;
+}
+
+template <class Data, class Priority>
+arrPriorityQueue<Data,Priority>& arrPriorityQueue<Data, Priority>::operator>>(Data &d) {
+    d = pop();
+    return *this;
+}
+
+template <class Data, class Priority>
+arrPriorityQueue<Data,Priority>& arrPriorityQueue<Data, Priority>::operator<<(const element<Data, Priority>& e) {
+    push(e.data, e.priority);
+    return *this;
+}
+
+
+template<typename D,typename P>
+std::ostream& operator<<(std::ostream &out, const arrPriorityQueue<D,P> &q) {
+    if (&std::cout != &out)
+        out << "Capacity: " << q.getCapacity() << std::endl;
+    
+}
+
+template<typename D,typename P>
+std::istream& operator>>(std::istream &in, arrPriorityQueue<D,P> &q) {
+    std::string junk;
+    q.clear();
+    element<D, P> temp;
+    
+    if(&std::cin == &in)
+        in>>junk>>q.capacity;
+    
+    else {
+        std::cout<<"Queue capacity: ";
+        in>>q.myCapacity;
+    }
+    
+    while (in >> temp) {    // iostream to an element type need to be updated.
+        q << temp;
+    }
 }
 
 
