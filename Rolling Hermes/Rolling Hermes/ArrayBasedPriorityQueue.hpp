@@ -258,7 +258,6 @@ std::istream& operator>>(std::istream &in, arrPriorityQueue<D,P> &q) {
         std::cout<<"Queue capacity: ";
         in>>q.myCapacity;
     }
-    
     while (in >> temp) {    // iostream to an element type need to be updated.
         q << temp;
     }
