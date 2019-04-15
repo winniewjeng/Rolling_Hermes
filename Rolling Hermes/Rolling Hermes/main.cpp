@@ -13,11 +13,22 @@ int* func(int* head, int p, int size);
 static int con = 0;
 int main(int argc, const char * argv[]) {
     
-    int head[] = {10,10,9,9,9,8,8,8,8,8,6,4,3,3,0,0};
-    
-    int* walker = func(head,1, 2);
-    cout << "insert before:" << *walker << endl;
-    cout << "at: " << walker - head << endl;
+    arrPriorityQueue<int, int> a;
+    a.enqueue(1, 1);
+    a.print();
+    a.enqueue(2, 1);
+    a.print();
+    a.enqueue(3, 1);
+    a.print();
+    a.enqueue(40, 2);
+    a.print();
+    a.enqueue(41, 2);
+    a.print();
+    cout << a.deque() << endl;
+    a.print();
+    cout << a.deque() << endl;
+    a.print();
+
     return 0;
 }
 

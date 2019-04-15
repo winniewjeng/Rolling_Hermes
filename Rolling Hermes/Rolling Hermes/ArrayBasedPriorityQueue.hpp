@@ -15,7 +15,7 @@ template <class Data, class Priority>
 struct element {
     Data data;
     Priority priority;
-    element(Data d, Priority p): data(d), priority(p){}
+    element(Data d = Data(), Priority p = Priority()): data(d), priority(p){}
 };
 
 template <class Data, class Priority>
@@ -65,11 +65,12 @@ public:
     // Return type:
     // Paramaters:
     
-    const Data& peek() const {return head[size-1].data;};
+    const Data& peek() const {return head -> data;};
     // Function:
     // Description:
     // Return type:
     // Paramaters:
+    void print() const;
     
     // Mutators
     void clear();
@@ -84,13 +85,13 @@ public:
     // Return type:
     // Paramaters:
     
-    void push(Data d, Priority p);
+    void enqueue(Data d, Priority p);
     // Function:
     // Description:
     // Return type:
     // Paramaters:
     
-    Data& pop();
+    Data& deque();
     // Function:
     // Description:
     // Return type:
@@ -158,6 +159,14 @@ arrPriorityQueue<Data, Priority>& arrPriorityQueue<Data, Priority>::operator= (c
 }
 
 template <class Data, class Priority>
+void arrPriorityQueue<Data, Priority>::print()const {
+    for (int i = 0; i < size; ++ i)
+        std::cout << "(" << head[i].data << "," << head[i].priority << ") ";
+    std::cout << std::endl;
+}
+
+
+template <class Data, class Priority>
 void arrPriorityQueue<Data, Priority>::clear() {
     delete [] head;
     head = nullptr;
@@ -176,31 +185,36 @@ void arrPriorityQueue<Data, Priority>::resize(unsigned int s) {
 }
 
 template <class Data, class Priority>
-void arrPriorityQueue<Data, Priority>::push(Data d, Priority p) {
+void arrPriorityQueue<Data, Priority>::enqueue(Data d, Priority p) {
     if (full())
         throw PQ_FULL;
-    insertBefore(autoInsert(head, p, size++), element<Data, Priority>(d, p));
+    element<Data, Priority> e = element<Data, Priority>(d, p);
+    element<Data, Priority>* place = autoInsert(head, p, size++);
+    std::cout << place - head  << " with size: "<< size << std::endl;
+    insertBefore(place, e);
 }
 
 template <class Data, class Priority>
-Data& arrPriorityQueue<Data, Priority>::pop() {
+Data& arrPriorityQueue<Data, Priority>::deque() {
     if (empty())
         throw PQ_EMPTY;
     size --;
     element<Data, Priority>* walker = head;
-    element<Data, Priority>* end = head + size - 1;
+    element<Data, Priority>* end = head + size;
     Data temp = head -> data;
     
-    while (walker < end)
-        *walker = *(++walker);
+    while (walker < end) {
+        *walker = *(walker + 1);
+        walker ++;
+    }
     
     return temp;
 }
 
 template <class Data, class Priority>
 void arrPriorityQueue<Data, Priority>::insertBefore(element<Data, Priority>* beforeThis, const element<Data, Priority>& token) {
-    element<Data, Priority>* walker = head + size;
-    while (walker != beforeThis + 1) {
+    element<Data, Priority>* walker = head + size + 1;
+    while (walker != beforeThis) {
         *walker = *(walker - 1);
         walker --;
     }
@@ -211,15 +225,17 @@ void arrPriorityQueue<Data, Priority>::insertBefore(element<Data, Priority>* bef
 // it can look for the correct position to insert the element.
 template <class Data, class Priority>
 element<Data, Priority>* arrPriorityQueue<Data, Priority>::autoInsert(element<Data, Priority>* head, Priority p, int size) {
+    if (size == 0)
+        return head;
     if (size == 1)
-        return (*head > p)? (head+1):(head);
+        return ((head -> priority) >= p)? (head+1):(head);
     
-    if (*(head + size/2) > p)
+    if ((head + size/2) -> priority > p)
         head = autoInsert(head + size/2 + 1, p, size/2);
-    else if (*(head + size/2) < p)
+    else if ((head + size/2) -> priority < p)
         head = autoInsert(head, p, size/2);
     else {
-        while (*(head + size/2) == p) head ++;
+        while ((head + size/2) -> priority == p) head ++;
         return head + size/2;
     }
     return head;
@@ -227,13 +243,13 @@ element<Data, Priority>* arrPriorityQueue<Data, Priority>::autoInsert(element<Da
 
 template <class Data, class Priority>
 arrPriorityQueue<Data,Priority>& arrPriorityQueue<Data, Priority>::operator>>(Data &d) {
-    d = pop();
+    d = deque();
     return *this;
 }
 
 template <class Data, class Priority>
 arrPriorityQueue<Data,Priority>& arrPriorityQueue<Data, Priority>::operator<<(const element<Data, Priority>& e) {
-    push(e.data, e.priority);
+    enqueue(e.data, e.priority);
     return *this;
 }
 

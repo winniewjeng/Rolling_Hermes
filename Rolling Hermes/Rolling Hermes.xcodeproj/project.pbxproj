@@ -28,6 +28,7 @@
 		EBB75F67225C2B0700DA3332 /* ArrayBasedPriorityQueue.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ArrayBasedPriorityQueue.hpp; sourceTree = "<group>"; };
 		EBC3406E2255A84300381151 /* Rolling Hermes */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Rolling Hermes"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC340712255A84300381151 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		EBDF994A2264527D00507376 /* disk.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = disk.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +79,7 @@
 			children = (
 				EBC340712255A84300381151 /* main.cpp */,
 				EBB75F67225C2B0700DA3332 /* ArrayBasedPriorityQueue.hpp */,
+				EBDF994A2264527D00507376 /* disk.hpp */,
 				EB92BB34225ED6CF0085CAE4 /* Stack */,
 				EB92BB3F225ED7010085CAE4 /* Discarded */,
 			);
