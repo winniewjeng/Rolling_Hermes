@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8212C7C32265492E00DFC11F /* Stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8212C7C22265492E00DFC11F /* Stack.cpp */; };
+		8212C7C522654A2700DFC11F /* ArrayBasedPriorityQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8212C7C422654A2700DFC11F /* ArrayBasedPriorityQueue.cpp */; };
 		EB164A1D2265001700DF00F6 /* board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB164A1B2265001700DF00F6 /* board.cpp */; };
 		EBC340722255A84300381151 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBC340712255A84300381151 /* main.cpp */; };
 		EBDF9951226470BE00507376 /* disk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBDF994F226470BE00507376 /* disk.cpp */; };
@@ -26,6 +28,8 @@
 
 /* Begin PBXFileReference section */
 		8212C7C0226530ED00DFC11F /* Stack.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Stack.hpp; sourceTree = "<group>"; };
+		8212C7C22265492E00DFC11F /* Stack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Stack.cpp; sourceTree = "<group>"; };
+		8212C7C422654A2700DFC11F /* ArrayBasedPriorityQueue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ArrayBasedPriorityQueue.cpp; sourceTree = "<group>"; };
 		EB164A1B2265001700DF00F6 /* board.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = board.cpp; sourceTree = "<group>"; };
 		EB164A1C2265001700DF00F6 /* board.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = board.hpp; sourceTree = "<group>"; };
 		EB9D69DD2256CDF60014D6A4 /* baseNode.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = baseNode.hpp; sourceTree = "<group>"; };
@@ -52,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				8212C7C0226530ED00DFC11F /* Stack.hpp */,
+				8212C7C22265492E00DFC11F /* Stack.cpp */,
 			);
 			path = Stack;
 			sourceTree = "<group>";
@@ -84,7 +89,6 @@
 		EBC340702255A84300381151 /* Rolling Hermes */ = {
 			isa = PBXGroup;
 			children = (
-				EBC340712255A84300381151 /* main.cpp */,
 				EB164A1C2265001700DF00F6 /* board.hpp */,
 				EB164A1B2265001700DF00F6 /* board.cpp */,
 				EBDF99522264736300507376 /* Disk */,
@@ -97,9 +101,11 @@
 		EBDF99522264736300507376 /* Disk */ = {
 			isa = PBXGroup;
 			children = (
+				EBC340712255A84300381151 /* main.cpp */,
 				EBDF994F226470BE00507376 /* disk.cpp */,
 				EBDF9950226470BE00507376 /* disk.hpp */,
 				EBB75F67225C2B0700DA3332 /* ArrayBasedPriorityQueue.hpp */,
+				8212C7C422654A2700DFC11F /* ArrayBasedPriorityQueue.cpp */,
 			);
 			path = Disk;
 			sourceTree = "<group>";
@@ -160,6 +166,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8212C7C522654A2700DFC11F /* ArrayBasedPriorityQueue.cpp in Sources */,
+				8212C7C32265492E00DFC11F /* Stack.cpp in Sources */,
 				EBDF9951226470BE00507376 /* disk.cpp in Sources */,
 				EBC340722255A84300381151 /* main.cpp in Sources */,
 				EB164A1D2265001700DF00F6 /* board.cpp in Sources */,

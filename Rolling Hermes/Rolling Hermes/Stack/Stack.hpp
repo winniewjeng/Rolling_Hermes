@@ -14,37 +14,37 @@
 
 enum STACK_ERRORS{STACK_EMPTY, STACK_FULL, STACK_BAD_SIZE};
 
-template <class D>
-
 class Stack {
 private:
-    disk disc;
-    int size;
+    disk _disk;
+    int _size;
+    int _cap;
     
 public:
-    Stack();
+    Stack(disk d = disk());
     ~Stack();
+    Stack(const Stack& other);
+    Stack& operator=(const Stack& other);
     
-    void push(D dis);
-    void pop();
-    int StackSize();
+    void push(disk disc);
+    disk& pop();
+    disk& peek();
+    void clear();
+    void print() const;
+    void resize();
     
+    bool empty();
+    bool full();
+    
+    Stack& operator>>(disk& d);
+    Stack&  operator<<(const disk& d);
+    
+    // iostream
+    friend std::ostream& operator<<(std::ostream &out, const Stack &s);
+    friend std::istream& operator>>(std::istream &in, Stack &q);
+    
+    int getSize() const;
 };
-template <class D>
-Stack<D>::Stack() {}
-
-template <class D>
-Stack<D>::~Stack() {}
-
-template <class D>
-void Stack<D>::push(D dis) {}
-
-template <class D>
-void Stack<D>::pop() {}
-
-template <class D>
-int Stack<D>::StackSize() {}
-
 
 
 #endif /* Stack_hpp */

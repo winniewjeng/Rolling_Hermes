@@ -17,7 +17,7 @@ void testStack();
 
 int main(int argc, const char * argv[]) {
     
-    testPQ();
+//    testPQ();
     
     testStack();
     
@@ -50,6 +50,7 @@ void testPQ() {
 
 void testStack() {
     cout << "TEST STACK\n";
-    Stack<int> src;
+    
+    Stack src;
     
 }
