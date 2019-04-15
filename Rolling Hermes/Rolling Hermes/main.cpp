@@ -13,23 +13,19 @@ using namespace std;
 
 int main(int argc, const char * argv[]) {
     
-    arrPriorityQueue<int, int> a;
-    a.enqueue(1, 1);
-    a.print();
-    a.enqueue(2, 1);
-    a.print();
-    a.enqueue(3, 1);
-    a.print();
-    a.enqueue(40, 2);
-    a.print();
-    a.enqueue(41, 2);
-    a.print();
-    cout << a.deque() << endl;
-    a.print();
-    cout << a.deque() << endl;
-    a.print();
+    arrPriorityQueue<disk*, int> src;
+    for (int i = 0; i < 5; ++i) {
+        disk* temp = new disk();
+        cout << "temp: " << temp -> getNumber() << " ";
+        cout << "\ni = " << -i << endl;
+        src.enqueue(temp, -i);
+    }
 
-    return 0;
+    for (int i = 0; i<5;++i) {
+        cout << src.deque() -> getNumber() << endl;
+    }
+    cout << endl;
+//    board(5);
 }
 
 

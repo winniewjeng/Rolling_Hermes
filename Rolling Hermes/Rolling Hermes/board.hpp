@@ -13,19 +13,33 @@
 #include "ArrayBasedPriorityQueue.hpp"
 
 class board {
-    arrPriorityQueue<disk, int> src;
-    arrPriorityQueue<disk, int> aux;
-    arrPriorityQueue<disk, int> des;
-    unsigned int numberOfDisk;
+    
+private:
+    arrPriorityQueue<disk*, int> src;
+    arrPriorityQueue<disk*, int> aux;
+    arrPriorityQueue<disk*, int> des;
+    unsigned int diskNumber;
     unsigned int move;
+    bool preferOdd;
+    
 public:
-    board();
+    board(unsigned int _diskNum = 4);
     ~board();
     board(const board& other);
     board& operator =(const board& other);
     
     // accessor
     unsigned int getMove();
+    unsigned int getDiskNumber();
+    
+    // Board Class Delegate
+    void init();
+    void moveToSrc();
+    void moveToAux();
+    void moveToDes();
+    void autoMove(bool finishTheGame = false);
+    
+    bool inProgress();
     
     
     

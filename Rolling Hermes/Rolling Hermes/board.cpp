@@ -7,3 +7,13 @@
 //
 
 #include "board.hpp"
+
+board::board(unsigned int _diskNum): diskNumber(_diskNum) {
+    move = 0;
+
+    
+}
+
+board::~board() {
+    
+}

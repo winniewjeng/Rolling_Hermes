@@ -8,18 +8,20 @@
 
 #ifndef disk_hpp
 #define disk_hpp
-
+#include <iostream>
 using namespace std;
 class disk {
 private:
     static int lastIssued;
-    unsigned int number;
+    int number;
     
 public:
     disk();
     ~disk();
     disk(const disk& other);
     disk& operator =(const disk& other);
+    
+    int getNumber() {return number;}
     
     friend
     ostream& operator<< (ostream& out, const disk& print);

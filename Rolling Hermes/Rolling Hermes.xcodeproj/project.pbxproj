@@ -82,11 +82,11 @@
 		EBC340702255A84300381151 /* Rolling Hermes */ = {
 			isa = PBXGroup;
 			children = (
-				EB164A1B2265001700DF00F6 /* board.cpp */,
-				EB164A1C2265001700DF00F6 /* board.hpp */,
 				EBC340712255A84300381151 /* main.cpp */,
-				EBB75F67225C2B0700DA3332 /* ArrayBasedPriorityQueue.hpp */,
+				EB164A1C2265001700DF00F6 /* board.hpp */,
+				EB164A1B2265001700DF00F6 /* board.cpp */,
 				EBDF99522264736300507376 /* Disk */,
+				EBB75F67225C2B0700DA3332 /* ArrayBasedPriorityQueue.hpp */,
 				EB92BB34225ED6CF0085CAE4 /* Stack */,
 				EB92BB3F225ED7010085CAE4 /* Discarded */,
 			);

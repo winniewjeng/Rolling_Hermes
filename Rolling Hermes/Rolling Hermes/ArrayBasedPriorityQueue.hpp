@@ -190,7 +190,7 @@ void arrPriorityQueue<Data, Priority>::enqueue(Data d, Priority p) {
         throw PQ_FULL;
     element<Data, Priority> e = element<Data, Priority>(d, p);
     element<Data, Priority>* place = autoInsert(head, p, size++);
-    std::cout << place - head  << " with size: "<< size << std::endl;
+    std::cout << endl << place - head  << " with size: "<< size << std::endl;
     insertBefore(place, e);
 }
 
