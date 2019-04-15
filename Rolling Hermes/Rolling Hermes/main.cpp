@@ -8,17 +8,26 @@
 
 #include <iostream>
 #include "board.hpp"
+#include "Stack.hpp"
 
 using namespace std;
 
-//void testStack();
+void testPQ();
+void testStack();
 
 int main(int argc, const char * argv[]) {
     
-    arrPriorityQueue<disk*, int> qu;
+    testPQ();
     
+    testStack();
+    
+}
+
+void testPQ() {
+    
+    arrPriorityQueue<disk*, int> qu;
     for (int i = 0; i < 5; ++i) {
-        disk* temp = new disk();
+        disk* temp = new disk();  // mem leak
         cout << "temp: " << temp -> getNumber() << " ";
         cout << "\npriority = " << -i << endl;
         qu.enqueue(temp, -i);
@@ -26,14 +35,12 @@ int main(int argc, const char * argv[]) {
         cout << endl;
     }
     
-//    cout << endl;
-//    cout << qu.getSize() << endl;
-//    qu.print();
-//    cout << *qu.deque() << endl;
-//    cout << *qu.deque() << endl;
-//    cout << *qu.deque() << endl; // nullptr dereferenced crash. 3rd disk is a nullptr. Check autoInsert algo
-//
+    //    cout << qu.getSize() << endl;
+    //    cout << *qu.deque() << endl;
+    //    cout << *qu.deque() << endl;
+    //    cout << *qu.deque() << endl;
     
+    //3rd disk nullptr dereferenced. Check autoInsert()algo
     
     //    for (int i = 0; i<5;++i) {
     //        cout << qu.deque() -> getNumber() << endl;
@@ -41,3 +48,8 @@ int main(int argc, const char * argv[]) {
     //    board(5);
 }
 
+void testStack() {
+    cout << "TEST STACK\n";
+    Stack<int> src;
+    
+}

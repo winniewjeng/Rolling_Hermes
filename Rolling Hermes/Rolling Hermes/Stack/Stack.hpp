@@ -15,20 +15,36 @@
 enum STACK_ERRORS{STACK_EMPTY, STACK_FULL, STACK_BAD_SIZE};
 
 template <class D>
+
 class Stack {
 private:
-//    disk d;
-//    int size;
-//    
-//public:
-//    Stack() {}
-//    ~Stack() {}
-//    
-////    void push(disk d());
-//    int StackSize() {return 0;}
+    disk disc;
+    int size;
     
+public:
+    Stack();
+    ~Stack();
+    
+    void push(D dis);
+    void pop();
+    int StackSize();
     
 };
+template <class D>
+Stack<D>::Stack() {}
+
+template <class D>
+Stack<D>::~Stack() {}
+
+template <class D>
+void Stack<D>::push(D dis) {}
+
+template <class D>
+void Stack<D>::pop() {}
+
+template <class D>
+int Stack<D>::StackSize() {}
+
 
 
 #endif /* Stack_hpp */
