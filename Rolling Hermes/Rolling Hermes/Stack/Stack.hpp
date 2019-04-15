@@ -10,14 +10,23 @@
 #define Stack_hpp
 
 #include <stdio.h>
-#include "ArrayBasedPriorityQueue.hpp"
+#include "disk.hpp"
 
 enum STACK_ERRORS{STACK_EMPTY, STACK_FULL, STACK_BAD_SIZE};
 
+template <class D>
 class Stack {
 private:
+//    disk d;
+//    int size;
+//    
+//public:
+//    Stack() {}
+//    ~Stack() {}
+//    
+////    void push(disk d());
+//    int StackSize() {return 0;}
     
-public:
     
 };
 

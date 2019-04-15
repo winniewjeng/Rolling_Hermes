@@ -190,15 +190,16 @@ void arrPriorityQueue<Data, Priority>::enqueue(Data d, Priority p) {
         throw PQ_FULL;
     element<Data, Priority> e = element<Data, Priority>(d, p);
     element<Data, Priority>* place = autoInsert(head, p, size++);
-    std::cout << endl << place - head  << " with size: "<< size << std::endl;
+    std::cout << place - head  << " with size: "<< size << "\n";
     insertBefore(place, e);
 }
 
+//
 template <class Data, class Priority>
 Data& arrPriorityQueue<Data, Priority>::deque() {
     if (empty())
         throw PQ_EMPTY;
-    size --;
+//    size--;
     element<Data, Priority>* walker = head;
     element<Data, Priority>* end = head + size;
     Data temp = head -> data;
@@ -207,6 +208,7 @@ Data& arrPriorityQueue<Data, Priority>::deque() {
         *walker = *(walker + 1);
         walker ++;
     }
+    size--;
     
     return temp;
 }

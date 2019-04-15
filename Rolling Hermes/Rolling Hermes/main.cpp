@@ -11,21 +11,33 @@
 
 using namespace std;
 
+//void testStack();
+
 int main(int argc, const char * argv[]) {
     
-    arrPriorityQueue<disk*, int> src;
+    arrPriorityQueue<disk*, int> qu;
+    
     for (int i = 0; i < 5; ++i) {
         disk* temp = new disk();
         cout << "temp: " << temp -> getNumber() << " ";
-        cout << "\ni = " << -i << endl;
-        src.enqueue(temp, -i);
+        cout << "\npriority = " << -i << endl;
+        qu.enqueue(temp, -i);
+        qu.print();
+        cout << endl;
     }
-
-    for (int i = 0; i<5;++i) {
-        cout << src.deque() -> getNumber() << endl;
-    }
-    cout << endl;
-//    board(5);
+    
+//    cout << endl;
+//    cout << qu.getSize() << endl;
+//    qu.print();
+//    cout << *qu.deque() << endl;
+//    cout << *qu.deque() << endl;
+//    cout << *qu.deque() << endl; // nullptr dereferenced crash. 3rd disk is a nullptr. Check autoInsert algo
+//
+    
+    
+    //    for (int i = 0; i<5;++i) {
+    //        cout << qu.deque() -> getNumber() << endl;
+    //    }
+    //    board(5);
 }
-
 
