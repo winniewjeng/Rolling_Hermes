@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB164A1D2265001700DF00F6 /* board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB164A1B2265001700DF00F6 /* board.cpp */; };
 		EBC340722255A84300381151 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBC340712255A84300381151 /* main.cpp */; };
 		EBDF9951226470BE00507376 /* disk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBDF994F226470BE00507376 /* disk.cpp */; };
 /* End PBXBuildFile section */
@@ -24,12 +25,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EB164A1B2265001700DF00F6 /* board.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = board.cpp; sourceTree = "<group>"; };
+		EB164A1C2265001700DF00F6 /* board.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = board.hpp; sourceTree = "<group>"; };
 		EB9D69DD2256CDF60014D6A4 /* baseNode.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = baseNode.hpp; sourceTree = "<group>"; };
 		EB9D69E02256CF160014D6A4 /* Node.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Node.hpp; sourceTree = "<group>"; };
 		EBB75F67225C2B0700DA3332 /* ArrayBasedPriorityQueue.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ArrayBasedPriorityQueue.hpp; sourceTree = "<group>"; };
 		EBC3406E2255A84300381151 /* Rolling Hermes */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Rolling Hermes"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC340712255A84300381151 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		EBDF994D2264531200507376 /* board.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = board.hpp; sourceTree = "<group>"; };
 		EBDF994F226470BE00507376 /* disk.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = disk.cpp; sourceTree = "<group>"; };
 		EBDF9950226470BE00507376 /* disk.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = disk.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,8 +82,9 @@
 		EBC340702255A84300381151 /* Rolling Hermes */ = {
 			isa = PBXGroup;
 			children = (
+				EB164A1B2265001700DF00F6 /* board.cpp */,
+				EB164A1C2265001700DF00F6 /* board.hpp */,
 				EBC340712255A84300381151 /* main.cpp */,
-				EBDF994D2264531200507376 /* board.hpp */,
 				EBB75F67225C2B0700DA3332 /* ArrayBasedPriorityQueue.hpp */,
 				EBDF99522264736300507376 /* Disk */,
 				EB92BB34225ED6CF0085CAE4 /* Stack */,
@@ -157,6 +160,7 @@
 			files = (
 				EBDF9951226470BE00507376 /* disk.cpp in Sources */,
 				EBC340722255A84300381151 /* main.cpp in Sources */,
+				EB164A1D2265001700DF00F6 /* board.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

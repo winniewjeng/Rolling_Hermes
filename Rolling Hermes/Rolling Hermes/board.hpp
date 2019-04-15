@@ -16,6 +16,7 @@ class board {
     arrPriorityQueue<disk, int> src;
     arrPriorityQueue<disk, int> aux;
     arrPriorityQueue<disk, int> des;
+    unsigned int numberOfDisk;
     unsigned int move;
 public:
     board();
