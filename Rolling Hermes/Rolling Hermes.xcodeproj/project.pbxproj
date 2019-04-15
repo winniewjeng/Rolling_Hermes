@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EBC340722255A84300381151 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBC340712255A84300381151 /* main.cpp */; };
+		EBDF9951226470BE00507376 /* disk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBDF994F226470BE00507376 /* disk.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,7 +29,9 @@
 		EBB75F67225C2B0700DA3332 /* ArrayBasedPriorityQueue.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ArrayBasedPriorityQueue.hpp; sourceTree = "<group>"; };
 		EBC3406E2255A84300381151 /* Rolling Hermes */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Rolling Hermes"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC340712255A84300381151 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		EBDF994A2264527D00507376 /* disk.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = disk.hpp; sourceTree = "<group>"; };
+		EBDF994D2264531200507376 /* board.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = board.hpp; sourceTree = "<group>"; };
+		EBDF994F226470BE00507376 /* disk.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = disk.cpp; sourceTree = "<group>"; };
+		EBDF9950226470BE00507376 /* disk.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = disk.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,12 +81,22 @@
 			isa = PBXGroup;
 			children = (
 				EBC340712255A84300381151 /* main.cpp */,
+				EBDF994D2264531200507376 /* board.hpp */,
 				EBB75F67225C2B0700DA3332 /* ArrayBasedPriorityQueue.hpp */,
-				EBDF994A2264527D00507376 /* disk.hpp */,
+				EBDF99522264736300507376 /* Disk */,
 				EB92BB34225ED6CF0085CAE4 /* Stack */,
 				EB92BB3F225ED7010085CAE4 /* Discarded */,
 			);
 			path = "Rolling Hermes";
+			sourceTree = "<group>";
+		};
+		EBDF99522264736300507376 /* Disk */ = {
+			isa = PBXGroup;
+			children = (
+				EBDF994F226470BE00507376 /* disk.cpp */,
+				EBDF9950226470BE00507376 /* disk.hpp */,
+			);
+			path = Disk;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBDF9951226470BE00507376 /* disk.cpp in Sources */,
 				EBC340722255A84300381151 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
