@@ -25,6 +25,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8212C7C0226530ED00DFC11F /* Stack.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Stack.hpp; sourceTree = "<group>"; };
 		EB164A1B2265001700DF00F6 /* board.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = board.cpp; sourceTree = "<group>"; };
 		EB164A1C2265001700DF00F6 /* board.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = board.hpp; sourceTree = "<group>"; };
 		EB9D69DD2256CDF60014D6A4 /* baseNode.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = baseNode.hpp; sourceTree = "<group>"; };
@@ -50,6 +51,7 @@
 		EB92BB34225ED6CF0085CAE4 /* Stack */ = {
 			isa = PBXGroup;
 			children = (
+				8212C7C0226530ED00DFC11F /* Stack.hpp */,
 			);
 			path = Stack;
 			sourceTree = "<group>";
@@ -282,7 +284,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A4R6VQRKMH;
+				DEVELOPMENT_TEAM = 37CWHKAPJQ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -291,7 +293,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A4R6VQRKMH;
+				DEVELOPMENT_TEAM = 37CWHKAPJQ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
