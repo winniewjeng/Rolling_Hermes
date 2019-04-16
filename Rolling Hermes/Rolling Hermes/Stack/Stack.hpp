@@ -16,17 +16,17 @@ enum STACK_ERRORS{STACK_EMPTY, STACK_FULL, STACK_BAD_SIZE};
 
 class Stack {
 private:
-    disk _disk;
+    disk* head;
     int _size;
     int _cap;
     
 public:
-    Stack(disk d = disk());
+    Stack(unsigned int cap = 10);
     ~Stack();
     Stack(const Stack& other);
     Stack& operator=(const Stack& other);
     
-    void push(disk disc);
+    void push(disk* d);
     disk& pop();
     disk& peek();
     void clear();
@@ -36,14 +36,17 @@ public:
     bool empty();
     bool full();
     
+    int getSize() const;
+    
     Stack& operator>>(disk& d);
     Stack&  operator<<(const disk& d);
     
     // iostream
+    template<typename R>
     friend std::ostream& operator<<(std::ostream &out, const Stack &s);
+    template<typename R>
     friend std::istream& operator>>(std::istream &in, Stack &q);
     
-    int getSize() const;
 };
 
 

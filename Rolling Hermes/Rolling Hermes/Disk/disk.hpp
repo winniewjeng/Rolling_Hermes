@@ -10,6 +10,7 @@
 #define disk_hpp
 #include <iostream>
 using namespace std;
+
 class disk {
 private:
     static int lastIssued;

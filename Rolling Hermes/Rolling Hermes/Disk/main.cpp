@@ -17,40 +17,50 @@ void testStack();
 
 int main(int argc, const char * argv[]) {
     
-//    testPQ();
+    testPQ();
     
-    testStack();
+    //    testStack();
     
 }
 
 void testPQ() {
     
-    arrPriorityQueue<disk*, int> qu;
-    for (int i = 0; i < 5; ++i) {
-        disk* temp = new disk();  // mem leak
+    arrPriorityQueue<disk*, int> qu(10);
+    for (int i = 0; i < 4; ++i) {
+        disk* temp = new disk();  //
         cout << "temp: " << temp -> getNumber() << " ";
-        cout << "\npriority = " << -i << endl;
-        qu.enqueue(temp, -i);
-        qu.print();
+        cout << "\npriority = " << i << endl;
+        qu.enqueue(temp, i);
+//        qu.print();
         cout << endl;
     }
+    // why some disks end up being nullptrs when doing -i
+    // so going counterintuitively, greater number, greater priority
+    // ie priority = 4 > priority = 1
     
-    //    cout << qu.getSize() << endl;
-    //    cout << *qu.deque() << endl;
-    //    cout << *qu.deque() << endl;
-    //    cout << *qu.deque() << endl;
-    
-    //3rd disk nullptr dereferenced.
-    
-    //    for (int i = 0; i<5;++i) {
-    //        cout << qu.deque() -> getNumber() << endl;
-    //    }
-    //    board(5);
+    qu.print();
+    cout << endl;
+    disk* temp = new disk();
+    cout << "temp: " << temp -> getNumber() << " ";
+    cout << "\npriority = " << 1 << endl;
+    qu.enqueue(temp, 1);
+    cout << endl;
+    qu.print();
+
+//    while(qu.peek()!=nullptr) {
+//        qu.print();
+//        qu.deque();
+//    }
+    // board(5);
+    int s = qu.getSize();
+    Stack src(s);
+    while (!qu.empty()) {
+        src.push(qu.deque());
+    }
 }
 
 void testStack() {
     cout << "TEST STACK\n";
     
-    Stack src;
     
 }

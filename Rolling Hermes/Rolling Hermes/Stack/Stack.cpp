@@ -8,7 +8,7 @@
 
 #include "Stack.hpp"
 
-Stack::Stack(disk d):_disk(d), _size(0), _cap(0) {}
+Stack::Stack(unsigned int cap): _size(0), _cap(cap), head(nullptr) {}
 
 Stack::~Stack() {
     clear(); // not yet implemented
@@ -39,16 +39,32 @@ Stack& Stack::operator=(const Stack& other) {
     return *this;
 }
 
-void Stack::push(disk disc) {
+void Stack::push(disk* d) {
+    if (full()) {
+        throw STACK_FULL;
+    }
     
+    disk* walker = head;
+    
+    while (walker != nullptr) {
+        *walker = *(walker + 1);
+        walker++;
+    }
+    
+    walker = d;
+    cout << "hi"<<endl;
+    cout << *walker <<  endl;
+    _size++;
 }
 
 disk& Stack::pop() {
-    return _disk;
+    disk d;
+    return d;
 }
 
 disk& Stack::peek() {
-    return _disk;
+    disk d;
+    return d;
 }
 
 void Stack::clear() {
@@ -58,16 +74,17 @@ void Stack::clear() {
 void Stack::print() const {
     
 }
+
 void Stack::resize() {
     
 }
 
 bool Stack::empty() {
-    return 0;
+    return _size == 0;
 }
 
 bool Stack::full() {
-    return 0;
+    return _size == _cap;
 }
 
 int Stack::getSize() const {
@@ -85,9 +102,12 @@ Stack& Stack::operator<<(const disk& d) {
 }
 
 // iostream
+template<typename R>
 std::ostream& operator<<(std::ostream &out, const Stack &s) {
     return out;
 }
+
+template<typename R>
 std::istream& operator>>(std::istream &in, Stack &q) {
     return in;
 }
