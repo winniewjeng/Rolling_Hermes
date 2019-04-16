@@ -8,20 +8,16 @@
 
 #include "Stack.hpp"
 
-Stack::Stack(unsigned int cap): _size(0), _cap(cap) {
-    _top = nullptr;
-    //    _top = new node<disk>();
-}
+Stack::Stack(unsigned int cap): _size(0), _cap(cap), _top(nullptr) {}
 
 Stack::~Stack() {
-    clear(); // not yet implemented
+    clear();
 }
 
 Stack::Stack(const Stack& other) {
     clear();
     
     //copy other stack's disk into this stack - not yet imp
-    
     _size = other._size;
     _cap = other._cap;
     
@@ -29,12 +25,10 @@ Stack::Stack(const Stack& other) {
 
 Stack& Stack::operator=(const Stack& other) {
     
-    if (this == &other) {
+    if (this == &other)
         return *this;
-    }
     
     clear();
-    
     _cap = other._cap;
     _size = other._size;
     
@@ -47,49 +41,60 @@ void Stack::push(disk* d) {
     
     if (full())
         throw STACK_FULL;
-    // cout << *d << " - " << d <<endl;
-    // insert head function
-    // create a new node storing item *d and next* nullptr
+    
     node<disk>* new_node = new node<disk>(*d);
     new_node->_next = _top;
     _top = new_node;
     _size++;
 }
 
-disk* Stack::pop() {
+disk Stack::pop() {
     if (empty())
         throw STACK_EMPTY;
     
     disk item = _top->_item;
-    
-    _size--;
     node<disk>* temp = _top;
-    if (_top->_next) {
-        _top = _top->_next;
+    delete _top;
+    _size--;
+    // welp im creating mem leak here
+    // only move next if next is not nullptr
+    if (temp->_next) {
+        _top = temp->_next;
     }
-    delete temp;
-    cout  << "new top is "<< _top->_item << " " << _top <<endl<<endl;
     
-    return &item;
+    return item;
 }
 
-disk* Stack::peek() {
+disk Stack::peek() {
     if (empty())
         throw STACK_EMPTY;
-    //    node<disk>* walker = _top;
-    return &_top->_item;
-    //    return &(walker+_size-1)->_item;
+    return _top->_item;
 }
 
 void Stack::clear() {
-    
+    // delete each and every single node
+    while (_top->_next) {
+        node<disk>*temp = _top;
+        _top = _top->_next;
+        delete temp;
+    }
+    _top = nullptr; // delete head node
+    _size = 0;
+    _cap = 5;
 }
 
 void Stack::print() const {
     
 }
 
-void Stack::resize() {
+void Stack::resize(unsigned int cap) {
+    if (cap < 2)
+        throw STACK_BAD_SIZE;
+    
+    _cap = cap;
+    // node<disk>* temp =  copy(_top, cap) - not yet  implemented
+    //    delete[] _top;
+    // _top = temp
     
 }
 

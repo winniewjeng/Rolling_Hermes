@@ -45,12 +45,10 @@ void testPQS() {
     }
     cout << endl;
     while (!src.empty()) {
+        cout << "bye " << src.peek() <<endl;
         src.pop();
+        cout <<endl;
     }
     cout <<endl << src.getSize() <<endl;
-    //    src.pop();
-    //    cout << src.getSize() <<endl;
-    //    src.pop();
-    //    cout << src.getSize() <<endl;
-    //    src.pop();
+
 }

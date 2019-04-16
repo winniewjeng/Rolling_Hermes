@@ -30,17 +30,17 @@ private:
     unsigned int _cap;
     
 public:
-    Stack(unsigned int cap = 10);
+    Stack(unsigned int cap = 5);
     ~Stack();
     Stack(const Stack& other);
     Stack& operator=(const Stack& other);
     
     void push(disk* d);
-    disk* pop();
-    disk* peek();
+    disk pop();
+    disk peek();
     void clear();
     void print() const;
-    void resize();
+    void resize(unsigned int cap);
     
     bool empty();
     bool full();
