@@ -43,12 +43,11 @@ void testPQS() {
     while (!qu.empty()) {
         src.push(qu.deque());
     }
-    cout << endl;
+    cout << "\nsize "<< src.getSize() <<endl;
     while (!src.empty()) {
-        cout << "bye " << src.peek() <<endl;
+        cout << "Bye " << src.peek() <<endl;
         src.pop();
-        cout <<endl;
+        // why is everything destroyed twice?
     }
-    cout <<endl << src.getSize() <<endl;
-
+    cout << "size "<< src.getSize() << endl;
 }

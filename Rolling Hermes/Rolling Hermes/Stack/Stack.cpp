@@ -17,7 +17,7 @@ Stack::~Stack() {
 Stack::Stack(const Stack& other) {
     clear();
     
-    //copy other stack's disk into this stack - not yet imp
+    //copy other - not yet imp
     _size = other._size;
     _cap = other._cap;
     
@@ -48,19 +48,17 @@ void Stack::push(disk* d) {
     _size++;
 }
 
+// hi jack mind checking my pop()?
 disk Stack::pop() {
     if (empty())
         throw STACK_EMPTY;
     
     disk item = _top->_item;
-    node<disk>* temp = _top;
-    delete _top;
     _size--;
     // welp im creating mem leak here
     // only move next if next is not nullptr
-    if (temp->_next) {
-        _top = temp->_next;
-    }
+    if (_top->_next)
+        _top = _top->_next;
     
     return item;
 }

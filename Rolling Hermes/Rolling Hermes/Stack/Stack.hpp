@@ -42,6 +42,8 @@ public:
     void print() const;
     void resize(unsigned int cap);
     
+    void copy();
+    
     bool empty();
     bool full();
     
