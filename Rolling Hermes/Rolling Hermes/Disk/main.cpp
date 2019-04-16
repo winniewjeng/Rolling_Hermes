@@ -40,7 +40,7 @@ void testPQ() {
     //    cout << *qu.deque() << endl;
     //    cout << *qu.deque() << endl;
     
-    //3rd disk nullptr dereferenced. Check autoInsert()algo
+    //3rd disk nullptr dereferenced.
     
     //    for (int i = 0; i<5;++i) {
     //        cout << qu.deque() -> getNumber() << endl;
