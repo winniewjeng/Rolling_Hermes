@@ -8,7 +8,9 @@
 
 #include "Stack.hpp"
 
-Stack::Stack(unsigned int cap): _size(0), _cap(cap), head(nullptr) {}
+Stack::Stack(unsigned int cap): _size(0), _cap(cap) {
+    _top = new node[_cap]();
+}
 
 Stack::~Stack() {
     clear(); // not yet implemented
@@ -17,7 +19,7 @@ Stack::~Stack() {
 Stack::Stack(const Stack& other) {
     clear();
     
-    //copy other stack's disk into this stack ...
+    //copy other stack's disk into this stack - not yet imp
     
     _size = other._size;
     _cap = other._cap;
@@ -34,37 +36,40 @@ Stack& Stack::operator=(const Stack& other) {
     
     _cap = other._cap;
     _size = other._size;
+    
     // copy the disks over - not yet implemented
     
     return *this;
 }
 
 void Stack::push(disk* d) {
-    if (full()) {
+    
+    if (full())
         throw STACK_FULL;
-    }
     
-    disk* walker = head;
+//    cout << *d << " - " << d <<endl;
     
-    while (walker != nullptr) {
-        *walker = *(walker + 1);
-        walker++;
-    }
-    
-    walker = d;
-    cout << "hi"<<endl;
-    cout << *walker <<  endl;
+    node n = node(*d, nullptr);
+    (_top+_size)->_item = *d;
+//    cout  << (_top+_size)->_item <<  endl;
     _size++;
 }
 
-disk& Stack::pop() {
-    disk d;
-    return d;
+disk* Stack::pop() {
+    if (empty())
+        throw STACK_EMPTY;
+    
+    node* temp = _top;
+    _top = _top->_next;
+    _size--;
+    
+    return &temp->_item;
 }
 
-disk& Stack::peek() {
-    disk d;
-    return d;
+disk* Stack::peek() {
+
+    disk* e;
+    return e;
 }
 
 void Stack::clear() {

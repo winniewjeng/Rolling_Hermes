@@ -14,9 +14,17 @@
 
 enum STACK_ERRORS{STACK_EMPTY, STACK_FULL, STACK_BAD_SIZE};
 
+struct node {
+    disk _item;
+    node* _next;
+    // ctor
+    node(disk d = disk(), node* n = nullptr): _item(d), _next(n) {}
+};
+
+
 class Stack {
 private:
-    disk* head;
+    node* _top;
     int _size;
     int _cap;
     
@@ -27,8 +35,8 @@ public:
     Stack& operator=(const Stack& other);
     
     void push(disk* d);
-    disk& pop();
-    disk& peek();
+    disk* pop();
+    disk* peek();
     void clear();
     void print() const;
     void resize();
@@ -39,7 +47,7 @@ public:
     int getSize() const;
     
     Stack& operator>>(disk& d);
-    Stack&  operator<<(const disk& d);
+    Stack& operator<<(const disk& d);
     
     // iostream
     template<typename R>

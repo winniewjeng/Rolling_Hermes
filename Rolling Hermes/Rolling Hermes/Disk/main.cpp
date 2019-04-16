@@ -12,18 +12,17 @@
 
 using namespace std;
 
-void testPQ();
-void testStack();
+void testPQS();
 
 int main(int argc, const char * argv[]) {
     
-    testPQ();
+    testPQS();
     
     //    testStack();
     
 }
 
-void testPQ() {
+void testPQS() {
     
     arrPriorityQueue<disk*, int> qu(10);
     for (int i = 0; i < 4; ++i) {
@@ -31,36 +30,38 @@ void testPQ() {
         cout << "temp: " << temp -> getNumber() << " ";
         cout << "\npriority = " << i << endl;
         qu.enqueue(temp, i);
-//        qu.print();
+        //        qu.print();
         cout << endl;
     }
     // why some disks end up being nullptrs when doing -i
-    // so going counterintuitively, greater number, greater priority
-    // ie priority = 4 > priority = 1
+    // so going counterintuitively, greater number = greater priority ie priority 4 > priority 1
     
     qu.print();
-    cout << endl;
-    disk* temp = new disk();
-    cout << "temp: " << temp -> getNumber() << " ";
-    cout << "\npriority = " << 1 << endl;
-    qu.enqueue(temp, 1);
-    cout << endl;
-    qu.print();
-
-//    while(qu.peek()!=nullptr) {
-//        qu.print();
-//        qu.deque();
-//    }
+//    cout << endl;
+//    disk* temp = new disk();
+//    cout << "temp: " << temp -> getNumber() << " ";
+//    cout << "\npriority = " << 1 << endl;
+//    qu.enqueue(temp, 1);
+//    cout << endl;
+//    qu.print();
+    
     // board(5);
+    
     int s = qu.getSize();
     Stack src(s);
     while (!qu.empty()) {
         src.push(qu.deque());
+        
     }
-}
 
-void testStack() {
-    cout << "TEST STACK\n";
     
+    cout << *src.pop() <<endl;
+    cout << *src.pop() <<endl;
+    cout << *src.pop() <<endl;
+
+
+    
+    // cout<<qu.getSize() <<endl;
+    // cout << src.getSize()<<endl;
     
 }
