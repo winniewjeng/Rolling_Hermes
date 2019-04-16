@@ -14,19 +14,20 @@
 
 enum STACK_ERRORS{STACK_EMPTY, STACK_FULL, STACK_BAD_SIZE};
 
+template <typename T>
 struct node {
-    disk _item;
+    T _item;
     node* _next;
     // ctor
-    node(disk d = disk(), node* n = nullptr): _item(d), _next(n) {}
+    node(T item = T()): _item(item) {}
 };
 
 
 class Stack {
 private:
-    node* _top;
-    int _size;
-    int _cap;
+    node<disk>* _top;
+    unsigned int _size;
+    unsigned int _cap;
     
 public:
     Stack(unsigned int cap = 10);

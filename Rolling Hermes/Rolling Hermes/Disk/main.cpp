@@ -18,8 +18,6 @@ int main(int argc, const char * argv[]) {
     
     testPQS();
     
-    //    testStack();
-    
 }
 
 void testPQS() {
@@ -37,13 +35,6 @@ void testPQS() {
     // so going counterintuitively, greater number = greater priority ie priority 4 > priority 1
     
     qu.print();
-//    cout << endl;
-//    disk* temp = new disk();
-//    cout << "temp: " << temp -> getNumber() << " ";
-//    cout << "\npriority = " << 1 << endl;
-//    qu.enqueue(temp, 1);
-//    cout << endl;
-//    qu.print();
     
     // board(5);
     
@@ -51,17 +42,15 @@ void testPQS() {
     Stack src(s);
     while (!qu.empty()) {
         src.push(qu.deque());
-        
     }
-
-    
-    cout << *src.pop() <<endl;
-    cout << *src.pop() <<endl;
-    cout << *src.pop() <<endl;
-
-
-    
-    // cout<<qu.getSize() <<endl;
-    // cout << src.getSize()<<endl;
-    
+    cout << endl;
+    while (!src.empty()) {
+        src.pop();
+    }
+    cout <<endl << src.getSize() <<endl;
+    //    src.pop();
+    //    cout << src.getSize() <<endl;
+    //    src.pop();
+    //    cout << src.getSize() <<endl;
+    //    src.pop();
 }

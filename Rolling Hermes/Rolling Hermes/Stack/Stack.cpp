@@ -9,7 +9,8 @@
 #include "Stack.hpp"
 
 Stack::Stack(unsigned int cap): _size(0), _cap(cap) {
-    _top = new node[_cap]();
+    _top = nullptr;
+    //    _top = new node<disk>();
 }
 
 Stack::~Stack() {
@@ -46,12 +47,12 @@ void Stack::push(disk* d) {
     
     if (full())
         throw STACK_FULL;
-    
-//    cout << *d << " - " << d <<endl;
-    
-    node n = node(*d, nullptr);
-    (_top+_size)->_item = *d;
-//    cout  << (_top+_size)->_item <<  endl;
+    // cout << *d << " - " << d <<endl;
+    // insert head function
+    // create a new node storing item *d and next* nullptr
+    node<disk>* new_node = new node<disk>(*d);
+    new_node->_next = _top;
+    _top = new_node;
     _size++;
 }
 
@@ -59,17 +60,25 @@ disk* Stack::pop() {
     if (empty())
         throw STACK_EMPTY;
     
-    node* temp = _top;
-    _top = _top->_next;
-    _size--;
+    disk item = _top->_item;
     
-    return &temp->_item;
+    _size--;
+    node<disk>* temp = _top;
+    if (_top->_next) {
+        _top = _top->_next;
+    }
+    delete temp;
+    cout  << "new top is "<< _top->_item << " " << _top <<endl<<endl;
+    
+    return &item;
 }
 
 disk* Stack::peek() {
-
-    disk* e;
-    return e;
+    if (empty())
+        throw STACK_EMPTY;
+    //    node<disk>* walker = _top;
+    return &_top->_item;
+    //    return &(walker+_size-1)->_item;
 }
 
 void Stack::clear() {
