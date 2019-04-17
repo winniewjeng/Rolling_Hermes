@@ -72,7 +72,9 @@ void board::autoMove(bool finishTheGame) {
         interval[i - 1] = pow(2, i);
     }
     
-    while (finishTheGame && inProgress()) {
+    do {
+        if (!inProgress())
+            break;
         int i = 0;
         int forLaterUse = 0;
         for (i = 0; i < diskNumber; ++ i) {
@@ -123,7 +125,7 @@ void board::autoMove(bool finishTheGame) {
                 break;
         }
 
-    }
+    } while (finishTheGame);
 }
 
 bool board::inProgress() {
