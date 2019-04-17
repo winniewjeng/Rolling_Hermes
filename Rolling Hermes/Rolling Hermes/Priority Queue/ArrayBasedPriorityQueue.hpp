@@ -59,18 +59,28 @@ public:
     // Return type: unsigned int
     // Paramaters: None
     
-    unsigned int getCapacity() const {return capacity;};
+    unsigned int getCapacity() const {return capacity;}
     // Function:
     // Description:
     // Return type:
     // Paramaters:
     
-    Data& peek() {return head -> data;};
+    Data& peek() {return head -> data;}
     // Function:
     // Description:
     // Return type:
     // Paramaters:
+    Priority& peekPriority()const {return head -> priority;}
+    // Function:
+    // Description:
+    // Return type:
+    // Paramaters:
+    
     void print() const;
+    // Function:
+    // Description:
+    // Return type:
+    // Paramaters:
     
     // Mutators
     void clear();

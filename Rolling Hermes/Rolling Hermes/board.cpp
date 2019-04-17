@@ -28,7 +28,6 @@ board::board(unsigned int _diskNum): diskNumber(_diskNum) {
 board::~board() {
     if (!src.empty()) {
         for (int i = src.getSize(); i > 0; -- i) {
-            cout << "i = " << i << endl;
             delete src.peek();
             src.deque();
         }
@@ -48,6 +47,7 @@ board::~board() {
 }
 
 void board::fromOneToOther(arrPriorityQueue<disk*, int>& from, arrPriorityQueue<disk*, int>& to) {
-    
-    
+    int tempP = from.peekPriority();
+    disk* tempD = from.deque();
+    to.enqueue(tempD, tempP);
 }
