@@ -34,9 +34,7 @@ public:
     
     // Board Class Delegate
     void init();
-    void moveToSrc();
-    void moveToAux();
-    void moveToDes();
+    void fromOneToOther(arrPriorityQueue<disk*, int>& from, arrPriorityQueue<disk*, int>& to);
     void autoMove(bool finishTheGame = false);
     
     bool inProgress();
