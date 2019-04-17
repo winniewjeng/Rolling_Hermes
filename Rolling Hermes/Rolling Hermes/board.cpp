@@ -75,14 +75,39 @@ void board::autoMove(bool finishTheGame) {
     while (finishTheGame && inProgress()) {
         int i = 0;
         int forLaterUse = 0;
-        for (i = 0; i < diskNumber; i ++) {
+        for (i = 0; i < diskNumber; ++ i) {
             forLaterUse = (move - initMove[i] + 1) % modNum[i];
             if (forLaterUse % interval[i] == 1)
                 break;
         }
-        if (i % 2) { // i is odd
-            int opIndex = forLaterUse / interval[i];
-//            forLaterUse /
+        
+        i --; // Decr from the for loop in order to have the right number of Peg.
+        
+        int opIndex = forLaterUse / interval[i];
+        switch (opIndex) {
+            case 1:
+                if ((i%2)&&preferOdd) {
+                   // SD
+                } else {
+                    // SA
+                }
+                break;
+            case 2:
+                if ((i%2)&&preferOdd) {
+                    // DA
+                } else {
+                    // AD
+                }
+                break;
+            case 3:
+                if ((i%2)&&preferOdd) {
+                    // AS
+                } else {
+                    // DS
+                }
+                break;
+            default:
+                break;
         }
         // 然后判断i是单双数，是否preferred
         // 然后 step减去InitMove[i] + 1， 再Modulo modNum[i]
