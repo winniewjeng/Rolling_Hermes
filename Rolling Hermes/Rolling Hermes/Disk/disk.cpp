@@ -30,7 +30,7 @@ disk& disk::operator =(const disk& other) {
 
 
 ostream& operator<< (ostream& out, const disk& print) {
-    out << "Disk: " << print.number << " ";
+    out << "Disk: " << print.number;
     return out;
 }
 

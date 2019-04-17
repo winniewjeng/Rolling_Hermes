@@ -65,6 +65,7 @@ void board::printBoard() {
     cout << "\n    Dest Peg: ";
     for (int i = 0; i < des.getSize(); ++ i)
         std::cout << "(" << *(des.at(i) -> data) <<") ";
+    cout << "\n        Move: " << move;
     cout << "\n\n";
 }
 
@@ -106,8 +107,6 @@ void board::autoMove(bool finishTheGame) {
                 break;
         }
         
-//        i --; // Decr from the for loop in order to have the right number of Peg.
-        
         // 然后判断i是单双数，是否preferred
         // 然后 step减去InitMove[i] + 1， 再Modulo modNum[i]
         // 然后divide interval[i]，
@@ -116,6 +115,8 @@ void board::autoMove(bool finishTheGame) {
         // Unpreferred：SA AD DS
         
         int operationIndex = forLaterUse / interval[i];
+        // Increment i in order to correct the index number to the disk number
+        // in for loop, i starts at 0; in disk world, i starts at 1.
         i ++;
         switch (operationIndex) {
             case 0:
@@ -150,8 +151,6 @@ void board::autoMove(bool finishTheGame) {
         }
         
     } while (finishTheGame);
-    cout << "total move:" << move << endl;
-    cout << "Expected total move: " << pow(2, diskNumber) - 1 << endl;
 }
 
 bool board::inProgress() {
