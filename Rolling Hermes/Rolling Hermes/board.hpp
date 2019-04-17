@@ -11,6 +11,10 @@
 
 #include "disk.hpp"
 #include "ArrayBasedPriorityQueue.hpp"
+enum BOARD_ERROR {
+    ILLEGAL_MOVE,
+    PEG_EMPTY
+};
 
 class board {
     

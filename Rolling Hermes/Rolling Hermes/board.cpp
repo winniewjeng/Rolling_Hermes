@@ -56,25 +56,31 @@ void board::init () {
 }
 
 void board::printBoard() {
-    cout << "Source Peg: ";
+    cout << "  Source Peg: ";
     for (int i = 0; i < src.getSize(); ++ i)
         std::cout << "(" << *(src.at(i) -> data) <<") ";
-    cout << "\nAuxilary Peg:";
+    cout << "\nAuxilary Peg: ";
     for (int i = 0; i < aux.getSize(); ++ i)
         std::cout << "(" << *(aux.at(i) -> data) <<") ";
-    cout << "\nDest Peg: ";
+    cout << "\n    Dest Peg: ";
     for (int i = 0; i < des.getSize(); ++ i)
         std::cout << "(" << *(des.at(i) -> data) <<") ";
     cout << "\n\n";
 }
 
 void board::fromOneToOther(arrPriorityQueue<disk*, int>& from, arrPriorityQueue<disk*, int>& to) {
+    if (from.peekPriority() < to.peekPriority())
+        throw ILLEGAL_MOVE;
+    if (from.empty())
+        throw PEG_EMPTY;
     int tempP = from.peekPriority();
     disk* tempD = from.deque();
     to.enqueue(tempD, tempP);
 }
 
 void board::autoMove(bool finishTheGame) {
+    int i = 0;
+    int forLaterUse = 0;
     int modNum[diskNumber];
     int initMove[diskNumber];
     int interval[diskNumber];
@@ -91,12 +97,14 @@ void board::autoMove(bool finishTheGame) {
         cout << "init Move: " << initMove[i] << endl;
         cout << "interval: " << interval[i] << endl;
     }
+    
     do {
+        printBoard();
+        cout << endl;
         if (!inProgress())
             break;
         ++move;
-        int i = 0;
-        int forLaterUse = 0;
+        forLaterUse = 0;
         for (i = 0; i < diskNumber; ++ i) {
             forLaterUse = (move - initMove[i] + 1) % modNum[i];
             if (forLaterUse % interval[i] == 1)
@@ -145,10 +153,10 @@ void board::autoMove(bool finishTheGame) {
             default:
                 break;
         }
-        printBoard();
-        cout << endl;
+        
     } while (finishTheGame);
-    cout << "total move:" << move;
+    cout << "total move:" << move << endl;
+    cout << "Expected total move: " << pow(2, diskNumber) - 1 << endl;
 }
 
 bool board::inProgress() {
