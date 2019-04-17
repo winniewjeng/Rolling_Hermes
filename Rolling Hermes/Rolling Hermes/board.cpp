@@ -29,7 +29,7 @@ board::~board() {
     if (!aux.empty()) {
         for (int i = aux.getSize(); i > 0; -- i) {
             delete aux.peek();
-            src.deque();
+//            src.deque();
         }
     }
     if (!des.empty()) {
@@ -92,12 +92,7 @@ void board::autoMove(bool finishTheGame) {
         initMove[i - 1] = pow(2, (i - 1));
         interval[i - 1] = pow(2, i);
     }
-    for (int i = 0; i < diskNumber; ++ i) {
-        cout << "Mod Num: " << modNum[i] << endl;
-        cout << "init Move: " << initMove[i] << endl;
-        cout << "interval: " << interval[i] << endl;
-    }
-    
+
     do {
         printBoard();
         cout << endl;

@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rolling Hermes/board.cpp"
-            timestampString = "577225867.178331"
+            timestampString = "577226687.413306"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rolling Hermes/board.cpp"
-            timestampString = "577225867.1785671"
+            timestampString = "577226687.413552"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "board::autoMove(bool finishTheGame)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rolling Hermes/board.cpp"
-            timestampString = "577225867.1786211"
+            timestampString = "577226687.413615"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "board::autoMove(bool finishTheGame)"
             landmarkType = "7">
          </BreakpointContent>
@@ -54,16 +54,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rolling Hermes/board.cpp"
-            timestampString = "577225867.178666"
+            timestampString = "577226687.413662"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
-            landmarkName = "board::autoMove(bool finishTheGame)"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "board::~board()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
