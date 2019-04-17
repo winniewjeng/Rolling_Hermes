@@ -6,7 +6,9 @@
 //  Copyright © 2019 Jack Zhao. All rights reserved.
 //
 #include <cmath>
+#include <chrono>
 #include "board.hpp"
+using namespace std::chrono;
 const int AReallyBigNumber = 100;
 const int Increment = 1;
 const int Even = 2;
@@ -53,6 +55,19 @@ void board::init () {
     }
 }
 
+void board::printBoard() {
+    cout << "Source Peg: ";
+    for (int i = 0; i < src.getSize(); ++ i)
+        std::cout << "(" << *(src.at(i) -> data) <<") ";
+    cout << "\nAuxilary Peg:";
+    for (int i = 0; i < aux.getSize(); ++ i)
+        std::cout << "(" << *(aux.at(i) -> data) <<") ";
+    cout << "\nDest Peg: ";
+    for (int i = 0; i < des.getSize(); ++ i)
+        std::cout << "(" << *(des.at(i) -> data) <<") ";
+    cout << "\n\n";
+}
+
 void board::fromOneToOther(arrPriorityQueue<disk*, int>& from, arrPriorityQueue<disk*, int>& to) {
     int tempP = from.peekPriority();
     disk* tempD = from.deque();
@@ -71,10 +86,15 @@ void board::autoMove(bool finishTheGame) {
         initMove[i - 1] = pow(2, (i - 1));
         interval[i - 1] = pow(2, i);
     }
-    
+    for (int i = 0; i < diskNumber; ++ i) {
+        cout << "Mod Num: " << modNum[i] << endl;
+        cout << "init Move: " << initMove[i] << endl;
+        cout << "interval: " << interval[i] << endl;
+    }
     do {
         if (!inProgress())
             break;
+        ++move;
         int i = 0;
         int forLaterUse = 0;
         for (i = 0; i < diskNumber; ++ i) {
@@ -83,7 +103,7 @@ void board::autoMove(bool finishTheGame) {
                 break;
         }
         
-        i --; // Decr from the for loop in order to have the right number of Peg.
+//        i --; // Decr from the for loop in order to have the right number of Peg.
         
         // 然后判断i是单双数，是否preferred
         // 然后 step减去InitMove[i] + 1， 再Modulo modNum[i]
@@ -93,9 +113,10 @@ void board::autoMove(bool finishTheGame) {
         // Unpreferred：SA AD DS
         
         int operationIndex = forLaterUse / interval[i];
+        i ++;
         switch (operationIndex) {
             case 0:
-                if ((i%2)&&preferOdd) {
+                if ((i%2) == preferOdd) {
                    // SD
                     fromOneToOther(src, des);
                 } else {
@@ -104,7 +125,7 @@ void board::autoMove(bool finishTheGame) {
                 }
                 break;
             case 1:
-                if ((i%2)&&preferOdd) {
+                if ((i%2) == preferOdd) {
                     // DA
                     fromOneToOther(des, aux);
                 } else {
@@ -113,7 +134,7 @@ void board::autoMove(bool finishTheGame) {
                 }
                 break;
             case 2:
-                if ((i%2)&&preferOdd) {
+                if ((i%2) == preferOdd) {
                     // AS
                     fromOneToOther(aux, src);
                 } else {
@@ -124,10 +145,12 @@ void board::autoMove(bool finishTheGame) {
             default:
                 break;
         }
-
+        printBoard();
+        cout << endl;
     } while (finishTheGame);
+    cout << "total move:" << move;
 }
 
 bool board::inProgress() {
-    return (src.empty() && aux.empty());
+    return !(src.empty() && aux.empty());
 }

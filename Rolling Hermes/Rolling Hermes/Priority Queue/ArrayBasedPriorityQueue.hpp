@@ -70,6 +70,8 @@ public:
     // Description:
     // Return type:
     // Paramaters:
+    element<Data, Priority>* at(const unsigned int i) {return (head + i);}
+    
     Priority& peekPriority()const {return head -> priority;}
     // Function:
     // Description:
@@ -178,7 +180,8 @@ void arrPriorityQueue<Data, Priority>::print()const {
 
 template <class Data, class Priority>
 void arrPriorityQueue<Data, Priority>::clear() {
-    delete [] head;
+//    if (head != nullptr)
+//        delete [] head;
     head = nullptr;
     size = 0;
     capacity = 5;

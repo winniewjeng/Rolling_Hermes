@@ -15,9 +15,9 @@ using namespace std;
 void testPQS();
 
 int main(int argc, const char * argv[]) {
-    board(5);
-    cout << endl;
-    board(6);
+    board a(4);
+    
+    a.autoMove(true);
 //    testPQS();
 }
 /*
