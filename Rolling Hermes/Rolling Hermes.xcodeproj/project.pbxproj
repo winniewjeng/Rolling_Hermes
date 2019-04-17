@@ -70,6 +70,15 @@
 			path = Discarded;
 			sourceTree = "<group>";
 		};
+		EBBCB1BF226709B400A8CB66 /* Priority Queue */ = {
+			isa = PBXGroup;
+			children = (
+				EBB75F67225C2B0700DA3332 /* ArrayBasedPriorityQueue.hpp */,
+				8212C7C422654A2700DFC11F /* ArrayBasedPriorityQueue.cpp */,
+			);
+			path = "Priority Queue";
+			sourceTree = "<group>";
+		};
 		EBC340652255A84300381151 = {
 			isa = PBXGroup;
 			children = (
@@ -89,9 +98,11 @@
 		EBC340702255A84300381151 /* Rolling Hermes */ = {
 			isa = PBXGroup;
 			children = (
+				EBC340712255A84300381151 /* main.cpp */,
 				EB164A1C2265001700DF00F6 /* board.hpp */,
 				EB164A1B2265001700DF00F6 /* board.cpp */,
 				EBDF99522264736300507376 /* Disk */,
+				EBBCB1BF226709B400A8CB66 /* Priority Queue */,
 				EB92BB34225ED6CF0085CAE4 /* Stack */,
 				EB92BB3F225ED7010085CAE4 /* Discarded */,
 			);
@@ -101,11 +112,8 @@
 		EBDF99522264736300507376 /* Disk */ = {
 			isa = PBXGroup;
 			children = (
-				EBC340712255A84300381151 /* main.cpp */,
 				EBDF994F226470BE00507376 /* disk.cpp */,
 				EBDF9950226470BE00507376 /* disk.hpp */,
-				EBB75F67225C2B0700DA3332 /* ArrayBasedPriorityQueue.hpp */,
-				8212C7C422654A2700DFC11F /* ArrayBasedPriorityQueue.cpp */,
 			);
 			path = Disk;
 			sourceTree = "<group>";
@@ -292,7 +300,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 37CWHKAPJQ;
+				DEVELOPMENT_TEAM = A4R6VQRKMH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -301,7 +309,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 37CWHKAPJQ;
+				DEVELOPMENT_TEAM = A4R6VQRKMH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
