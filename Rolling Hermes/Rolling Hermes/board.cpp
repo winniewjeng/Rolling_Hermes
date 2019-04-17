@@ -83,38 +83,46 @@ void board::autoMove(bool finishTheGame) {
         
         i --; // Decr from the for loop in order to have the right number of Peg.
         
-        int opIndex = forLaterUse / interval[i];
-        switch (opIndex) {
-            case 1:
-                if ((i%2)&&preferOdd) {
-                   // SD
-                } else {
-                    // SA
-                }
-                break;
-            case 2:
-                if ((i%2)&&preferOdd) {
-                    // DA
-                } else {
-                    // AD
-                }
-                break;
-            case 3:
-                if ((i%2)&&preferOdd) {
-                    // AS
-                } else {
-                    // DS
-                }
-                break;
-            default:
-                break;
-        }
         // 然后判断i是单双数，是否preferred
         // 然后 step减去InitMove[i] + 1， 再Modulo modNum[i]
         // 然后divide interval[i]，
         // 看结果：
         // Preferred：SD DA AS
         // Unpreferred：SA AD DS
+        
+        int operationIndex = forLaterUse / interval[i];
+        switch (operationIndex) {
+            case 0:
+                if ((i%2)&&preferOdd) {
+                   // SD
+                    fromOneToOther(src, des);
+                } else {
+                    // SA
+                    fromOneToOther(src, aux);
+                }
+                break;
+            case 1:
+                if ((i%2)&&preferOdd) {
+                    // DA
+                    fromOneToOther(des, aux);
+                } else {
+                    // AD
+                    fromOneToOther(aux, des);
+                }
+                break;
+            case 2:
+                if ((i%2)&&preferOdd) {
+                    // AS
+                    fromOneToOther(aux, src);
+                } else {
+                    // DS
+                    fromOneToOther(des, src);
+                }
+                break;
+            default:
+                break;
+        }
+
     }
 }
 
