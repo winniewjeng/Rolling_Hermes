@@ -65,7 +65,7 @@ public:
     // Return type:
     // Paramaters:
     
-    const Data& peek() const {return head -> data;};
+    Data& peek() {return head -> data;};
     // Function:
     // Description:
     // Return type:

@@ -15,10 +15,61 @@ using namespace std;
 void testPQS();
 
 int main(int argc, const char * argv[]) {
-    
-    testPQS();
-    
+    board(5);
+    cout << endl;
+    board(6);
+//    testPQS();
 }
+/*
+ Board Test run:
+ Disk #1 was created!
+ Disk #2 was created!
+ Disk #3 was created!
+ Disk #4 was created!
+ Disk #5 was created!
+ i = 5
+ src size = 5
+ Disk #1 was destroyed!
+ i = 4
+ src size = 4
+ Disk #2 was destroyed!
+ i = 3
+ src size = 3
+ Disk #3 was destroyed!
+ i = 2
+ src size = 2
+ Disk #4 was destroyed!
+ i = 1
+ src size = 1
+ Disk #5 was destroyed!
+ 
+ Disk #1 was created!
+ Disk #2 was created!
+ Disk #3 was created!
+ Disk #4 was created!
+ Disk #5 was created!
+ Disk #6 was created!
+ i = 6
+ src size = 6
+ Disk #1 was destroyed!
+ i = 5
+ src size = 5
+ Disk #2 was destroyed!
+ i = 4
+ src size = 4
+ Disk #3 was destroyed!
+ i = 3
+ src size = 3
+ Disk #4 was destroyed!
+ i = 2
+ src size = 2
+ Disk #5 was destroyed!
+ i = 1
+ src size = 1
+ Disk #6 was destroyed!
+ */
+
+
 
 void testPQS() {
     
