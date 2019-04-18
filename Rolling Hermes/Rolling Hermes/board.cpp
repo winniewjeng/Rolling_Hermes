@@ -22,20 +22,19 @@ board::board(unsigned int _diskNum): diskNumber(_diskNum) {
 board::~board() {
     if (!src.empty()) {
         for (int i = src.getSize(); i > 0; -- i) {
-            delete src.peek();
-            src.deque();
+            delete src.at(i - 1) -> data;
         }
     }
     if (!aux.empty()) {
         for (int i = aux.getSize(); i > 0; -- i) {
-            delete aux.peek();
+            delete aux.at(i - 1) -> data;
 //            src.deque();
         }
     }
     if (!des.empty()) {
         for (int i = des.getSize(); i > 0; -- i) {
-            delete des.peek();
-            des.deque();
+            delete des.at(i - 1) -> data;
+            
         }
     }
 }
@@ -75,7 +74,7 @@ void board::fromOneToOther(arrPriorityQueue<disk*, int>& from, arrPriorityQueue<
     if (from.empty())
         throw PEG_EMPTY;
     int tempP = from.peekPriority();
-    disk* tempD = from.deque();
+    disk* tempD = new disk(*from.deque());
     to.enqueue(tempD, tempP);
 }
 
@@ -93,14 +92,17 @@ void board::autoMove(bool finishTheGame) {
         initMove[i - 1] = pow(2, (i - 1));
         interval[i - 1] = pow(2, i);
     }
-
+    
     do {
-        printBoard();
+//        printBoard();
         cout << endl;
         if (!inProgress())
             break;
         ++move;
         forLaterUse = 0;
+        printBoard();
+//        if (move == int(pow(2, diskNumber)) - 1)
+//            cout << "趁现在" <<endl;
         for (i = 0; i < diskNumber; ++ i) {
             forLaterUse = (move - initMove[i] + 1) % modNum[i];
             if (forLaterUse % interval[i] == 1)

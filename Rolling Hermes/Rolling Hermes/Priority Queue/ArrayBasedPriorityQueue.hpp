@@ -103,7 +103,7 @@ public:
     // Return type:
     // Paramaters:
     
-    Data& deque();
+    Data deque();
     // Function:
     // Description:
     // Return type:
@@ -210,14 +210,13 @@ void arrPriorityQueue<Data, Priority>::enqueue(Data d, Priority p) {
 
 //
 template <class Data, class Priority>
-Data& arrPriorityQueue<Data, Priority>::deque() {
+Data arrPriorityQueue<Data, Priority>::deque() {
     if (empty())
         throw PQ_EMPTY;
 //    size--;
     element<Data, Priority>* walker = head;
     element<Data, Priority>* end = head + size;
     Data temp = head -> data;
-    
     while (walker < end) {
         *walker = *(walker + 1);
         walker ++;

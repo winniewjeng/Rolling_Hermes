@@ -9,6 +9,7 @@
 #include <iostream>
 #include "board.hpp"
 #include "Stack.hpp"
+#include "Playground.hpp"
 
 using namespace std;
 

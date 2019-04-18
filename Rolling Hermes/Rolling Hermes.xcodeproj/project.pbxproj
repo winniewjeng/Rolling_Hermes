@@ -10,6 +10,8 @@
 		8212C7C32265492E00DFC11F /* Stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8212C7C22265492E00DFC11F /* Stack.cpp */; };
 		EB164A1D2265001700DF00F6 /* board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB164A1B2265001700DF00F6 /* board.cpp */; };
 		EBC340722255A84300381151 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBC340712255A84300381151 /* main.cpp */; };
+		EBD251462267DFD700ABAB7D /* sfml-graphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD251452267DFD700ABAB7D /* sfml-graphics.framework */; };
+		EBD2514C2267EFB500ABAB7D /* Playground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBD2514A2267EFB500ABAB7D /* Playground.cpp */; };
 		EBDF9951226470BE00507376 /* disk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBDF994F226470BE00507376 /* disk.cpp */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,9 @@
 		EBB75F67225C2B0700DA3332 /* ArrayBasedPriorityQueue.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ArrayBasedPriorityQueue.hpp; sourceTree = "<group>"; };
 		EBC3406E2255A84300381151 /* Rolling Hermes */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Rolling Hermes"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC340712255A84300381151 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		EBD251452267DFD700ABAB7D /* sfml-graphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-graphics.framework"; path = "../../../../../../../../Library/Frameworks/sfml-graphics.framework"; sourceTree = "<group>"; };
+		EBD2514A2267EFB500ABAB7D /* Playground.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Playground.cpp; sourceTree = "<group>"; };
+		EBD2514B2267EFB500ABAB7D /* Playground.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Playground.hpp; sourceTree = "<group>"; };
 		EBDF994F226470BE00507376 /* disk.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = disk.cpp; sourceTree = "<group>"; };
 		EBDF9950226470BE00507376 /* disk.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = disk.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -44,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBD251462267DFD700ABAB7D /* sfml-graphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +87,7 @@
 			children = (
 				EBC340702255A84300381151 /* Rolling Hermes */,
 				EBC3406F2255A84300381151 /* Products */,
+				EBD251442267DFD700ABAB7D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,8 +109,18 @@
 				EBBCB1BF226709B400A8CB66 /* Priority Queue */,
 				EB92BB34225ED6CF0085CAE4 /* Stack */,
 				EB92BB3F225ED7010085CAE4 /* Discarded */,
+				EBD2514A2267EFB500ABAB7D /* Playground.cpp */,
+				EBD2514B2267EFB500ABAB7D /* Playground.hpp */,
 			);
 			path = "Rolling Hermes";
+			sourceTree = "<group>";
+		};
+		EBD251442267DFD700ABAB7D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EBD251452267DFD700ABAB7D /* sfml-graphics.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		EBDF99522264736300507376 /* Disk */ = {
@@ -174,6 +191,7 @@
 				8212C7C32265492E00DFC11F /* Stack.cpp in Sources */,
 				EBDF9951226470BE00507376 /* disk.cpp in Sources */,
 				EBC340722255A84300381151 /* main.cpp in Sources */,
+				EBD2514C2267EFB500ABAB7D /* Playground.cpp in Sources */,
 				EB164A1D2265001700DF00F6 /* board.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +315,10 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A4R6VQRKMH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -306,6 +328,10 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A4R6VQRKMH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
