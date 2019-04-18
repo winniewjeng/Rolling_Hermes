@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include <string>
 #include "board.hpp"
 #include "Stack.hpp"
 #include "Playground.hpp"
@@ -16,7 +17,7 @@ using namespace std;
 void testPQS();
 
 int main(int argc, const char * argv[]) {
-    board a(6);
+    board a(7);
     
     a.autoMove(true);
    

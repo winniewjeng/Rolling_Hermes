@@ -64,16 +64,16 @@ void board::printBoard() {
     cout << "\n    Dest Peg: ";
     for (int i = 0; i < des.getSize(); ++ i)
         std::cout << "(" << *(des.at(i) -> data) <<") ";
-    cout << "\n        Move: " << move;
-    cout << "\n\n";
+    cout << "\n        Move: " << move << endl;
 }
 
-void board::fromOneToOther(arrPriorityQueue<disk*, int>& from, arrPriorityQueue<disk*, int>& to) {
+void board::fromOneToAnother(arrPriorityQueue<disk*, int>& from, arrPriorityQueue<disk*, int>& to) {
     if (from.peekPriority() < to.peekPriority())
         throw ILLEGAL_MOVE;
     if (from.empty())
         throw PEG_EMPTY;
     int tempP = from.peekPriority();
+    
     disk* tempD = new disk(*from.deque());
     to.enqueue(tempD, tempP);
 }
@@ -94,15 +94,12 @@ void board::autoMove(bool finishTheGame) {
     }
     
     do {
-//        printBoard();
         cout << endl;
         if (!inProgress())
             break;
         ++move;
         forLaterUse = 0;
-        printBoard();
-//        if (move == int(pow(2, diskNumber)) - 1)
-//            cout << "趁现在" <<endl;
+        
         for (i = 0; i < diskNumber; ++ i) {
             forLaterUse = (move - initMove[i] + 1) % modNum[i];
             if (forLaterUse % interval[i] == 1)
@@ -124,34 +121,34 @@ void board::autoMove(bool finishTheGame) {
             case 0:
                 if ((i%2) == preferOdd) {
                    // SD
-                    fromOneToOther(src, des);
+                    fromOneToAnother(src, des);
                 } else {
                     // SA
-                    fromOneToOther(src, aux);
+                    fromOneToAnother(src, aux);
                 }
                 break;
             case 1:
                 if ((i%2) == preferOdd) {
                     // DA
-                    fromOneToOther(des, aux);
+                    fromOneToAnother(des, aux);
                 } else {
                     // AD
-                    fromOneToOther(aux, des);
+                    fromOneToAnother(aux, des);
                 }
                 break;
             case 2:
                 if ((i%2) == preferOdd) {
                     // AS
-                    fromOneToOther(aux, src);
+                    fromOneToAnother(aux, src);
                 } else {
                     // DS
-                    fromOneToOther(des, src);
+                    fromOneToAnother(des, src);
                 }
                 break;
             default:
                 break;
         }
-        
+        printBoard();
     } while (finishTheGame);
 }
 

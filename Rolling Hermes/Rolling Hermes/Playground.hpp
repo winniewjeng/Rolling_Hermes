@@ -10,15 +10,22 @@
 #define Playground_hpp
 
 #include <SFML/Graphics.hpp>
+#include "board.hpp"
 using namespace sf;
-class RollingHermes {
+class RollingHermes: public board {
 private:
     RenderWindow game;
-    
+    Vector2i mousePos;
 public:
     RollingHermes();
     void init();
     void build();
+    void EventDelegate();
+    void render();
+    
+    void buildPegs();
+    
+    
 };
 
 #endif /* Playground_hpp */

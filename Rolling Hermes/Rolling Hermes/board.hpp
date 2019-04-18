@@ -35,12 +35,15 @@ public:
     // accessor
     unsigned int getMove();
     unsigned int getDiskNumber();
+    arrPriorityQueue<disk*, int>& getSourcePeg() {return src;}
+    arrPriorityQueue<disk*, int>& getAuxilaryPeg() {return aux;}
+    arrPriorityQueue<disk*, int>& getDestinationPeg() {return des;}
     
     // Board Class Delegate
     void init();
     // Board initialize
     void printBoard();
-    void fromOneToOther(arrPriorityQueue<disk*, int>& from, arrPriorityQueue<disk*, int>& to);
+    void fromOneToAnother(arrPriorityQueue<disk*, int>& from, arrPriorityQueue<disk*, int>& to);
     void autoMove(bool finishTheGame = false);
     
     bool inProgress();
