@@ -8,14 +8,20 @@
 
 #ifndef Playground_hpp
 #define Playground_hpp
-
+#include <vector>
 #include <SFML/Graphics.hpp>
+#include "UIKit Ripoff/UIButton.hpp"
 #include "board.hpp"
+
 using namespace sf;
 class RollingHermes: public board {
 private:
     RenderWindow game;
     Vector2i mousePos;
+    UIButton srcPeg;
+    UIButton auxPeg;
+    UIButton desPeg;
+    vector<UIButton> disks;
 public:
     RollingHermes();
     void init();
