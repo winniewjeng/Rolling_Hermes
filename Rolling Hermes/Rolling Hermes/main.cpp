@@ -8,7 +8,6 @@
 
 #include <iostream>
 #include <string>
-#include "board.hpp"
 #include "Stack.hpp"
 #include "Playground.hpp"
 

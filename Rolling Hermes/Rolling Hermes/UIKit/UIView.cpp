@@ -1,11 +1,12 @@
 //
 //  UIView.cpp
-//  Graphing Calculator CAS
+//  Rolling Hermes
 //
-//  Created by Jack Zhao on 11/19/18.
-//  Copyright © 2018 Jack Zhao. All rights reserved.
+//  Created by Jack Zhao on 4/17/19.
+//  Copyright © 2019 Jack Zhao. All rights reserved.
 //
-#include <iostream>
+
+//#include <iostream>
 #include "UIView.hpp"
 UIView::UIView(CGRect frame): frame(frame) {
     _View.setFillColor(sf::Color::Green);

@@ -1,9 +1,9 @@
 //
 //  UIButton.cpp
-//  Graphing Calculator CAS
+//  Rolling Hermes
 //
-//  Created by Jack Zhao on 11/19/18.
-//  Copyright © 2018 Jack Zhao. All rights reserved.
+//  Created by Jack Zhao on 4/17/19.
+//  Copyright © 2019 Jack Zhao. All rights reserved.
 //
 
 #include "UIButton.hpp"
@@ -29,7 +29,7 @@ UIButton::UIButton() {
     title.loadFontFromFile(regularFont);
     title.setCharacterSize(radius - 9);
     title.setTitle("");
-
+    
     textAlignToCenter();
 }
 
@@ -75,7 +75,7 @@ void UIButton::setTitleOffset(double offestY) {
 }
 
 void UIButton::setTitle(const std::string& _title) {
-//    title.setString(_title);
+    //    title.setString(_title);
     title.setTitle(_title);
 }
 

@@ -1,13 +1,13 @@
 //
 //  CGRect.cpp
-//  Graphing Calculator CAS
+//  Rolling Hermes
 //
-//  Created by Jack Zhao on 11/19/18.
-//  Copyright © 2018 Jack Zhao. All rights reserved.
+//  Created by Jack Zhao on 4/17/19.
+//  Copyright © 2019 Jack Zhao. All rights reserved.
 //
 
 #include "CGRect.hpp"
-#include <iostream>
+//#include <iostream>
 CGRect::CGRect(CGPoint _origin, CGSize _size): origin(_origin), size(_size) {}
 
 CGRect::CGRect(double x, double y, double width, double height) {

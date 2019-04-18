@@ -12,11 +12,15 @@
 		EB19408E226819DD007BC15D /* SFML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB19408D226819DD007BC15D /* SFML.framework */; };
 		EB194091226819F8007BC15D /* sfml-window.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB19408F226819F8007BC15D /* sfml-window.framework */; };
 		EB194092226819F8007BC15D /* sfml-system.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB194090226819F8007BC15D /* sfml-system.framework */; };
-		EB3310FD2268323A00198226 /* constants.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB3310FC2268323A00198226 /* constants.cpp */; };
 		EBC340722255A84300381151 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBC340712255A84300381151 /* main.cpp */; };
 		EBD251462267DFD700ABAB7D /* sfml-graphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD251452267DFD700ABAB7D /* sfml-graphics.framework */; };
 		EBD2514C2267EFB500ABAB7D /* Playground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBD2514A2267EFB500ABAB7D /* Playground.cpp */; };
 		EBDF9951226470BE00507376 /* disk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBDF994F226470BE00507376 /* disk.cpp */; };
+		EBFC9D0A226839D00057972D /* CGRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBFC9D08226839D00057972D /* CGRect.cpp */; };
+		EBFC9D0F22683A5B0057972D /* UIView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBFC9D0D22683A5B0057972D /* UIView.cpp */; };
+		EBFC9D1222683A9E0057972D /* UIButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBFC9D1022683A9E0057972D /* UIButton.cpp */; };
+		EBFC9D1522683AD10057972D /* UILabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBFC9D1322683AD10057972D /* UILabel.cpp */; };
+		EBFC9D1722683AFE0057972D /* constants.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBFC9D1622683AFE0057972D /* constants.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,20 +43,8 @@
 		EB19408D226819DD007BC15D /* SFML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SFML.framework; path = ../../../../../../../../Library/Frameworks/SFML.framework; sourceTree = "<group>"; };
 		EB19408F226819F8007BC15D /* sfml-window.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-window.framework"; path = "../../../../../../../../Library/Frameworks/sfml-window.framework"; sourceTree = "<group>"; };
 		EB194090226819F8007BC15D /* sfml-system.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-system.framework"; path = "../../../../../../../../Library/Frameworks/sfml-system.framework"; sourceTree = "<group>"; };
-		EB3310FC2268323A00198226 /* constants.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = constants.cpp; path = "../../../../../CS 3A/Huge Final Project/Graphing Calculator CAS/UIKit Ripoff/constants.cpp"; sourceTree = "<group>"; };
 		EB4ED8F4226827AF00B91108 /* SF-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Light.otf"; sourceTree = "<group>"; };
 		EB4ED8F5226827AF00B91108 /* SF-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Regular.otf"; sourceTree = "<group>"; };
-		EB4ED8F72268316400B91108 /* UILabel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UILabel.cpp; sourceTree = "<group>"; };
-		EB4ED8F82268316400B91108 /* UIView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UIView.cpp; sourceTree = "<group>"; };
-		EB4ED8F92268316400B91108 /* UIButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UIButton.cpp; sourceTree = "<group>"; };
-		EB4ED8FA2268316400B91108 /* CGRect.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CGRect.hpp; sourceTree = "<group>"; };
-		EB4ED8FB2268316400B91108 /* CGSize.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CGSize.hpp; sourceTree = "<group>"; };
-		EB4ED8FC2268316400B91108 /* CGVector.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CGVector.hpp; sourceTree = "<group>"; };
-		EB4ED8FD2268316400B91108 /* CGRect.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CGRect.cpp; sourceTree = "<group>"; };
-		EB4ED8FE2268316400B91108 /* CGPoint.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CGPoint.hpp; sourceTree = "<group>"; };
-		EB4ED9002268316400B91108 /* UILabel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = UILabel.hpp; sourceTree = "<group>"; };
-		EB4ED9012268316400B91108 /* UIView.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = UIView.hpp; sourceTree = "<group>"; };
-		EB4ED9022268316400B91108 /* UIButton.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = UIButton.hpp; sourceTree = "<group>"; };
 		EB9D69DD2256CDF60014D6A4 /* baseNode.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = baseNode.hpp; sourceTree = "<group>"; };
 		EB9D69E02256CF160014D6A4 /* Node.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Node.hpp; sourceTree = "<group>"; };
 		EBB75F67225C2B0700DA3332 /* ArrayBasedPriorityQueue.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ArrayBasedPriorityQueue.hpp; sourceTree = "<group>"; };
@@ -63,6 +55,18 @@
 		EBD2514B2267EFB500ABAB7D /* Playground.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Playground.hpp; sourceTree = "<group>"; };
 		EBDF994F226470BE00507376 /* disk.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = disk.cpp; sourceTree = "<group>"; };
 		EBDF9950226470BE00507376 /* disk.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = disk.hpp; sourceTree = "<group>"; };
+		EBFC9D00226839650057972D /* CGpoint.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CGpoint.hpp; sourceTree = "<group>"; };
+		EBFC9D03226839970057972D /* CGSize.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CGSize.hpp; sourceTree = "<group>"; };
+		EBFC9D06226839B70057972D /* CGVector.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CGVector.hpp; sourceTree = "<group>"; };
+		EBFC9D08226839D00057972D /* CGRect.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CGRect.cpp; sourceTree = "<group>"; };
+		EBFC9D09226839D00057972D /* CGRect.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CGRect.hpp; sourceTree = "<group>"; };
+		EBFC9D0D22683A5B0057972D /* UIView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UIView.cpp; sourceTree = "<group>"; };
+		EBFC9D0E22683A5B0057972D /* UIView.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = UIView.hpp; sourceTree = "<group>"; };
+		EBFC9D1022683A9E0057972D /* UIButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UIButton.cpp; sourceTree = "<group>"; };
+		EBFC9D1122683A9E0057972D /* UIButton.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = UIButton.hpp; sourceTree = "<group>"; };
+		EBFC9D1322683AD10057972D /* UILabel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UILabel.cpp; sourceTree = "<group>"; };
+		EBFC9D1422683AD10057972D /* UILabel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = UILabel.hpp; sourceTree = "<group>"; };
+		EBFC9D1622683AFE0057972D /* constants.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = constants.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,39 +87,12 @@
 		EB4ED8F6226827B600B91108 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EBFC9D1622683AFE0057972D /* constants.cpp */,
 				EB4ED8F4226827AF00B91108 /* SF-Light.otf */,
 				EB4ED8F5226827AF00B91108 /* SF-Regular.otf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
-		};
-		EB4ED8FF2268316400B91108 /* CoreGraphics */ = {
-			isa = PBXGroup;
-			children = (
-				EB4ED8FA2268316400B91108 /* CGRect.hpp */,
-				EB4ED8FB2268316400B91108 /* CGSize.hpp */,
-				EB4ED8FC2268316400B91108 /* CGVector.hpp */,
-				EB4ED8FD2268316400B91108 /* CGRect.cpp */,
-				EB4ED8FE2268316400B91108 /* CGPoint.hpp */,
-			);
-			path = CoreGraphics;
-			sourceTree = "<group>";
-		};
-		EB4ED9032268316400B91108 /* UIKit Ripoff */ = {
-			isa = PBXGroup;
-			children = (
-				EB4ED8FF2268316400B91108 /* CoreGraphics */,
-				EB4ED8F72268316400B91108 /* UILabel.cpp */,
-				EB4ED8F82268316400B91108 /* UIView.cpp */,
-				EB4ED8F92268316400B91108 /* UIButton.cpp */,
-				EB4ED9002268316400B91108 /* UILabel.hpp */,
-				EB3310FC2268323A00198226 /* constants.cpp */,
-				EB4ED9012268316400B91108 /* UIView.hpp */,
-				EB4ED9022268316400B91108 /* UIButton.hpp */,
-			);
-			name = "UIKit Ripoff";
-			path = "/Users/jackzhao/Documents/PCC Archived/Computer Science/CS 8/Rolling_Hermes/Rolling Hermes/Rolling Hermes/UIKit Ripoff";
-			sourceTree = "<absolute>";
 		};
 		EB92BB34225ED6CF0085CAE4 /* Stack */ = {
 			isa = PBXGroup;
@@ -168,12 +145,11 @@
 				EBD2514B2267EFB500ABAB7D /* Playground.hpp */,
 				EB164A1C2265001700DF00F6 /* board.hpp */,
 				EB164A1B2265001700DF00F6 /* board.cpp */,
-				EB4ED9032268316400B91108 /* UIKit Ripoff */,
 				EBDF99522264736300507376 /* Disk */,
 				EBBCB1BF226709B400A8CB66 /* Priority Queue */,
 				EB92BB34225ED6CF0085CAE4 /* Stack */,
-				EB4ED8F6226827B600B91108 /* Resources */,
 				EB92BB3F225ED7010085CAE4 /* Discarded */,
+				EBFC9D1822683B450057972D /* UIKit */,
 			);
 			path = "Rolling Hermes";
 			sourceTree = "<group>";
@@ -196,6 +172,33 @@
 				EBDF9950226470BE00507376 /* disk.hpp */,
 			);
 			path = Disk;
+			sourceTree = "<group>";
+		};
+		EBFC9D0C22683A0A0057972D /* Core Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				EBFC9D00226839650057972D /* CGpoint.hpp */,
+				EBFC9D08226839D00057972D /* CGRect.cpp */,
+				EBFC9D09226839D00057972D /* CGRect.hpp */,
+				EBFC9D06226839B70057972D /* CGVector.hpp */,
+				EBFC9D03226839970057972D /* CGSize.hpp */,
+			);
+			path = "Core Graphics";
+			sourceTree = "<group>";
+		};
+		EBFC9D1822683B450057972D /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				EBFC9D0C22683A0A0057972D /* Core Graphics */,
+				EB4ED8F6226827B600B91108 /* Resources */,
+				EBFC9D0D22683A5B0057972D /* UIView.cpp */,
+				EBFC9D0E22683A5B0057972D /* UIView.hpp */,
+				EBFC9D1022683A9E0057972D /* UIButton.cpp */,
+				EBFC9D1122683A9E0057972D /* UIButton.hpp */,
+				EBFC9D1322683AD10057972D /* UILabel.cpp */,
+				EBFC9D1422683AD10057972D /* UILabel.hpp */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,11 +258,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8212C7C32265492E00DFC11F /* Stack.cpp in Sources */,
+				EBFC9D0A226839D00057972D /* CGRect.cpp in Sources */,
+				EBFC9D0F22683A5B0057972D /* UIView.cpp in Sources */,
+				EBFC9D1722683AFE0057972D /* constants.cpp in Sources */,
 				EBDF9951226470BE00507376 /* disk.cpp in Sources */,
 				EBC340722255A84300381151 /* main.cpp in Sources */,
+				EBFC9D1522683AD10057972D /* UILabel.cpp in Sources */,
 				EBD2514C2267EFB500ABAB7D /* Playground.cpp in Sources */,
 				EB164A1D2265001700DF00F6 /* board.cpp in Sources */,
-				EB3310FD2268323A00198226 /* constants.cpp in Sources */,
+				EBFC9D1222683A9E0057972D /* UIButton.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

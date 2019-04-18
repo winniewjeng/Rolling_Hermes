@@ -5,6 +5,9 @@
       location = "group:/Users/jackzhao/Documents/PCC Archived/Computer Science/CS 8/Rolling_Hermes/Rolling Hermes/Rolling Hermes/UIKit Ripoff"
       name = "UIKit Ripoff">
       <FileRef
+         location = "group:constants.cpp">
+      </FileRef>
+      <FileRef
          location = "group:UILabel.cpp">
       </FileRef>
       <FileRef
@@ -43,6 +46,6 @@
       </FileRef>
    </Group>
    <FileRef
-      location = "self:Rolling Hermes.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>

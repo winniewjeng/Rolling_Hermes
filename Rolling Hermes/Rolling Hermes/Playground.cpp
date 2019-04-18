@@ -9,7 +9,7 @@
 #include "Playground.hpp"
 
 RollingHermes::RollingHermes() {
-    
+    init();
 }
 
 void RollingHermes::init() {

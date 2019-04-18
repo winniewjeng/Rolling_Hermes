@@ -1,15 +1,15 @@
 //
 //  UIView.hpp
-//  Graphing Calculator CAS
+//  Rolling Hermes
 //
-//  Created by Jack Zhao on 11/19/18.
-//  Copyright © 2018 Jack Zhao. All rights reserved.
+//  Created by Jack Zhao on 4/17/19.
+//  Copyright © 2019 Jack Zhao. All rights reserved.
 //
 
 #ifndef UIView_hpp
 #define UIView_hpp
 
-#include "CoreGraphics/CGRect.hpp"
+#include "Core Graphics/CGRect.hpp"
 #include "SFML/Graphics.hpp"
 
 // An abstract UIView class.
@@ -41,5 +41,4 @@ public:
     sf::FloatRect getGlobalBounds();
     
 };
-
 #endif /* UIView_hpp */
