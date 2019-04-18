@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		8212C7C32265492E00DFC11F /* Stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8212C7C22265492E00DFC11F /* Stack.cpp */; };
 		EB164A1D2265001700DF00F6 /* board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB164A1B2265001700DF00F6 /* board.cpp */; };
+		EB19408E226819DD007BC15D /* SFML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB19408D226819DD007BC15D /* SFML.framework */; };
+		EB194091226819F8007BC15D /* sfml-window.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB19408F226819F8007BC15D /* sfml-window.framework */; };
+		EB194092226819F8007BC15D /* sfml-system.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB194090226819F8007BC15D /* sfml-system.framework */; };
+		EB1940A12268270A007BC15D /* UILabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB1940942268270A007BC15D /* UILabel.cpp */; };
+		EB1940A22268270A007BC15D /* UIView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB1940952268270A007BC15D /* UIView.cpp */; };
+		EB1940A32268270A007BC15D /* UIButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB1940962268270A007BC15D /* UIButton.cpp */; };
+		EB1940A42268270A007BC15D /* CGRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB19409B2268270A007BC15D /* CGRect.cpp */; };
+		EB1940A52268270A007BC15D /* constants.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB19409D2268270A007BC15D /* constants.cpp */; };
 		EBC340722255A84300381151 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBC340712255A84300381151 /* main.cpp */; };
 		EBD251462267DFD700ABAB7D /* sfml-graphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD251452267DFD700ABAB7D /* sfml-graphics.framework */; };
 		EBD2514C2267EFB500ABAB7D /* Playground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBD2514A2267EFB500ABAB7D /* Playground.cpp */; };
@@ -32,6 +40,23 @@
 		8212C7C22265492E00DFC11F /* Stack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Stack.cpp; sourceTree = "<group>"; };
 		EB164A1B2265001700DF00F6 /* board.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = board.cpp; sourceTree = "<group>"; };
 		EB164A1C2265001700DF00F6 /* board.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = board.hpp; sourceTree = "<group>"; };
+		EB19408D226819DD007BC15D /* SFML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SFML.framework; path = ../../../../../../../../Library/Frameworks/SFML.framework; sourceTree = "<group>"; };
+		EB19408F226819F8007BC15D /* sfml-window.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-window.framework"; path = "../../../../../../../../Library/Frameworks/sfml-window.framework"; sourceTree = "<group>"; };
+		EB194090226819F8007BC15D /* sfml-system.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-system.framework"; path = "../../../../../../../../Library/Frameworks/sfml-system.framework"; sourceTree = "<group>"; };
+		EB1940942268270A007BC15D /* UILabel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UILabel.cpp; sourceTree = "<group>"; };
+		EB1940952268270A007BC15D /* UIView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIView.cpp; sourceTree = "<group>"; };
+		EB1940962268270A007BC15D /* UIButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIButton.cpp; sourceTree = "<group>"; };
+		EB1940982268270A007BC15D /* CGRect.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CGRect.hpp; sourceTree = "<group>"; };
+		EB1940992268270A007BC15D /* CGSize.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CGSize.hpp; sourceTree = "<group>"; };
+		EB19409A2268270A007BC15D /* CGVector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CGVector.hpp; sourceTree = "<group>"; };
+		EB19409B2268270A007BC15D /* CGRect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CGRect.cpp; sourceTree = "<group>"; };
+		EB19409C2268270A007BC15D /* CGPoint.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CGPoint.hpp; sourceTree = "<group>"; };
+		EB19409D2268270A007BC15D /* constants.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = constants.cpp; sourceTree = "<group>"; };
+		EB19409E2268270A007BC15D /* UILabel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = UILabel.hpp; sourceTree = "<group>"; };
+		EB19409F2268270A007BC15D /* UIView.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = UIView.hpp; sourceTree = "<group>"; };
+		EB1940A02268270A007BC15D /* UIButton.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = UIButton.hpp; sourceTree = "<group>"; };
+		EB4ED8F4226827AF00B91108 /* SF-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Light.otf"; sourceTree = "<group>"; };
+		EB4ED8F5226827AF00B91108 /* SF-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Regular.otf"; sourceTree = "<group>"; };
 		EB9D69DD2256CDF60014D6A4 /* baseNode.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = baseNode.hpp; sourceTree = "<group>"; };
 		EB9D69E02256CF160014D6A4 /* Node.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Node.hpp; sourceTree = "<group>"; };
 		EBB75F67225C2B0700DA3332 /* ArrayBasedPriorityQueue.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ArrayBasedPriorityQueue.hpp; sourceTree = "<group>"; };
@@ -49,6 +74,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB194091226819F8007BC15D /* sfml-window.framework in Frameworks */,
+				EB194092226819F8007BC15D /* sfml-system.framework in Frameworks */,
+				EB19408E226819DD007BC15D /* SFML.framework in Frameworks */,
 				EBD251462267DFD700ABAB7D /* sfml-graphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,6 +84,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB1940932268270A007BC15D /* UIKit Ripoff */ = {
+			isa = PBXGroup;
+			children = (
+				EB1940972268270A007BC15D /* CoreGraphics */,
+				EB1940942268270A007BC15D /* UILabel.cpp */,
+				EB1940952268270A007BC15D /* UIView.cpp */,
+				EB1940962268270A007BC15D /* UIButton.cpp */,
+				EB19409D2268270A007BC15D /* constants.cpp */,
+				EB19409E2268270A007BC15D /* UILabel.hpp */,
+				EB19409F2268270A007BC15D /* UIView.hpp */,
+				EB1940A02268270A007BC15D /* UIButton.hpp */,
+			);
+			name = "UIKit Ripoff";
+			path = "../../../../CS 3A/Huge Final Project/Graphing Calculator CAS/UIKit Ripoff";
+			sourceTree = "<group>";
+		};
+		EB1940972268270A007BC15D /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				EB1940982268270A007BC15D /* CGRect.hpp */,
+				EB1940992268270A007BC15D /* CGSize.hpp */,
+				EB19409A2268270A007BC15D /* CGVector.hpp */,
+				EB19409B2268270A007BC15D /* CGRect.cpp */,
+				EB19409C2268270A007BC15D /* CGPoint.hpp */,
+			);
+			path = CoreGraphics;
+			sourceTree = "<group>";
+		};
+		EB4ED8F6226827B600B91108 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EB4ED8F4226827AF00B91108 /* SF-Light.otf */,
+				EB4ED8F5226827AF00B91108 /* SF-Regular.otf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		EB92BB34225ED6CF0085CAE4 /* Stack */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,14 +168,16 @@
 			isa = PBXGroup;
 			children = (
 				EBC340712255A84300381151 /* main.cpp */,
+				EBD2514A2267EFB500ABAB7D /* Playground.cpp */,
+				EBD2514B2267EFB500ABAB7D /* Playground.hpp */,
 				EB164A1C2265001700DF00F6 /* board.hpp */,
 				EB164A1B2265001700DF00F6 /* board.cpp */,
 				EBDF99522264736300507376 /* Disk */,
 				EBBCB1BF226709B400A8CB66 /* Priority Queue */,
 				EB92BB34225ED6CF0085CAE4 /* Stack */,
+				EB1940932268270A007BC15D /* UIKit Ripoff */,
+				EB4ED8F6226827B600B91108 /* Resources */,
 				EB92BB3F225ED7010085CAE4 /* Discarded */,
-				EBD2514A2267EFB500ABAB7D /* Playground.cpp */,
-				EBD2514B2267EFB500ABAB7D /* Playground.hpp */,
 			);
 			path = "Rolling Hermes";
 			sourceTree = "<group>";
@@ -118,6 +185,9 @@
 		EBD251442267DFD700ABAB7D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EB194090226819F8007BC15D /* sfml-system.framework */,
+				EB19408F226819F8007BC15D /* sfml-window.framework */,
+				EB19408D226819DD007BC15D /* SFML.framework */,
 				EBD251452267DFD700ABAB7D /* sfml-graphics.framework */,
 			);
 			name = Frameworks;
@@ -190,9 +260,14 @@
 			files = (
 				8212C7C32265492E00DFC11F /* Stack.cpp in Sources */,
 				EBDF9951226470BE00507376 /* disk.cpp in Sources */,
+				EB1940A22268270A007BC15D /* UIView.cpp in Sources */,
+				EB1940A52268270A007BC15D /* constants.cpp in Sources */,
+				EB1940A12268270A007BC15D /* UILabel.cpp in Sources */,
+				EB1940A42268270A007BC15D /* CGRect.cpp in Sources */,
 				EBC340722255A84300381151 /* main.cpp in Sources */,
 				EBD2514C2267EFB500ABAB7D /* Playground.cpp in Sources */,
 				EB164A1D2265001700DF00F6 /* board.cpp in Sources */,
+				EB1940A32268270A007BC15D /* UIButton.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
