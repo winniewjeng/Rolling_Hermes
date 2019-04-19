@@ -35,19 +35,21 @@ public:
     Stack(const Stack& other);
     Stack& operator=(const Stack& other);
     
+    node<disk>* copy(const Stack& other);
+    //    node<disk>* copy(Stack s);  // make private later
     void push(disk* d);
+    void insert_top(disk* d);
     disk pop();
     disk peek();
     void clear();
     void print() const;
     void resize(unsigned int cap);
     
-    void copy();
-    
     bool empty();
     bool full();
     
     int getSize() const;
+    node<disk>* getTop() const;
     
     Stack& operator>>(disk& d);
     Stack& operator<<(const disk& d);
@@ -59,6 +61,7 @@ public:
     friend std::istream& operator>>(std::istream &in, Stack &q);
     
 };
+
 
 
 #endif /* Stack_hpp */
