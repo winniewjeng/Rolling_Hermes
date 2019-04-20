@@ -49,16 +49,15 @@ public:
     bool empty();
     bool full();
     
-    int getSize() const;
+    unsigned int getSize() const;
+    unsigned int getCap() const;
     node<disk>* getTop() const;
     
     Stack& operator>>(disk& d);
     Stack& operator<<(const disk& d);
     
     // iostream
-    template<typename R>
-    friend std::ostream& operator<<(std::ostream &out, const Stack &s);
-    template<typename R>
+    friend std::ostream& operator<<(std::ostream &out, Stack &s);
     friend std::istream& operator>>(std::istream &in, Stack &q);
     
 };

@@ -136,7 +136,7 @@ bool Stack::full() {
     return _size == _cap;
 }
 
-int Stack::getSize() const {
+unsigned int Stack::getSize() const {
     return _size;
 }
 
@@ -155,34 +155,39 @@ Stack& Stack::operator>>(disk& d) {
 }
 
 // insertion optr
-Stack& Stack::operator<<(disk& d) {
-    push(&d);
+Stack& Stack::operator<<(const disk& d) {
+    disk item = d;
+    push(&item);
     return *this;
 }
 
 // ostream
-template<typename R>
 std::ostream& operator<<(std::ostream &out, const Stack &s) {
-    if (&std::cout != &out)
+    if (&std::cout != &out) {
         out << "Capacity: " << s.getCap() << std::endl;
+        node<disk>* walker = s.getTop();
+        while(walker) {
+            out << " [" << walker->_item << "]";
+            walker = walker->_next;
+        }
+    }
+    
+    return out;
 }
 
 // istream
-template<typename R>
 std::istream& operator>>(std::istream &in, Stack &s) {
-    std::string junk;
-    s.clear();
     node<disk>* temp;
-    
-    //    if(&std::cin == &in)
-    //        in>>junk>>s.getCap();
-    //
-    //    else {
-    //        std::cout<<"Queue capacity: ";
-    //        in>>s.getCap();
-    //    }
-    //    while (in >> temp) {
-    //        s << temp;
-    //    }
+    s.clear();
+    std::string junk;
+        if(&std::cin == &in)
+            in >> junk >> s._cap;
+        else
+            in >> s._cap;
+//        while (in >> temp) {
+//            disk hold = s.pop();
+//            insert_bottom(&hold);
+//        }
+    return in;
     
 }
