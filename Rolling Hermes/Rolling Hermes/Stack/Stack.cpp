@@ -58,6 +58,20 @@ void Stack::insert_top(disk* d) {
     _size++;
 }
 
+void Stack::insert_bottom(disk* d) {
+    if (!_top)
+        insert_top(d);
+    else {
+        node<disk>* walker = _top;
+        node<disk>* new_node = new node<disk>(*d);
+        while(walker->_prev)
+            walker =  walker->_prev;
+        walker->_prev = new_node;
+        new_node->_next = walker;
+        _size++;
+    }
+}
+
 void Stack::push(disk* d) {
     
     if (full())

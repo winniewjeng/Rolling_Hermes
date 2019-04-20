@@ -18,10 +18,10 @@ template <typename T>
 struct node {
     T _item;
     node* _next;
+    node* _prev;
     // ctor
-    node(T item = T()): _item(item) {}
+    node(T item = T()): _item(item), _next(nullptr),  _prev(nullptr) {}
 };
-
 
 class Stack {
 private:
@@ -36,9 +36,10 @@ public:
     Stack& operator=(const Stack& other);
     
     node<disk>* copy(const Stack& other);
-    //    node<disk>* copy(Stack s);  // make private later
+
     void push(disk* d);
     void insert_top(disk* d);
+    void insert_bottom(disk* d);
     disk pop();
     disk peek();
     void clear();
