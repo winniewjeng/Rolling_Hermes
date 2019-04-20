@@ -23,8 +23,11 @@ private:
     arrPriorityQueue<disk*, int> aux;
     arrPriorityQueue<disk*, int> des;
     unsigned int diskNumber;
-    unsigned int move;
     bool preferOdd;
+    
+protected:
+    unsigned int move;
+    unsigned int minMove;
     
 public:
     board(unsigned int _diskNum = 4);

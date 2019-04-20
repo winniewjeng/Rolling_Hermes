@@ -10,7 +10,7 @@
 #include "SFML/Graphics.hpp"
 const int FrameRate = 30;
 const double H_W_RATIO = 0.5625; // 16:9
-const int DEFAULT_W = 1080;
+const int DEFAULT_W = 1920;
 const int DEFAULT_H = DEFAULT_W * H_W_RATIO;
 
 

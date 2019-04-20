@@ -9,25 +9,39 @@
 #ifndef Playground_hpp
 #define Playground_hpp
 #include <vector>
+#include <cmath>
 #include <SFML/Graphics.hpp>
+
 #include "board.hpp"
-#include "UIKit/UIButton.hpp"
+#include "UIKit/UIKit.hpp"
+
 using namespace sf;
-class RollingHermes: public board {
+
+class UIDelegate: public board {
 private:
-    RenderWindow game;
+    RenderWindow window;
     Vector2i mousePos;
+//    Text minMove;
+//    UILabel totalMove;
+//    UILabel DiskNumDiaplay;
+    UIView SafeArea;
+    UIView appView;
+    
+
     
 public:
-    RollingHermes();
+    UIDelegate(unsigned int _diskNum = 4);
     void init();
-    void drawBackGround();
+    void initLabel();
+    // SFML UI Delegate
     void build();
     void EventDelegate();
     void render();
     
+    // Draw here.
     void buildPegs();
-    
+    void drawBackGround();
+    void drawLabels();
     
 };
 

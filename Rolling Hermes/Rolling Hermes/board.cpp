@@ -15,7 +15,9 @@ const int Even = 2;
 
 board::board(unsigned int _diskNum): diskNumber(_diskNum) {
     move = 0;
+    minMove = static_cast<int>(pow(2, diskNumber)) - 1;
     preferOdd = diskNumber % Even;
+    
     init();
 }
 
@@ -149,6 +151,7 @@ void board::autoMove(bool finishTheGame) {
                 break;
         }
         printBoard();
+        cout << "Expect min move: " << pow(2, diskNumber) - 1 << endl;
     } while (finishTheGame);
 }
 

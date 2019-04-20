@@ -21,6 +21,7 @@
 		EBFC9D1222683A9E0057972D /* UIButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBFC9D1022683A9E0057972D /* UIButton.cpp */; };
 		EBFC9D1522683AD10057972D /* UILabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBFC9D1322683AD10057972D /* UILabel.cpp */; };
 		EBFC9D1722683AFE0057972D /* constants.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBFC9D1622683AFE0057972D /* constants.cpp */; };
+		EBFC9D1E22684B7C0057972D /* Peg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBFC9D1C22684B7C0057972D /* Peg.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -67,6 +68,9 @@
 		EBFC9D1322683AD10057972D /* UILabel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UILabel.cpp; sourceTree = "<group>"; };
 		EBFC9D1422683AD10057972D /* UILabel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = UILabel.hpp; sourceTree = "<group>"; };
 		EBFC9D1622683AFE0057972D /* constants.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = constants.cpp; sourceTree = "<group>"; };
+		EBFC9D1A22683E740057972D /* UIKit.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = UIKit.hpp; sourceTree = "<group>"; };
+		EBFC9D1C22684B7C0057972D /* Peg.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Peg.cpp; sourceTree = "<group>"; };
+		EBFC9D1D22684B7C0057972D /* Peg.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Peg.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,8 +145,10 @@
 			isa = PBXGroup;
 			children = (
 				EBC340712255A84300381151 /* main.cpp */,
-				EBD2514A2267EFB500ABAB7D /* Playground.cpp */,
 				EBD2514B2267EFB500ABAB7D /* Playground.hpp */,
+				EBD2514A2267EFB500ABAB7D /* Playground.cpp */,
+				EBFC9D1C22684B7C0057972D /* Peg.cpp */,
+				EBFC9D1D22684B7C0057972D /* Peg.hpp */,
 				EB164A1C2265001700DF00F6 /* board.hpp */,
 				EB164A1B2265001700DF00F6 /* board.cpp */,
 				EBDF99522264736300507376 /* Disk */,
@@ -197,6 +203,7 @@
 				EBFC9D1122683A9E0057972D /* UIButton.hpp */,
 				EBFC9D1322683AD10057972D /* UILabel.cpp */,
 				EBFC9D1422683AD10057972D /* UILabel.hpp */,
+				EBFC9D1A22683E740057972D /* UIKit.hpp */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -262,6 +269,7 @@
 				EBFC9D0F22683A5B0057972D /* UIView.cpp in Sources */,
 				EBFC9D1722683AFE0057972D /* constants.cpp in Sources */,
 				EBDF9951226470BE00507376 /* disk.cpp in Sources */,
+				EBFC9D1E22684B7C0057972D /* Peg.cpp in Sources */,
 				EBC340722255A84300381151 /* main.cpp in Sources */,
 				EBFC9D1522683AD10057972D /* UILabel.cpp in Sources */,
 				EBD2514C2267EFB500ABAB7D /* Playground.cpp in Sources */,
