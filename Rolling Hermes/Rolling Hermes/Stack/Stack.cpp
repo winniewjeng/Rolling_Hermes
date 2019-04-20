@@ -118,12 +118,14 @@ void Stack::print() const {
 void Stack::resize(unsigned int cap) {
     if (cap < 2)
         throw STACK_BAD_SIZE;
-    
-    _cap = cap;
-    // node<disk>* temp =  copy(_top, cap) - not yet  implemented
-    //    delete[] _top;
-    // _top = temp
-    
+    Stack s(cap);
+    disk temp;
+    while (!empty() && s.getSize() != cap ) {
+        temp = pop();
+        s.insert_bottom(&temp);
+    }
+    clear();
+    *this = s;
 }
 
 bool Stack::empty() {
@@ -138,27 +140,49 @@ int Stack::getSize() const {
     return _size;
 }
 
+unsigned int Stack::getCap() const {
+    return _cap;
+}
+
 node<disk>* Stack::getTop() const {
     return _top;
 }
 
-// insertion/extraction optrs
-Stack& Stack::operator>>(disk& disc) {
-    
+// extraction optr
+Stack& Stack::operator>>(disk& d) {
+    d = pop();
     return *this;
 }
 
-Stack& Stack::operator<<(const disk& d) {
+// insertion optr
+Stack& Stack::operator<<(disk& d) {
+    push(&d);
     return *this;
 }
 
-// iostream
+// ostream
 template<typename R>
 std::ostream& operator<<(std::ostream &out, const Stack &s) {
-    return out;
+    if (&std::cout != &out)
+        out << "Capacity: " << s.getCap() << std::endl;
 }
 
+// istream
 template<typename R>
-std::istream& operator>>(std::istream &in, Stack &q) {
-    return in;
+std::istream& operator>>(std::istream &in, Stack &s) {
+    std::string junk;
+    s.clear();
+    node<disk>* temp;
+    
+    //    if(&std::cin == &in)
+    //        in>>junk>>s.getCap();
+    //
+    //    else {
+    //        std::cout<<"Queue capacity: ";
+    //        in>>s.getCap();
+    //    }
+    //    while (in >> temp) {
+    //        s << temp;
+    //    }
+    
 }
