@@ -12,14 +12,15 @@
 
 using namespace std::chrono;
 
-const int AReallyBigNumber = 100;
-const int Increment = 1;
-const int Even = 2;
+const int Inc = 1;
 
 stackBoard::stackBoard(unsigned int _diskNum): diskNumber(_diskNum) {
+    cout << diskNumber << endl;
     move = 0;
-    preferOdd = diskNumber % Even;
+    preferOdd = diskNumber % 2;
+    cout <<  preferOdd << " odd?" <<endl;
     init();
+    cout << "finished\n";
 }
 
 stackBoard::~stackBoard() {
@@ -35,17 +36,24 @@ stackBoard::~stackBoard() {
 }
 
 void stackBoard::init () {
+    cout << "in init\n";
     // Enlarge the array first if diskNumber exceeds.
     if (diskNumber > 5) {
-        src.resize(diskNumber + Increment);
-        aux.resize(diskNumber + Increment);
-        des.resize(diskNumber + Increment);
+        cout << "before size: "<< src.getCap() << " "<< aux.getCap() << " "<< des.getCap() << endl;
+        src.resize(diskNumber + Inc);
+        aux.resize(diskNumber + Inc);
+        des.resize(diskNumber + Inc);
+        cout << "after size: "<< src.getCap() << " "<< aux.getCap() << " "<< des.getCap() << endl;
     }
     // Create disk pointers and push them into the stack.
-    for (int i = 0; i < diskNumber; ++ i) {
-        disk* temp = new disk();
-        src.insert_bottom(temp);
+    for (int i = 0; i < diskNumber; ++i) {
+        node<disk>* temp = new node<disk>();
+//        disk* temp = new disk();
+        src.push(&temp->_item);
+        cout << "printing source " << i << ": ";
+        src.print();
     }
+    cout << "exit init()\n";
 }
 
 void stackBoard::printBoard() {
@@ -60,9 +68,9 @@ void stackBoard::printBoard() {
 
 void stackBoard::fromOneToAnother(Stack& from, Stack& to) {
     if (from.getTop()->_item < to.getTop()->_item)
-        throw ILLEGAL_MOVE;
+        throw BAD_MOVE;
     if (from.empty())
-        throw PEG_EMPTY;
+        throw EMPTY_PEG;
     disk* tempD = new disk(from.pop());
     to.insert_top(tempD);
 }

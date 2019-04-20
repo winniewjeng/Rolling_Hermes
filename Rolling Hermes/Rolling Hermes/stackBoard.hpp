@@ -12,9 +12,9 @@
 #include "disk.hpp"
 #include "Stack.hpp"
 
-enum BOARD_ERROR {
-    ILLEGAL_MOVE,
-    PEG_EMPTY
+enum STACK_BOARD_ERROR {
+    BAD_MOVE,
+    EMPTY_PEG
 };
 
 class stackBoard {
