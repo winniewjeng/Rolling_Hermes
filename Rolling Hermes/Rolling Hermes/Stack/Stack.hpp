@@ -18,10 +18,10 @@ template <typename T>
 struct node {
     T _item;
     node* _next;
+    node* _prev;
     // ctor
-    node(T item = T()): _item(item) {}
+    node(T item = T()): _item(item), _next(nullptr),  _prev(nullptr) {}
 };
-
 
 class Stack {
 private:
@@ -35,30 +35,33 @@ public:
     Stack(const Stack& other);
     Stack& operator=(const Stack& other);
     
+    node<disk>* copy(const Stack& other);
+
     void push(disk* d);
+    void insert_top(disk* d);
+    void insert_bottom(disk* d);
     disk pop();
     disk peek();
     void clear();
     void print() const;
     void resize(unsigned int cap);
     
-    void copy();
-    
     bool empty();
     bool full();
     
-    int getSize() const;
+    unsigned int getSize() const;
+    unsigned int getCap() const;
+    node<disk>* getTop() const;
     
     Stack& operator>>(disk& d);
     Stack& operator<<(const disk& d);
     
     // iostream
-    template<typename R>
-    friend std::ostream& operator<<(std::ostream &out, const Stack &s);
-    template<typename R>
+    friend std::ostream& operator<<(std::ostream &out, Stack &s);
     friend std::istream& operator>>(std::istream &in, Stack &q);
     
 };
+
 
 
 #endif /* Stack_hpp */

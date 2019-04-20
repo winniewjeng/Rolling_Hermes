@@ -10,15 +10,17 @@
 #include <string>
 #include "Stack.hpp"
 #include "Playground.hpp"
-
+#include "stackBoard.hpp"
 using namespace std;
 
 void testPQS();
+void testSB();
 
 int main(int argc, const char * argv[]) {
-    
-    board(6).autoMove(true);
-   
+//    board a(7);
+//
+//    a.autoMove(true);
+    testSB();
 //    testPQS();
 }
 /*
@@ -70,7 +72,9 @@ int main(int argc, const char * argv[]) {
  Disk #6 was destroyed!
  */
 
-
+void testSB() {
+    stackBoard(6);
+}
 
 void testPQS() {
     

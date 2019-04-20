@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8212C7C32265492E00DFC11F /* Stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8212C7C22265492E00DFC11F /* Stack.cpp */; };
+		822D1FE4226B13E80067F5DB /* stackBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 822D1FE2226B13E80067F5DB /* stackBoard.cpp */; };
 		EB164A1D2265001700DF00F6 /* board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB164A1B2265001700DF00F6 /* board.cpp */; };
 		EB19408E226819DD007BC15D /* SFML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB19408D226819DD007BC15D /* SFML.framework */; };
 		EB194091226819F8007BC15D /* sfml-window.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB19408F226819F8007BC15D /* sfml-window.framework */; };
@@ -39,6 +40,8 @@
 /* Begin PBXFileReference section */
 		8212C7C0226530ED00DFC11F /* Stack.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Stack.hpp; sourceTree = "<group>"; };
 		8212C7C22265492E00DFC11F /* Stack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Stack.cpp; sourceTree = "<group>"; };
+		822D1FE2226B13E80067F5DB /* stackBoard.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = stackBoard.cpp; path = ../stackBoard.cpp; sourceTree = "<group>"; };
+		822D1FE3226B13E80067F5DB /* stackBoard.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = stackBoard.hpp; path = ../stackBoard.hpp; sourceTree = "<group>"; };
 		EB164A1B2265001700DF00F6 /* board.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = board.cpp; sourceTree = "<group>"; };
 		EB164A1C2265001700DF00F6 /* board.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = board.hpp; sourceTree = "<group>"; };
 		EB19408D226819DD007BC15D /* SFML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SFML.framework; path = ../../../../../../../../Library/Frameworks/SFML.framework; sourceTree = "<group>"; };
@@ -101,6 +104,8 @@
 		EB92BB34225ED6CF0085CAE4 /* Stack */ = {
 			isa = PBXGroup;
 			children = (
+				822D1FE3226B13E80067F5DB /* stackBoard.hpp */,
+				822D1FE2226B13E80067F5DB /* stackBoard.cpp */,
 				8212C7C0226530ED00DFC11F /* Stack.hpp */,
 				8212C7C22265492E00DFC11F /* Stack.cpp */,
 			);
@@ -273,6 +278,7 @@
 				EBC340722255A84300381151 /* main.cpp in Sources */,
 				EBFC9D1522683AD10057972D /* UILabel.cpp in Sources */,
 				EBD2514C2267EFB500ABAB7D /* Playground.cpp in Sources */,
+				822D1FE4226B13E80067F5DB /* stackBoard.cpp in Sources */,
 				EB164A1D2265001700DF00F6 /* board.cpp in Sources */,
 				EBFC9D1222683A9E0057972D /* UIButton.cpp in Sources */,
 			);
@@ -396,7 +402,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A4R6VQRKMH;
+				DEVELOPMENT_TEAM = 37CWHKAPJQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
@@ -409,7 +415,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A4R6VQRKMH;
+				DEVELOPMENT_TEAM = 37CWHKAPJQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
