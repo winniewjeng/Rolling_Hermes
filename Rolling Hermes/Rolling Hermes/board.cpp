@@ -41,11 +41,36 @@ board::~board() {
     }
 }
 
+board::board(const board& other) {
+    diskNumber = other.diskNumber;
+    preferOdd = other.preferOdd;
+    src = other.src;
+    aux = other.aux;
+    des = other.des;
+    move = other.move;
+    minMove = other.minMove;
+}
+
+board& board::operator =(const board& other) {
+    if (this == &other)
+        return *this;
+    diskNumber = other.diskNumber;
+    preferOdd = other.preferOdd;
+    src = other.src;
+    aux = other.aux;
+    des = other.des;
+    move = other.move;
+    minMove = other.minMove;
+    return *this;
+}
+
 void board::adjustDiskNum(bool more) {
     if (more && diskNumber <= 8)
         diskNumber ++;
     else if (diskNumber > 3)
         diskNumber --;
+    
+    *this = board(diskNumber);
 }
 
 void board::init () {

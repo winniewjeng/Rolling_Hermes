@@ -30,7 +30,7 @@ void UIDelegate::init() {
     SafeArea.backgroundColor(orangePressed);
     
     initPeg();
-    initButton();
+    
     initDisk();
 }
 
@@ -63,13 +63,13 @@ void UIDelegate::initButton() {
     diskNumberIncr.setTitle("U");
     diskNumberIncr.setHeight(75);
     diskNumberIncr.setTitleSize(30);
-    diskNumberIncr.setBackGroundColor(orangeHighlighted);
+    diskNumberIncr.setType(OPERATOR);
     
     diskNumberDecr.setPosition(sf::Vector2f(- 0.4*diskNumberIncr.getRadius() - diskNumberIncr.getLength(),0) + displayDiskNumber.origin());
     diskNumberDecr.setTitle("D");
     diskNumberDecr.setHeight(75);
     diskNumberDecr.setTitleSize(30);
-    diskNumberDecr.setBackGroundColor(orangeHighlighted);
+    diskNumberDecr.setType(OPERATOR);
     
     
     // Align all text to the middle of the button.
@@ -77,6 +77,8 @@ void UIDelegate::initButton() {
     displayDiskNumber.textAlignToCenter();
     diskNumberIncr.textAlignToCenter();
     diskNumberDecr.textAlignToCenter();
+    
+    processButtonsStates();
 }
 
 void UIDelegate::initPeg() {
@@ -142,6 +144,14 @@ void UIDelegate::EventDelegate() {
                 break;
         }
     }
+}
+void UIDelegate::processButtonsStates() {
+    diskNumberIncr.setState(diskNumberIncr.contains(Vector2f(mousePos))? ((Mouse::isButtonPressed(Mouse::Left))? PRESSED:HIGHLIGHTED):DEFAULT);
+    diskNumberDecr.setState( diskNumberDecr.contains(Vector2f(mousePos))? ((Mouse::isButtonPressed(Mouse::Left))? PRESSED:HIGHLIGHTED):DEFAULT);
+}
+
+void UIDelegate::processButtonsAction() {
+    
 }
 
 

@@ -51,6 +51,8 @@ public:
     void drawPeg();
     // SFML UI Delegate
     void build();
+    void processButtonsStates();
+    void processButtonsAction();
     void EventDelegate();
     void render();
     
