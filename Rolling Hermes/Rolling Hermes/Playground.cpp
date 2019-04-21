@@ -27,8 +27,8 @@ void UIDelegate::init() {
     
     SafeArea.setPosition(CGPoint(0.1*DEFAULT_W, 0.25*DEFAULT_H));
     SafeArea.setSize(CGSize(0.8*DEFAULT_W, 0.5*DEFAULT_H));
-    SafeArea.backgroundColor(orangePressed);
-    
+    SafeArea.backgroundColor(sf::Color::Transparent);
+    initLabel();
     initPeg();
     initDisk();
 }
@@ -37,46 +37,41 @@ void UIDelegate::initLabel() {
     sf::Font font;
     if (!font.loadFromFile(regularFont))
         cout << "Error! Font loading failed!\n";
-    
+    title.setTitleFont(font);
+    title.setTitle("TOWER OF HANOI");
+    title.setCharacterSize(100);
+    title.setFillColor(lightGreyPressed);
+    title.setPosition(sf::Vector2f(SafeArea.frame.midX() - 0.5*title.getBoundary().width, 0.8*DEFAULT_H));
 }
 
 void UIDelegate::initButton() {
     displayMove.setPosition(Vector2f(0.05*DEFAULT_W, 0.05*DEFAULT_H));
-    displayMove.setTitle("Move: " + to_string(board::move) + ", Expected Minimum Move: " + to_string(board::minMove));
-    displayMove.setTitleSize(30);
+    displayMove.setTitle("Move: " + to_string(board::move));
+    displayMove.setTitleSize(35);
     displayMove.setHeight(75);
-    displayMove.setLength(600);
+    displayMove.setLength(550);
+    displayMove.setBackGroundColor(darkGreyHighlighted);
+    
+    minMove.setPosition(Vector2f(0.05*DEFAULT_W, 0.05*DEFAULT_H + displayMove.getHeight() + 20));
+    minMove.setTitle("Expected Minimum Move: " + to_string(board::minMove));
+    minMove.setTitleSize(35);
+    minMove.setHeight(75);
+    minMove.setLength(550);
+    minMove.setBackGroundColor(lineOrange);
 
-    
-    
     displayDiskNumber.setPosition(Vector2f(0.8*DEFAULT_W, 0.05*DEFAULT_H));
     displayDiskNumber.setTitle("Disk: " + to_string(getDiskNumber()));
     displayDiskNumber.setHeight(75);
     displayDiskNumber.setLength(200);
-    displayDiskNumber.setTitleSize(30);
-    displayDiskNumber.setBackGroundColor(orangeDefault);
+    displayDiskNumber.setTitleSize(35);
+    displayDiskNumber.setBackGroundColor(lineRed);
 
-    
-    diskNumberIncr.setPosition(sf::Vector2f(displayDiskNumber.getLength() + 0.4*diskNumberIncr.getRadius(),0) + displayDiskNumber.origin());
-    diskNumberIncr.setTitle("U");
-    diskNumberIncr.setHeight(75);
-    diskNumberIncr.setTitleSize(30);
-    diskNumberIncr.setType(OPERATOR);
-    
-    diskNumberDecr.setPosition(sf::Vector2f(- 0.4*diskNumberIncr.getRadius() - diskNumberIncr.getLength(),0) + displayDiskNumber.origin());
-    diskNumberDecr.setTitle("D");
-    diskNumberDecr.setHeight(75);
-    diskNumberDecr.setTitleSize(30);
-    diskNumberDecr.setType(OPERATOR);
     
     
     // Align all text to the middle of the button.
     displayMove.textAlignToCenter();
     displayDiskNumber.textAlignToCenter();
-    diskNumberIncr.textAlignToCenter();
-    diskNumberDecr.textAlignToCenter();
-    
-    processButtonsStates();
+    minMove.textAlignToCenter();
 }
 
 void UIDelegate::initPeg() {
@@ -90,15 +85,14 @@ void UIDelegate::initDisk() {
         UIButton* tempDisk = new UIButton();
         tempDisk -> setLength((i+1) * 0.13 * source.getLength());
         tempDisk -> setHeight(20);
+        tempDisk -> setBackGroundColor(lineBlue);
         disks.push_back(tempDisk);
     }
 }
 
 // Put disks on the correct peg.
 void UIDelegate::updateDisks() {
-    cout << "called\n";
     for (int i = getSourcePeg().getSize(); i > 0; --i) {
-        cout << "i = " << i << endl;
         UIButton* tempDisk = disks[getSourcePeg().at(i - 1) -> data ->getNumber() -1];
         tempDisk -> setPosition(source.getMidPoint() + sf::Vector2f(5-0.5*tempDisk->getLength(),-tempDisk->getHeight() -(getSourcePeg().getSize() - i)*25));
     }
@@ -124,6 +118,15 @@ void UIDelegate::drawPeg() {
     dest.draw(window);
 }
 
+void UIDelegate::drawButtons() {
+    displayMove.placeButton(window);
+    displayDiskNumber.placeButton(window);
+    minMove.placeButton(window);
+}
+
+void UIDelegate::drawLabels() {
+    title.drawLabel(window);
+}
 
 void UIDelegate::build() {
     while (window.isOpen()) {
@@ -141,8 +144,6 @@ void UIDelegate::EventDelegate() {
             case sf::Event::Closed:
                 window.close();
                 break;
-            case sf::Event::MouseButtonReleased:
-                break;
             case sf::Event::KeyPressed:
                 switch (event.key.code) {
                     case sf::Keyboard::Enter:
@@ -156,19 +157,7 @@ void UIDelegate::EventDelegate() {
         }
     }
 }
-void UIDelegate::processButtonsStates() {
-    diskNumberIncr.setState(diskNumberIncr.contains(Vector2f(mousePos))? ((Mouse::isButtonPressed(Mouse::Left))? PRESSED:HIGHLIGHTED):DEFAULT);
-    diskNumberDecr.setState( diskNumberDecr.contains(Vector2f(mousePos))? ((Mouse::isButtonPressed(Mouse::Left))? PRESSED:HIGHLIGHTED):DEFAULT);
-}
 
-void UIDelegate::processButtonsAction() {
-    if (diskNumberIncr.contains(sf::Vector2f(sf::Mouse::getPosition(window)))) {
-        adjustDiskNum(true);
-    }
-    if (diskNumberDecr.contains(sf::Vector2f(sf::Mouse::getPosition(window)))) {
-        adjustDiskNum(false);
-    }
-}
 
 
 
@@ -177,20 +166,17 @@ void UIDelegate::render() {
     // Draw base views here.
     window.draw(appView.getView());
     window.draw(SafeArea.getView());
-    
+    drawLabels();
     // Draw pegs here.
     drawPeg();
 
     // Update and Draw buttons here.
     initButton();
-    displayMove.placeButton(window);
-    displayDiskNumber.placeButton(window);
-    diskNumberIncr.placeButton(window);
-    diskNumberDecr.placeButton(window);
-    
+    drawButtons();
     // Draw disks here.
     updateDisks();
     drawDisks();
+    
     window.display();
     
 }

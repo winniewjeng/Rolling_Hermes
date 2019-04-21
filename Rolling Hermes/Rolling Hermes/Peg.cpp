@@ -31,7 +31,7 @@ void Peg::autoSetup(const UIView& safeArea, int index, float Gap) {
     Base.setPosition(safeArea.frame.minX() + (index + 1) * Gap + index * length, safeArea.frame.maxY() - 0.5 * (safeArea.frame.height() - length - 10));
     autoUpdate();
     
-    Base.setFillColor(lineBlue);
+    Base.setFillColor(lineGreen);
     Pole.setFillColor(lineGreen);
 }
 

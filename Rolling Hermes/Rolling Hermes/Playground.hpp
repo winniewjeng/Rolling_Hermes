@@ -22,9 +22,7 @@ class UIDelegate: public board {
 private:
     RenderWindow window;
     Vector2i mousePos;
-//    Text minMove;
-//    UILabel totalMove;
-//    UILabel DiskNumDiaplay;
+    
     Peg source;
     Peg aux;
     Peg dest;
@@ -33,9 +31,9 @@ private:
     UIView appView;
     UIButton displayMove;
     UIButton displayDiskNumber;
-    UIButton diskNumberIncr;
-    UIButton diskNumberDecr;
+    UIButton minMove;
     
+    UILabel title;
     vector<UIButton*> disks;
     
 public:
@@ -49,17 +47,16 @@ public:
     void updateDisks();
     void drawDisks();
     void drawPeg();
+    void drawButtons();
+    void drawLabels();
     // SFML UI Delegate
     void build();
-    void processButtonsStates();
-    void processButtonsAction();
     void EventDelegate();
     void render();
     
     // Draw here.
     void buildPegs();
     void drawBackGround();
-    void drawLabels();
     
 };
 

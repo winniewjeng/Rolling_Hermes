@@ -36,7 +36,6 @@ board::~board() {
     if (!des.empty()) {
         for (int i = des.getSize(); i > 0; -- i) {
             delete des.at(i - 1) -> data;
-            
         }
     }
 }
