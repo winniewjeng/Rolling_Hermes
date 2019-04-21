@@ -1,50 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <Group
-      location = "group:/Users/jackzhao/Documents/PCC Archived/Computer Science/CS 8/Rolling_Hermes/Rolling Hermes/Rolling Hermes/UIKit Ripoff"
-      name = "UIKit Ripoff">
-      <FileRef
-         location = "group:constants.cpp">
-      </FileRef>
-      <FileRef
-         location = "group:UILabel.cpp">
-      </FileRef>
-      <FileRef
-         location = "group:UIView.cpp">
-      </FileRef>
-      <FileRef
-         location = "group:UIButton.cpp">
-      </FileRef>
-      <Group
-         location = "group:CoreGraphics"
-         name = "CoreGraphics">
-         <FileRef
-            location = "group:CGRect.hpp">
-         </FileRef>
-         <FileRef
-            location = "group:CGSize.hpp">
-         </FileRef>
-         <FileRef
-            location = "group:CGVector.hpp">
-         </FileRef>
-         <FileRef
-            location = "group:CGRect.cpp">
-         </FileRef>
-         <FileRef
-            location = "group:CGPoint.hpp">
-         </FileRef>
-      </Group>
-      <FileRef
-         location = "group:UILabel.hpp">
-      </FileRef>
-      <FileRef
-         location = "group:UIView.hpp">
-      </FileRef>
-      <FileRef
-         location = "group:UIButton.hpp">
-      </FileRef>
-   </Group>
    <FileRef
       location = "self:">
    </FileRef>

@@ -74,6 +74,12 @@ int main(int argc, const char * argv[]) {
 
 void testSB() {
     stackBoard(6);
+    Stack s(6);
+    node<disk>* hi = new node<disk>;
+    
+    s.push(&(hi->_item));
+    
+    
 }
 
 void testPQS() {
