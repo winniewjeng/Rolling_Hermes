@@ -17,13 +17,12 @@ void testPQS();
 void testSB();
 
 int main(int argc, const char * argv[]) {
-    board a(7);
-    board b = a;
-    b.autoMove(true);
-////
-//    UIDelegate a;
-//    a.build();
-//    a.autoMove(true);
+
+    
+    UIDelegate a(6);
+    a.build();
+//    board a;
+//    a.autoMove();
 //    testSB();
 //    testPQS();
 }

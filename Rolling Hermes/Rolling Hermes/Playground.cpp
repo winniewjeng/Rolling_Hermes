@@ -30,7 +30,6 @@ void UIDelegate::init() {
     SafeArea.backgroundColor(orangePressed);
     
     initPeg();
-    
     initDisk();
 }
 
@@ -43,10 +42,10 @@ void UIDelegate::initLabel() {
 
 void UIDelegate::initButton() {
     displayMove.setPosition(Vector2f(0.05*DEFAULT_W, 0.05*DEFAULT_H));
-    displayMove.setTitle("Move: " + to_string(board::getMove()));
+    displayMove.setTitle("Move: " + to_string(board::move) + ", Expected Minimum Move: " + to_string(board::minMove));
     displayMove.setTitleSize(30);
     displayMove.setHeight(75);
-    displayMove.setLength(200);
+    displayMove.setLength(600);
 
     
     
@@ -57,7 +56,6 @@ void UIDelegate::initButton() {
     displayDiskNumber.setTitleSize(30);
     displayDiskNumber.setBackGroundColor(orangeDefault);
 
-    
     
     diskNumberIncr.setPosition(sf::Vector2f(displayDiskNumber.getLength() + 0.4*diskNumberIncr.getRadius(),0) + displayDiskNumber.origin());
     diskNumberIncr.setTitle("U");
@@ -98,15 +96,19 @@ void UIDelegate::initDisk() {
 
 // Put disks on the correct peg.
 void UIDelegate::updateDisks() {
+    cout << "called\n";
     for (int i = getSourcePeg().getSize(); i > 0; --i) {
+        cout << "i = " << i << endl;
         UIButton* tempDisk = disks[getSourcePeg().at(i - 1) -> data ->getNumber() -1];
         tempDisk -> setPosition(source.getMidPoint() + sf::Vector2f(5-0.5*tempDisk->getLength(),-tempDisk->getHeight() -(getSourcePeg().getSize() - i)*25));
     }
-    for (int i = 0; i < getAuxilaryPeg().getSize(); ++i) {
-        
+    for (int i = getAuxilaryPeg().getSize(); i > 0; --i) {
+        UIButton* tempDisk = disks[getAuxilaryPeg().at(i - 1) -> data ->getNumber() -1];
+        tempDisk -> setPosition(source.getMidPoint() + sf::Vector2f(5-0.5*tempDisk->getLength() + source.getLength() + 0.05*DEFAULT_W,-tempDisk->getHeight() -(getAuxilaryPeg().getSize() - i)*25));
     }
-    for (int i = 0; i < getDestinationPeg().getSize(); ++i) {
-        
+    for (int i = getDestinationPeg().getSize(); i > 0; --i) {
+        UIButton* tempDisk = disks[getDestinationPeg().at(i - 1) -> data ->getNumber() -1];
+        tempDisk -> setPosition(source.getMidPoint() + sf::Vector2f(5-0.5*tempDisk->getLength()+2* source.getLength()+0.1*DEFAULT_W,-tempDisk->getHeight() -(getDestinationPeg().getSize() - i)*25));
     }
 }
 
@@ -139,6 +141,15 @@ void UIDelegate::EventDelegate() {
             case sf::Event::Closed:
                 window.close();
                 break;
+            case sf::Event::MouseButtonReleased:
+                break;
+            case sf::Event::KeyPressed:
+                switch (event.key.code) {
+                    case sf::Keyboard::Enter:
+                        autoMove();
+                        updateDisks();
+                        break;
+                }
                 
             default:
                 break;
@@ -151,7 +162,12 @@ void UIDelegate::processButtonsStates() {
 }
 
 void UIDelegate::processButtonsAction() {
-    
+    if (diskNumberIncr.contains(sf::Vector2f(sf::Mouse::getPosition(window)))) {
+        adjustDiskNum(true);
+    }
+    if (diskNumberDecr.contains(sf::Vector2f(sf::Mouse::getPosition(window)))) {
+        adjustDiskNum(false);
+    }
 }
 
 

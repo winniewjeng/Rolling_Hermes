@@ -88,6 +88,10 @@ void board::init () {
     }
 }
 
+void board::changeDiskNumber(int newDisk) {
+    *this = board(newDisk);
+}
+
 void board::printBoard() {
     cout << "  Source Peg: ";
     for (int i = 0; i < src.getSize(); ++ i)
@@ -183,8 +187,9 @@ void board::autoMove(bool finishTheGame) {
                 break;
         }
         printBoard();
-        cout << "Expect min move: " << pow(2, diskNumber) - 1 << endl;
+
     } while (finishTheGame);
+    cout << "Expect minimum move: " << pow(2, diskNumber) - 1 << endl;
 }
 
 bool board::inProgress() {

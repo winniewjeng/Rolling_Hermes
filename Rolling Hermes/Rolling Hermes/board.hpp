@@ -46,6 +46,7 @@ public:
     // Board Class Delegate
     void init();
     // Board initialize
+    void changeDiskNumber(int newDisk);
     void printBoard();
     void fromOneToAnother(arrPriorityQueue<disk*, int>& from, arrPriorityQueue<disk*, int>& to);
     void autoMove(bool finishTheGame = false);
