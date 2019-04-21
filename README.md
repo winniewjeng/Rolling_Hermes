@@ -27,15 +27,14 @@ _p.p.s. Also, the three pegs will be named as Source, Auxilary (Aux) and Destina
 When DiskNum is **odd**, the next pole which **odd** numbered disk# always moves to is **(Dest - Aux - Source)**; <br/>
 When DiskNum is **odd**, the next pole which **even** numbered disk# always moves to is **(Aux - Dest - Source)**. <br/>
 When DiskNum is **even**, the next pole which **even** numbered disk# always moves to is **(Dest - Aux - Source)**; <br/>
-When DiskNum is **even**, the next pole which **odd** numbered disk# always moves to is **(Aux - Dest - Source)**. <br/>
-
-<br/>Getting there? <br/>
-Notice that when _DiskNum_ and _disk#_ are the both odd or even, the moving cycle is **(Dest - Aux - Source)**, otherwise **(Aux - Dest - Source)**. The next step would be simple, just find the relationship between disk# and current move.
+When DiskNum is **even**, the next pole which **odd** numbered disk# always moves to is **(Aux - Dest - Source)**.<br/>
+Getting there? <br/>
+Notice that when _DiskNum_ and _disk#_ are the both odd or even, the moving cycle is **(Dest - Aux - Source)**, otherwise **(Aux - Dest - Source)**. The next step would be simple, just find the relationship between disk# and current move. <br/>
 
 ## UIKit (ripoff)
-Part of Apple's UIKit library rebuilt from scratch with SFML in C++, including UIView, UIButtons, UILabel, and CoreGraphics Library. Functions may be modified for specific use. For more information, please refer to my other project: [Graphic Calculator](https://github.com/JackZhao98/GraphicCalculator-SFML) .
+Part of Apple's UIKit library rebuilt from scratch with SFML in C++, including UIView, UIButtons, UILabel, and CoreGraphics Library. Functions may be modified for specific use. For more information, please refer to my other project: [Graphic Calculator](https://github.com/JackZhao98/GraphicCalculator-SFML). <br/>
 
 ## Screenshots
-![screenshot_1](https://github.com/JackZhao98/Rolling_Hermes/blob/master/Rolling%20Hermes/Rolling%20Hermes/UIKit/Resources/ScreenShot_1.png)
+![screenshot_1](https://github.com/JackZhao98/Rolling_Hermes/blob/master/Rolling%20Hermes/Rolling%20Hermes/UIKit/Resources/ScreenShot_3.png)
 ![screenshot_2](https://github.com/JackZhao98/Rolling_Hermes/blob/master/Rolling%20Hermes/Rolling%20Hermes/UIKit/Resources/ScreenShot_2.png)
-![screenshot_3](https://github.com/JackZhao98/Rolling_Hermes/blob/master/Rolling%20Hermes/Rolling%20Hermes/UIKit/Resources/ScreenShot_3.png)
+![screenshot_3](https://github.com/JackZhao98/Rolling_Hermes/blob/master/Rolling%20Hermes/Rolling%20Hermes/UIKit/Resources/ScreenShot_1.png)
