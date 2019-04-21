@@ -31,8 +31,12 @@ When DiskNum is **even**, the next pole which **odd** numbered disk# always move
 Getting there? <br/>
 Notice that when _DiskNum_ and _disk#_ are the both odd or even, the moving cycle is **(Dest - Aux - Source)**, otherwise **(Aux - Dest - Source)**. The next step would be simple, just find the relationship between disk# and current move. <br/>
 
+### Priority Queue VS. Stack
+![screenshot_0](https://github.com/winniewjeng/Rolling_Hermes/blob/master/Rolling%20Hermes/Rolling%20Hermes/UIKit/Resources/Screen%20Shot%202019-04-21%20at%2001.19.48.png)
+<br/>
+
 ## UIKit (ripoff)
-Part of Apple's UIKit library rebuilt from scratch with SFML in C++, including UIView, UIButtons, UILabel, and CoreGraphics Library. Functions may be modified for specific use. For more information, please refer to my other project: [Graphic Calculator](https://github.com/JackZhao98/GraphicCalculator-SFML). <br/>
+Part of Apple's UIKit library rebuilt from scratch with SFML in C++, including UIView, UIButtons, UILabel, and CoreGraphics Library. Functions may be modified for specific use. For more information, please refer to my other project: [Graphic Calculator](https://github.com/JackZhao98/GraphicCalculator-SFML). <br/><br/>
 
 ## Screenshots
 ![screenshot_1](https://github.com/JackZhao98/Rolling_Hermes/blob/master/Rolling%20Hermes/Rolling%20Hermes/UIKit/Resources/ScreenShot_3.png)
