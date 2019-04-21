@@ -41,6 +41,13 @@ board::~board() {
     }
 }
 
+void board::adjustDiskNum(bool more) {
+    if (more && diskNumber <= 8)
+        diskNumber ++;
+    else if (diskNumber > 3)
+        diskNumber --;
+}
+
 void board::init () {
     // Enlarge the array first if diskNumber exceeds.
     if (diskNumber > 5) {

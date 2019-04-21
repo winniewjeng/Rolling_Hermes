@@ -28,6 +28,7 @@ private:
 protected:
     unsigned int move;
     unsigned int minMove;
+    void adjustDiskNum(bool more);
     
 public:
     board(unsigned int _diskNum = 4);
@@ -36,8 +37,8 @@ public:
     board& operator =(const board& other);
     
     // accessor
-    unsigned int getMove();
-    unsigned int getDiskNumber();
+    unsigned int getMove() {return move;}
+    unsigned int getDiskNumber() {return diskNumber;};
     arrPriorityQueue<disk*, int>& getSourcePeg() {return src;}
     arrPriorityQueue<disk*, int>& getAuxilaryPeg() {return aux;}
     arrPriorityQueue<disk*, int>& getDestinationPeg() {return des;}
