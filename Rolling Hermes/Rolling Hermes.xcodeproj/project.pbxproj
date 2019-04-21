@@ -57,6 +57,9 @@
 		EBD251452267DFD700ABAB7D /* sfml-graphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-graphics.framework"; path = "../../../../../../../../Library/Frameworks/sfml-graphics.framework"; sourceTree = "<group>"; };
 		EBD2514A2267EFB500ABAB7D /* Playground.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Playground.cpp; sourceTree = "<group>"; };
 		EBD2514B2267EFB500ABAB7D /* Playground.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Playground.hpp; sourceTree = "<group>"; };
+		EBDCDDEC226C5471000F8810 /* ScreenShot_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShot_3.png; sourceTree = "<group>"; };
+		EBDCDDED226C5471000F8810 /* ScreenShot_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShot_1.png; sourceTree = "<group>"; };
+		EBDCDDEE226C5472000F8810 /* ScreenShot_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShot_2.png; sourceTree = "<group>"; };
 		EBDF994F226470BE00507376 /* disk.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = disk.cpp; sourceTree = "<group>"; };
 		EBDF9950226470BE00507376 /* disk.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = disk.hpp; sourceTree = "<group>"; };
 		EBFC9D00226839650057972D /* CGpoint.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CGpoint.hpp; sourceTree = "<group>"; };
@@ -94,6 +97,9 @@
 		EB4ED8F6226827B600B91108 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EBDCDDED226C5471000F8810 /* ScreenShot_1.png */,
+				EBDCDDEE226C5472000F8810 /* ScreenShot_2.png */,
+				EBDCDDEC226C5471000F8810 /* ScreenShot_3.png */,
 				EBFC9D1622683AFE0057972D /* constants.cpp */,
 				EB4ED8F4226827AF00B91108 /* SF-Light.otf */,
 				EB4ED8F5226827AF00B91108 /* SF-Regular.otf */,
