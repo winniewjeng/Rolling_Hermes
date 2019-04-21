@@ -15,7 +15,9 @@ const int Even = 2;
 
 board::board(unsigned int _diskNum): diskNumber(_diskNum) {
     move = 0;
+    minMove = static_cast<int>(pow(2, diskNumber)) - 1;
     preferOdd = diskNumber % Even;
+    
     init();
 }
 
@@ -34,9 +36,40 @@ board::~board() {
     if (!des.empty()) {
         for (int i = des.getSize(); i > 0; -- i) {
             delete des.at(i - 1) -> data;
-            
         }
     }
+}
+
+board::board(const board& other) {
+    diskNumber = other.diskNumber;
+    preferOdd = other.preferOdd;
+    src = other.src;
+    aux = other.aux;
+    des = other.des;
+    move = other.move;
+    minMove = other.minMove;
+}
+
+board& board::operator =(const board& other) {
+    if (this == &other)
+        return *this;
+    diskNumber = other.diskNumber;
+    preferOdd = other.preferOdd;
+    src = other.src;
+    aux = other.aux;
+    des = other.des;
+    move = other.move;
+    minMove = other.minMove;
+    return *this;
+}
+
+void board::adjustDiskNum(bool more) {
+    if (more && diskNumber <= 8)
+        diskNumber ++;
+    else if (diskNumber > 3)
+        diskNumber --;
+    
+    *this = board(diskNumber);
 }
 
 void board::init () {
@@ -52,6 +85,10 @@ void board::init () {
         disk* temp = new disk();
         src.enqueue(temp, AReallyBigNumber - temp->getNumber());
     }
+}
+
+void board::changeDiskNumber(int newDisk) {
+    *this = board(newDisk);
 }
 
 void board::printBoard() {
@@ -149,7 +186,9 @@ void board::autoMove(bool finishTheGame) {
                 break;
         }
         printBoard();
+
     } while (finishTheGame);
+    cout << "Expect minimum move: " << pow(2, diskNumber) - 1 << endl;
 }
 
 bool board::inProgress() {

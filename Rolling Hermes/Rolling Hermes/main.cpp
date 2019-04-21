@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <string>
+#include <chrono>
 #include "Stack.hpp"
 #include "Playground.hpp"
 #include "stackBoard.hpp"
@@ -17,11 +18,26 @@ void testPQS();
 void testSB();
 
 int main(int argc, const char * argv[]) {
-//    board a(7);
-//
+
+    
+    UIDelegate ui(7);
+    ui.build();
+//    board a(6);
+//    auto start_PQ = chrono::high_resolution_clock::now();
 //    a.autoMove(true);
-    testSB();
-//    testPQS();
+//    auto stop_PQ = chrono::high_resolution_clock::now();
+//    auto PQDuration = std::chrono::duration_cast<chrono::microseconds>(stop_PQ - start_PQ);
+//
+//
+//    auto start_ST = chrono::high_resolution_clock::now();
+//    testSB();
+//    auto stop_ST = chrono::high_resolution_clock::now();
+//    auto STDuration = std::chrono::duration_cast<chrono::microseconds>(stop_ST - start_ST);
+//
+//    cout  << "Priority Queue took " << PQDuration.count()  << "ms. " << endl;
+//    cout  << "Stack took " << STDuration.count()  << "ms. " << endl;
+
+    
 }
 /*
  Board Test run:

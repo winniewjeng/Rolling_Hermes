@@ -23,8 +23,12 @@ private:
     arrPriorityQueue<disk*, int> aux;
     arrPriorityQueue<disk*, int> des;
     unsigned int diskNumber;
-    unsigned int move;
     bool preferOdd;
+    
+protected:
+    unsigned int move;
+    unsigned int minMove;
+    void adjustDiskNum(bool more);
     
 public:
     board(unsigned int _diskNum = 4);
@@ -33,8 +37,8 @@ public:
     board& operator =(const board& other);
     
     // accessor
-    unsigned int getMove();
-    unsigned int getDiskNumber();
+    unsigned int getMove() {return move;}
+    unsigned int getDiskNumber() {return diskNumber;};
     arrPriorityQueue<disk*, int>& getSourcePeg() {return src;}
     arrPriorityQueue<disk*, int>& getAuxilaryPeg() {return aux;}
     arrPriorityQueue<disk*, int>& getDestinationPeg() {return des;}
@@ -42,6 +46,7 @@ public:
     // Board Class Delegate
     void init();
     // Board initialize
+    void changeDiskNumber(int newDisk);
     void printBoard();
     void fromOneToAnother(arrPriorityQueue<disk*, int>& from, arrPriorityQueue<disk*, int>& to);
     void autoMove(bool finishTheGame = false);

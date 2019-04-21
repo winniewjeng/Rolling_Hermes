@@ -22,6 +22,7 @@
 		EBFC9D1222683A9E0057972D /* UIButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBFC9D1022683A9E0057972D /* UIButton.cpp */; };
 		EBFC9D1522683AD10057972D /* UILabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBFC9D1322683AD10057972D /* UILabel.cpp */; };
 		EBFC9D1722683AFE0057972D /* constants.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBFC9D1622683AFE0057972D /* constants.cpp */; };
+		EBFC9D1E22684B7C0057972D /* Peg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBFC9D1C22684B7C0057972D /* Peg.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -56,6 +57,9 @@
 		EBD251452267DFD700ABAB7D /* sfml-graphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-graphics.framework"; path = "../../../../../../../../Library/Frameworks/sfml-graphics.framework"; sourceTree = "<group>"; };
 		EBD2514A2267EFB500ABAB7D /* Playground.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Playground.cpp; sourceTree = "<group>"; };
 		EBD2514B2267EFB500ABAB7D /* Playground.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Playground.hpp; sourceTree = "<group>"; };
+		EBDCDDEC226C5471000F8810 /* ScreenShot_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShot_3.png; sourceTree = "<group>"; };
+		EBDCDDED226C5471000F8810 /* ScreenShot_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShot_1.png; sourceTree = "<group>"; };
+		EBDCDDEE226C5472000F8810 /* ScreenShot_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShot_2.png; sourceTree = "<group>"; };
 		EBDF994F226470BE00507376 /* disk.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = disk.cpp; sourceTree = "<group>"; };
 		EBDF9950226470BE00507376 /* disk.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = disk.hpp; sourceTree = "<group>"; };
 		EBFC9D00226839650057972D /* CGpoint.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CGpoint.hpp; sourceTree = "<group>"; };
@@ -70,6 +74,9 @@
 		EBFC9D1322683AD10057972D /* UILabel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UILabel.cpp; sourceTree = "<group>"; };
 		EBFC9D1422683AD10057972D /* UILabel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = UILabel.hpp; sourceTree = "<group>"; };
 		EBFC9D1622683AFE0057972D /* constants.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = constants.cpp; sourceTree = "<group>"; };
+		EBFC9D1A22683E740057972D /* UIKit.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = UIKit.hpp; sourceTree = "<group>"; };
+		EBFC9D1C22684B7C0057972D /* Peg.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Peg.cpp; sourceTree = "<group>"; };
+		EBFC9D1D22684B7C0057972D /* Peg.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Peg.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +97,9 @@
 		EB4ED8F6226827B600B91108 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EBDCDDED226C5471000F8810 /* ScreenShot_1.png */,
+				EBDCDDEE226C5472000F8810 /* ScreenShot_2.png */,
+				EBDCDDEC226C5471000F8810 /* ScreenShot_3.png */,
 				EBFC9D1622683AFE0057972D /* constants.cpp */,
 				EB4ED8F4226827AF00B91108 /* SF-Light.otf */,
 				EB4ED8F5226827AF00B91108 /* SF-Regular.otf */,
@@ -146,8 +156,10 @@
 			isa = PBXGroup;
 			children = (
 				EBC340712255A84300381151 /* main.cpp */,
-				EBD2514A2267EFB500ABAB7D /* Playground.cpp */,
 				EBD2514B2267EFB500ABAB7D /* Playground.hpp */,
+				EBD2514A2267EFB500ABAB7D /* Playground.cpp */,
+				EBFC9D1C22684B7C0057972D /* Peg.cpp */,
+				EBFC9D1D22684B7C0057972D /* Peg.hpp */,
 				EB164A1C2265001700DF00F6 /* board.hpp */,
 				EB164A1B2265001700DF00F6 /* board.cpp */,
 				EBDF99522264736300507376 /* Disk */,
@@ -202,6 +214,7 @@
 				EBFC9D1122683A9E0057972D /* UIButton.hpp */,
 				EBFC9D1322683AD10057972D /* UILabel.cpp */,
 				EBFC9D1422683AD10057972D /* UILabel.hpp */,
+				EBFC9D1A22683E740057972D /* UIKit.hpp */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -267,6 +280,7 @@
 				EBFC9D0F22683A5B0057972D /* UIView.cpp in Sources */,
 				EBFC9D1722683AFE0057972D /* constants.cpp in Sources */,
 				EBDF9951226470BE00507376 /* disk.cpp in Sources */,
+				EBFC9D1E22684B7C0057972D /* Peg.cpp in Sources */,
 				EBC340722255A84300381151 /* main.cpp in Sources */,
 				EBFC9D1522683AD10057972D /* UILabel.cpp in Sources */,
 				EBD2514C2267EFB500ABAB7D /* Playground.cpp in Sources */,
@@ -394,7 +408,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 37CWHKAPJQ;
+				DEVELOPMENT_TEAM = A4R6VQRKMH;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
@@ -407,7 +421,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 37CWHKAPJQ;
+				DEVELOPMENT_TEAM = A4R6VQRKMH;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
