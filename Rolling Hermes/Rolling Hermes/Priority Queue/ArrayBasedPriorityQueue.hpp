@@ -27,6 +27,10 @@ template <class Data, class Priority>
 class arrPriorityQueue {
 private:
     element<Data, Priority>* autoInsert(element<Data, Priority>* head, Priority p, int size);
+    // Function: Auto insert
+    // Description: This function uses binary search to find the correct position
+    //                where the new data should be inserted. Recursively called.
+    // Returns the pointer where should be inserted before.
     
     element<Data, Priority>* head;
     unsigned int size;
@@ -57,63 +61,58 @@ public:
     // Function: get array size.
     // Description: accessor, return the private member: size
     // Return type: unsigned int
-    // Paramaters: None
+    
     
     unsigned int getCapacity() const {return capacity;}
-    // Function:
-    // Description:
-    // Return type:
-    // Paramaters:
+    // Function: get capacity
+    // Description: Accessor
+    // Return type: Unsigned int
+    
     
     Data& peek() {return head -> data;}
-    // Function:
-    // Description:
-    // Return type:
-    // Paramaters:
+    // Function: Peek
+    // Description: Look at the first item's data without popping it.
+    // Return type: Data
+    
     element<Data, Priority>* at(const unsigned int i) {return (head + i);}
+    // Function: at
+    // Description: Look at the i'th item's data without popping it. (works like [])
+    // Return type: element<Data, Priority>*
     
     Priority& peekPriority()const {return head -> priority;}
-    // Function:
-    // Description:
-    // Return type:
-    // Paramaters:
+    // Function: peek
+    // Description: Look at the first item's priority
+    // Return type: Priority
     
     void print() const;
-    // Function:
-    // Description:
-    // Return type:
-    // Paramaters:
+    // Function: print
+    // Description: Print out every item in the queue. (item requires their own ostream operation)
     
     // Mutators
     void clear();
-    // Function:
-    // Description:
-    // Return type:
-    // Paramaters:
+    // Function: clear
+    // Description: clear the entire queue.
     
     void resize(unsigned int s);
-    // Function:
-    // Description:
-    // Return type:
-    // Paramaters:
+    // Function: resize
+    // Description: copy the entire queue into a new queue with new size s.
+    // Return type: void
+    // Paramaters: unsigned int s
     
     void enqueue(Data d, Priority p);
-    // Function:
-    // Description:
-    // Return type:
-    // Paramaters:
+    // Function: enqueue
+    // Description: same as push, push the item in the queue at it's right position
+    // Paramaters: Data d and Priority p.
     
     Data deque();
-    // Function:
-    // Description:
-    // Return type:
-    // Paramaters:
+    // Function: deque
+    // Description: same as pop(), delete the first item and return its Data
+    // Return type: Data
     
     void insertBefore(element<Data, Priority>* beforeThis, const element<Data, Priority>& token);
-    // Function:
-    // Description:
-    // Return type:
-    // Paramaters:
+    // Function: insertBefore
+    // Description: Insert the item before given pointer.
+    // Paramaters: element<Data, Priority>* key pointer and a element<Data, Priority>& token.
     
     arrPriorityQueue<Data,Priority>& operator>>(Data &d);
     // Function:
@@ -126,17 +125,6 @@ public:
     // Description:
     // Return type:
     // Paramaters:
-    
-    
-    // iostream
-    template<typename D,typename P>
-    friend
-    std::ostream& operator<<(std::ostream &out, const arrPriorityQueue<D,P> &q);
-    
-    template<typename D,typename P>
-    friend
-    std::istream& operator>>(std::istream &in, arrPriorityQueue<D,P> &q);
-//
 };
 
 template <class Data, class Priority>

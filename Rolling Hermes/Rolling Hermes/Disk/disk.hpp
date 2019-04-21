@@ -13,6 +13,8 @@ using namespace std;
 
 class disk {
 private:
+    // Static number
+    // Keeps the last issued disk size recorded.
     static int lastIssued;
     int number;
     
@@ -22,8 +24,11 @@ public:
     disk(const disk& other);
     disk& operator =(const disk& other);
     
+    // Accessor
     int getNumber() {return number;}
     
+    // Friend ostream
+    // Print the disk
     friend
     ostream& operator<< (ostream& out, const disk& print);
     
