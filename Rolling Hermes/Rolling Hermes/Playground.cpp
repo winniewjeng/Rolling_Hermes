@@ -88,16 +88,17 @@ void UIDelegate::initPeg() {
 void UIDelegate::initDisk() {
     for (int i = 0; i < getDiskNumber(); ++ i) {
         UIButton* tempDisk = new UIButton();
-        tempDisk -> setLength((i+1) * 0.128 * source.getLength());
-        tempDisk -> setHeight(15);
+        tempDisk -> setLength((i+1) * 0.13 * source.getLength());
+        tempDisk -> setHeight(20);
         disks.push_back(tempDisk);
     }
 }
 
 // Put disks on the correct peg.
 void UIDelegate::updateDisks() {
-    for (int i = 0; i < getSourcePeg().getSize(); ++i) {
-        
+    for (int i = getSourcePeg().getSize(); i > 0; --i) {
+        UIButton* tempDisk = disks[getSourcePeg().at(i - 1) -> data ->getNumber() -1];
+        tempDisk -> setPosition(source.getMidPoint() + sf::Vector2f(5-0.5*tempDisk->getLength(),-tempDisk->getHeight() -(getSourcePeg().getSize() - i)*25));
     }
     for (int i = 0; i < getAuxilaryPeg().getSize(); ++i) {
         
@@ -108,7 +109,9 @@ void UIDelegate::updateDisks() {
 }
 
 void UIDelegate::drawDisks() {
-    
+    for (int i = 0; i < disks.size(); ++ i) {
+        disks[i] -> placeButton(window);
+    }
 }
 
 void UIDelegate::drawPeg() {
@@ -145,24 +148,23 @@ void UIDelegate::EventDelegate() {
 
 void UIDelegate::render() {
     window.clear();
+    // Draw base views here.
     window.draw(appView.getView());
-    // Draw buttons here.
-    drawLabels();
     window.draw(SafeArea.getView());
     
     // Draw pegs here.
     drawPeg();
-    // Draw disks here.
+
+    // Update and Draw buttons here.
+    initButton();
     displayMove.placeButton(window);
     displayDiskNumber.placeButton(window);
     diskNumberIncr.placeButton(window);
     diskNumberDecr.placeButton(window);
     
+    // Draw disks here.
+    updateDisks();
+    drawDisks();
     window.display();
-    // Draw views, Pegs, disks here
-}
-
-
-void UIDelegate::drawLabels() {
     
 }

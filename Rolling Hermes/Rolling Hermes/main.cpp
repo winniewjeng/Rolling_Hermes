@@ -18,7 +18,7 @@ void testSB();
 
 int main(int argc, const char * argv[]) {
 //    board a(7);
-//
+////
     UIDelegate a;
     a.build();
 //    a.autoMove(true);
