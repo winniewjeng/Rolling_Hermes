@@ -60,6 +60,7 @@
 		EBDCDDEC226C5471000F8810 /* ScreenShot_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShot_3.png; sourceTree = "<group>"; };
 		EBDCDDED226C5471000F8810 /* ScreenShot_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShot_1.png; sourceTree = "<group>"; };
 		EBDCDDEE226C5472000F8810 /* ScreenShot_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShot_2.png; sourceTree = "<group>"; };
+		EBDCDDEF226C5F36000F8810 /* Screen Shot 2019-04-21 at 01.19.48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2019-04-21 at 01.19.48.png"; sourceTree = "<group>"; };
 		EBDF994F226470BE00507376 /* disk.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = disk.cpp; sourceTree = "<group>"; };
 		EBDF9950226470BE00507376 /* disk.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = disk.hpp; sourceTree = "<group>"; };
 		EBFC9D00226839650057972D /* CGpoint.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CGpoint.hpp; sourceTree = "<group>"; };
@@ -97,6 +98,7 @@
 		EB4ED8F6226827B600B91108 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EBDCDDEF226C5F36000F8810 /* Screen Shot 2019-04-21 at 01.19.48.png */,
 				EBDCDDED226C5471000F8810 /* ScreenShot_1.png */,
 				EBDCDDEE226C5472000F8810 /* ScreenShot_2.png */,
 				EBDCDDEC226C5471000F8810 /* ScreenShot_3.png */,
