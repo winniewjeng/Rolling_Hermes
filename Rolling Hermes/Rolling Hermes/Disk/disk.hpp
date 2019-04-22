@@ -22,16 +22,19 @@ public:
     disk(const disk& other);
     disk& operator =(const disk& other);
     
+    // accessor
     int getNumber() {return number;}
+    // Function: get disk number
+    // Description: returns the disk number
+    // Return type: int
+    // Paramaters: none
     
-    friend
-    ostream& operator<< (ostream& out, const disk& print);
+    // overloaded operators
+    friend ostream& operator<< (ostream& out, const disk& print);
     
-    friend
-    bool operator > (const disk& x, const disk& y);
+    friend bool operator > (const disk& x, const disk& y);
     
-    friend
-    bool operator < (const disk& x, const disk& y);
+    friend bool operator < (const disk& x, const disk& y);
     
 };
 #endif /* disk_hpp */
