@@ -19,15 +19,13 @@ void testSB();
 
 int main(int argc, const char * argv[]) {
 
-<<<<<<< HEAD
+
     UIDelegate ui(7);
     ui.build();
     
-=======
 //    UIDelegate ui(8);
 //    ui.build();
 //
->>>>>>> 49a6de37d29fa9e2ce0572a260ef63eac41a3f05
 //    board a(6);
 //    auto start_PQ = chrono::high_resolution_clock::now();
 //    a.autoMove(true,true);
@@ -94,7 +92,6 @@ int main(int argc, const char * argv[]) {
  Disk #6 was destroyed!
  */
 
-<<<<<<< HEAD
 //void testSB() {
 //    stackBoard(6);
 //    Stack s(6);
@@ -131,7 +128,7 @@ int main(int argc, const char * argv[]) {
 //    }
 //    cout << "size "<< src.getSize() << endl;
 //}
-=======
+
 void testSB() {
     stackBoard(10);
 }
@@ -167,4 +164,3 @@ void testPQS() {
     }
     cout << "size "<< src.getSize() << endl;
 }
->>>>>>> 49a6de37d29fa9e2ce0572a260ef63eac41a3f05

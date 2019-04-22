@@ -90,7 +90,7 @@ void board::fromOneToAnother(arrPriorityQueue<disk*, int>& from, arrPriorityQueu
     to.enqueue(tempD, tempP);
 }
 
-void board::autoMove(bool finishTheGame, bool print) {
+void board::autoMove(bool finishTheGame) {
     int i = 0;
     int forLaterUse = 0;
     int modNum[diskNumber];
@@ -160,7 +160,7 @@ void board::autoMove(bool finishTheGame, bool print) {
                 break;
         }
         
-        (print)? printBoard():void();
+        printBoard();
 
     } while (finishTheGame);
     cout << "Expect minimum move: " << pow(2, diskNumber) - 1 << endl;

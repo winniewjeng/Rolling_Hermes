@@ -153,7 +153,7 @@ void UIDelegate::EventDelegate() {
                     case sf::Keyboard::Space:
                     case sf::Keyboard::Right:
                         if (inProgress()) {
-                            autoMove(false,true);
+                            autoMove(false);
                             updateDisks();
                         }
                         break;

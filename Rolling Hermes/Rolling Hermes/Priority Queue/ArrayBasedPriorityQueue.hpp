@@ -61,7 +61,6 @@ public:
     // Function: get array size
     // Description: accessor, returns the private member size
     // Return type: unsigned int
-<<<<<<< HEAD
     // Paramaters: none
     
     unsigned int getCapacity() const {return capacity;}
@@ -75,27 +74,13 @@ public:
     // Description: accessor, return the private member head's data
     // Return type: Data
     // Paramaters: none
-=======
     
-    
-    unsigned int getCapacity() const {return capacity;}
-    // Function: get capacity
-    // Description: Accessor
-    // Return type: Unsigned int
-    
-    
-    Data& peek() {return head -> data;}
-    // Function: Peek
-    // Description: Look at the first item's data without popping it.
-    // Return type: Data
-    
->>>>>>> 49a6de37d29fa9e2ce0572a260ef63eac41a3f05
+ 
     element<Data, Priority>* at(const unsigned int i) {return (head + i);}
     // Function: at
     // Description: Look at the i'th item's data without popping it. (works like [])
     // Return type: element<Data, Priority>*
     
-<<<<<<< HEAD
     Priority& peekPriority() const {return head -> priority;}
     // Function: peek first priority of the queue
     // Description: accessor, return the private member head's priority
@@ -138,74 +123,25 @@ public:
     // Description: insert element (token) in queue at a marked position (beforeThis)
     // Return type: void
     // Paramaters: element<Data, Priority>*, const element<Data, Priority>&
-    
+    arrPriorityQueue<Data,Priority>& operator<<(const element<Data, Priority>& e);
+    // Function: overloaded extraction operator
+    // Description: enqueue the array with element
+    // Return type: arrPriorityQueue<Data,Priority>&
+    // Paramaters: Data&
     arrPriorityQueue<Data,Priority>& operator>>(Data& d);
     // Function: overloaded insertion operator
     // Description: deque the array with Data
     // Return type: arrPriorityQueue<Data,Priority>&
     // Paramaters: Data&
-=======
-    Priority& peekPriority()const {return head -> priority;}
-    // Function: peek
-    // Description: Look at the first item's priority
-    // Return type: Priority
-    
-    void print() const;
-    // Function: print
-    // Description: Print out every item in the queue. (item requires their own ostream operation)
-    
-    // Mutators
-    void clear();
-    // Function: clear
-    // Description: clear the entire queue.
-    
-    void resize(unsigned int s);
-    // Function: resize
-    // Description: copy the entire queue into a new queue with new size s.
-    // Return type: void
-    // Paramaters: unsigned int s
-    
-    void enqueue(Data d, Priority p);
-    // Function: enqueue
-    // Description: same as push, push the item in the queue at it's right position
-    // Paramaters: Data d and Priority p.
-    
-    Data deque();
-    // Function: deque
-    // Description: same as pop(), delete the first item and return its Data
-    // Return type: Data
-    
-    void insertBefore(element<Data, Priority>* beforeThis, const element<Data, Priority>& token);
-    // Function: insertBefore
-    // Description: Insert the item before given pointer.
-    // Paramaters: element<Data, Priority>* key pointer and a element<Data, Priority>& token.
-    
->>>>>>> 49a6de37d29fa9e2ce0572a260ef63eac41a3f05
-    
-    // Insertion and extraction operator.
-    // Not tested, not being used in this project.
-    arrPriorityQueue<Data,Priority>& operator>>(Data &d);
 
-    arrPriorityQueue<Data,Priority>& operator<<(const element<Data, Priority>& e);
-<<<<<<< HEAD
-    // Function: overloaded extraction operator
-    // Description: enqueue the array with element
-    // Return type: arrPriorityQueue<Data,Priority>&
-    // Paramaters: element<Data, Priority>&
-    
-    
     // iostream
     template<typename D,typename P>
-    friend
-    std::ostream& operator<<(std::ostream &out, const arrPriorityQueue<D,P> &q);
+    friend std::ostream& operator<<(std::ostream &out, const arrPriorityQueue<D,P> &q);
     
     template<typename D,typename P>
-    friend
-    std::istream& operator>>(std::istream &in, arrPriorityQueue<D,P> &q);
+    friend std::istream& operator>>(std::istream &in, arrPriorityQueue<D,P> &q);
+    
 //
-=======
-
->>>>>>> 49a6de37d29fa9e2ce0572a260ef63eac41a3f05
 };
 
 template <class Data, class Priority>
