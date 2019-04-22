@@ -25,20 +25,20 @@ int main(int argc, const char * argv[]) {
 //    UIDelegate ui(8);
 //    ui.build();
 //
-//    board a(6);
-//    auto start_PQ = chrono::high_resolution_clock::now();
-//    a.autoMove(true,true);
-//    auto stop_PQ = chrono::high_resolution_clock::now();
-//    auto PQDuration = std::chrono::duration_cast<chrono::microseconds>(stop_PQ - start_PQ);
+    board a(6);
+    auto start_PQ = chrono::high_resolution_clock::now();
+    a.autoMove(true, true);
+    auto stop_PQ = chrono::high_resolution_clock::now();
+    auto PQDuration = std::chrono::duration_cast<chrono::microseconds>(stop_PQ - start_PQ);
 
 ////
-    auto start_ST = chrono::high_resolution_clock::now();
-    testSB();
-    auto stop_ST = chrono::high_resolution_clock::now();
-    auto STDuration = std::chrono::duration_cast<chrono::microseconds>(stop_ST - start_ST);
+//    auto start_ST = chrono::high_resolution_clock::now();
+//    testSB();
+//    auto stop_ST = chrono::high_resolution_clock::now();
+//    auto STDuration = std::chrono::duration_cast<chrono::microseconds>(stop_ST - start_ST);
 //
-//    cout  << "Priority Queue took " << PQDuration.count()  << "ms. " << endl;
-    cout  << "Stack took " << STDuration.count()  << "ms. " << endl;
+    cout  << "Priority Queue took " << PQDuration.count()  << "ms. " << endl;
+//    cout  << "Stack took " << STDuration.count()  << "ms. " << endl;
 
     
 }
@@ -91,42 +91,6 @@ int main(int argc, const char * argv[]) {
  Disk #6 was destroyed!
  */
 
-//void testSB() {
-//    stackBoard(6);
-//    Stack s(6);
-//    node<disk>* hi = new node<disk>;
-//
-//    s.push(&(hi->_item));
-//}
-//
-//void testPQS() {
-//
-//    arrPriorityQueue<disk*, int> qu(10);
-//    for (int i = 0; i < 4; ++i) {
-//        disk* temp = new disk();  //
-//        cout << "temp: " << temp -> getNumber() << " ";
-//        cout << "\npriority = " << i << endl;
-//        qu.enqueue(temp, i);
-//        //        qu.print();
-//        cout << endl;
-//    }
-//
-//    qu.print();
-//
-//    // board(5);
-//
-//    int s = qu.getSize();
-//    Stack src(s);
-//    while (!qu.empty()) {
-//        src.push(qu.deque());
-//    }
-//    cout << "\nsize "<< src.getSize() <<endl;
-//    while (!src.empty()) {
-//        cout << "Bye " << src.peek() <<endl;
-//        src.pop();
-//    }
-//    cout << "size "<< src.getSize() << endl;
-//}
 
 void testSB() {
     stackBoard s(6);

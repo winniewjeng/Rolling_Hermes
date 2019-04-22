@@ -15,7 +15,6 @@ using namespace std::chrono;
 const int Inc = 1;
 
 stackBoard::stackBoard(unsigned int _diskNum): diskNumber(_diskNum) {
-    cout << diskNumber << endl;
     move = 0;
     preferOdd = diskNumber % 2;
     init();
@@ -45,7 +44,7 @@ void stackBoard::printBoard() {
     cout << "  Source Peg: ";
     for (int i = 0; i < src.getSize(); ++ i)
         std::cout << "(" << (src.at(i) -> getNumber()) <<") ";
-    cout << "\nAuxilary Peg: ";
+    cout << "\nAuxiliary Peg: ";
     for (int i = 0; i < aux.getSize(); ++ i)
         std::cout << "(" << (aux.at(i) -> getNumber()) <<") ";
     cout << "\n    Dest Peg: ";
@@ -62,7 +61,7 @@ void stackBoard::fromOneToAnother(Stack<disk*>& from, Stack<disk*>& to) {
     to.push(tempD);
 }
 
-void stackBoard::autoMove(bool finishTheGame) {
+void stackBoard::autoMove(bool finishTheGame, bool print) {
     int i = 0;
     int forLaterUse = 0;
     int modNum[diskNumber];
@@ -76,7 +75,6 @@ void stackBoard::autoMove(bool finishTheGame) {
     }
     
     do {
-        cout << endl;
         if (!inProgress())
             break;
         ++move;
@@ -116,7 +114,7 @@ void stackBoard::autoMove(bool finishTheGame) {
             default:
                 break;
         }
-        printBoard();
+        (print)? printBoard():void();
     } while (finishTheGame);
 }
 

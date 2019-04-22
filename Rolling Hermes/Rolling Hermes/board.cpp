@@ -84,13 +84,12 @@ void board::fromOneToAnother(arrPriorityQueue<disk*, int>& from, arrPriorityQueu
     if (from.empty())
         throw PEG_EMPTY;
     int tempP = from.peekPriority();
-
     disk* tempD = new disk(*from.peek());
     from.deque();
     to.enqueue(tempD, tempP);
 }
 
-void board::autoMove(bool finishTheGame) {
+void board::autoMove(bool finishTheGame, bool print) {
     int i = 0;
     int forLaterUse = 0;
     int modNum[diskNumber];
@@ -159,8 +158,8 @@ void board::autoMove(bool finishTheGame) {
             default:
                 break;
         }
-        
-        printBoard();
+        if (print)
+            printBoard();
 
     } while (finishTheGame);
     cout << "Expect minimum move: " << pow(2, diskNumber) - 1 << endl;
@@ -174,7 +173,7 @@ void board::printBoard() {
     cout << "  Source Peg: ";
     for (int i = 0; i < src.getSize(); ++ i)
         std::cout << "(" << *(src.at(i) -> data) <<") ";
-    cout << "\nAuxilary Peg: ";
+    cout << "\nAuxiliary Peg: ";
     for (int i = 0; i < aux.getSize(); ++ i)
         std::cout << "(" << *(aux.at(i) -> data) <<") ";
     cout << "\n    Dest Peg: ";
