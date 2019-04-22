@@ -1,326 +1,583 @@
 
 Comment:
 
-The Tower of Hanoi assignment is completed by Mr. Zhao and Ms. Jeng. Each person made contributions to the skeletal (data structure) parts of the project, i.e. the priority queue, stack, board, stackboard, disks, and nodes, although it should be noted that Mr. Zhao designed and built the UI and Ms. Jeng does not wish to claim the extra credit.
+The Tower of Hanoi assignment is completed by Mr. Zhao and Ms. Jeng. Each person made contributions to the skeletal (data structure) parts of the project, i.e. the priority queue, stack, board, stackBoard, disks, and nodes, although it should be noted that Mr. Zhao designed and built the UI and Ms. Jeng does not wish to claim the extra credit.
 
 The game optimizes for the minimum game moves by using the algorithm that relies the even and odd number of disks in the game and also the even or odd disk number on the peg. The UI part is built with with imported functions from the SFML library.
 
-Test-run the game with 6 disks:
+Test-run the game with 6 disks(Priority Queue): 
+
+  Source Peg: (Disk: 2) (Disk: 3) (Disk: 4) (Disk: 5) (Disk: 6) 
+Auxiliary Peg: (Disk: 1) 
+    Dest Peg: 
+        Move: 1
+  Source Peg: (Disk: 3) (Disk: 4) (Disk: 5) (Disk: 6) 
+Auxiliary Peg: (Disk: 1) 
+    Dest Peg: (Disk: 2) 
+        Move: 2
+  Source Peg: (Disk: 3) (Disk: 4) (Disk: 5) (Disk: 6) 
+Auxiliary Peg: 
+    Dest Peg: (Disk: 1) (Disk: 2) 
+        Move: 3
+  Source Peg: (Disk: 4) (Disk: 5) (Disk: 6) 
+Auxiliary Peg: (Disk: 3) 
+    Dest Peg: (Disk: 1) (Disk: 2) 
+        Move: 4
+  Source Peg: (Disk: 1) (Disk: 4) (Disk: 5) (Disk: 6) 
+Auxiliary Peg: (Disk: 3) 
+    Dest Peg: (Disk: 2) 
+        Move: 5
+  Source Peg: (Disk: 1) (Disk: 4) (Disk: 5) (Disk: 6) 
+Auxiliary Peg: (Disk: 2) (Disk: 3) 
+    Dest Peg: 
+        Move: 6
+  Source Peg: (Disk: 4) (Disk: 5) (Disk: 6) 
+Auxiliary Peg: (Disk: 1) (Disk: 2) (Disk: 3) 
+    Dest Peg: 
+        Move: 7
+  Source Peg: (Disk: 5) (Disk: 6) 
+Auxiliary Peg: (Disk: 1) (Disk: 2) (Disk: 3) 
+    Dest Peg: (Disk: 4) 
+        Move: 8
+  Source Peg: (Disk: 5) (Disk: 6) 
+Auxiliary Peg: (Disk: 2) (Disk: 3) 
+    Dest Peg: (Disk: 1) (Disk: 4) 
+        Move: 9
+  Source Peg: (Disk: 2) (Disk: 5) (Disk: 6) 
+Auxiliary Peg: (Disk: 3) 
+    Dest Peg: (Disk: 1) (Disk: 4) 
+        Move: 10
+  Source Peg: (Disk: 1) (Disk: 2) (Disk: 5) (Disk: 6) 
+Auxiliary Peg: (Disk: 3) 
+    Dest Peg: (Disk: 4) 
+        Move: 11
+  Source Peg: (Disk: 1) (Disk: 2) (Disk: 5) (Disk: 6) 
+Auxiliary Peg: 
+    Dest Peg: (Disk: 3) (Disk: 4) 
+        Move: 12
+  Source Peg: (Disk: 2) (Disk: 5) (Disk: 6) 
+Auxiliary Peg: (Disk: 1) 
+    Dest Peg: (Disk: 3) (Disk: 4) 
+        Move: 13
+  Source Peg: (Disk: 5) (Disk: 6) 
+Auxiliary Peg: (Disk: 1) 
+    Dest Peg: (Disk: 2) (Disk: 3) (Disk: 4) 
+        Move: 14
+  Source Peg: (Disk: 5) (Disk: 6) 
+Auxiliary Peg: 
+    Dest Peg: (Disk: 1) (Disk: 2) (Disk: 3) (Disk: 4) 
+        Move: 15
+  Source Peg: (Disk: 6) 
+Auxiliary Peg: (Disk: 5) 
+    Dest Peg: (Disk: 1) (Disk: 2) (Disk: 3) (Disk: 4) 
+        Move: 16
+  Source Peg: (Disk: 1) (Disk: 6) 
+Auxiliary Peg: (Disk: 5) 
+    Dest Peg: (Disk: 2) (Disk: 3) (Disk: 4) 
+        Move: 17
+  Source Peg: (Disk: 1) (Disk: 6) 
+Auxiliary Peg: (Disk: 2) (Disk: 5) 
+    Dest Peg: (Disk: 3) (Disk: 4) 
+        Move: 18
+  Source Peg: (Disk: 6) 
+Auxiliary Peg: (Disk: 1) (Disk: 2) (Disk: 5) 
+    Dest Peg: (Disk: 3) (Disk: 4) 
+        Move: 19
+  Source Peg: (Disk: 3) (Disk: 6) 
+Auxiliary Peg: (Disk: 1) (Disk: 2) (Disk: 5) 
+    Dest Peg: (Disk: 4) 
+        Move: 20
+  Source Peg: (Disk: 3) (Disk: 6) 
+Auxiliary Peg: (Disk: 2) (Disk: 5) 
+    Dest Peg: (Disk: 1) (Disk: 4) 
+        Move: 21
+  Source Peg: (Disk: 2) (Disk: 3) (Disk: 6) 
+Auxiliary Peg: (Disk: 5) 
+    Dest Peg: (Disk: 1) (Disk: 4) 
+        Move: 22
+  Source Peg: (Disk: 1) (Disk: 2) (Disk: 3) (Disk: 6) 
+Auxiliary Peg: (Disk: 5) 
+    Dest Peg: (Disk: 4) 
+        Move: 23
+  Source Peg: (Disk: 1) (Disk: 2) (Disk: 3) (Disk: 6) 
+Auxiliary Peg: (Disk: 4) (Disk: 5) 
+    Dest Peg: 
+        Move: 24
+  Source Peg: (Disk: 2) (Disk: 3) (Disk: 6) 
+Auxiliary Peg: (Disk: 1) (Disk: 4) (Disk: 5) 
+    Dest Peg: 
+        Move: 25
+  Source Peg: (Disk: 3) (Disk: 6) 
+Auxiliary Peg: (Disk: 1) (Disk: 4) (Disk: 5) 
+    Dest Peg: (Disk: 2) 
+        Move: 26
+  Source Peg: (Disk: 3) (Disk: 6) 
+Auxiliary Peg: (Disk: 4) (Disk: 5) 
+    Dest Peg: (Disk: 1) (Disk: 2) 
+        Move: 27
+  Source Peg: (Disk: 6) 
+Auxiliary Peg: (Disk: 3) (Disk: 4) (Disk: 5) 
+    Dest Peg: (Disk: 1) (Disk: 2) 
+        Move: 28
+  Source Peg: (Disk: 1) (Disk: 6) 
+Auxiliary Peg: (Disk: 3) (Disk: 4) (Disk: 5) 
+    Dest Peg: (Disk: 2) 
+        Move: 29
+  Source Peg: (Disk: 1) (Disk: 6) 
+Auxiliary Peg: (Disk: 2) (Disk: 3) (Disk: 4) (Disk: 5) 
+    Dest Peg: 
+        Move: 30
+  Source Peg: (Disk: 6) 
+Auxiliary Peg: (Disk: 1) (Disk: 2) (Disk: 3) (Disk: 4) (Disk: 5) 
+    Dest Peg: 
+        Move: 31
+  Source Peg: 
+Auxiliary Peg: (Disk: 1) (Disk: 2) (Disk: 3) (Disk: 4) (Disk: 5) 
+    Dest Peg: (Disk: 6) 
+        Move: 32
+  Source Peg: 
+Auxiliary Peg: (Disk: 2) (Disk: 3) (Disk: 4) (Disk: 5) 
+    Dest Peg: (Disk: 1) (Disk: 6) 
+        Move: 33
+  Source Peg: (Disk: 2) 
+Auxiliary Peg: (Disk: 3) (Disk: 4) (Disk: 5) 
+    Dest Peg: (Disk: 1) (Disk: 6) 
+        Move: 34
+  Source Peg: (Disk: 1) (Disk: 2) 
+Auxiliary Peg: (Disk: 3) (Disk: 4) (Disk: 5) 
+    Dest Peg: (Disk: 6) 
+        Move: 35
+  Source Peg: (Disk: 1) (Disk: 2) 
+Auxiliary Peg: (Disk: 4) (Disk: 5) 
+    Dest Peg: (Disk: 3) (Disk: 6) 
+        Move: 36
+  Source Peg: (Disk: 2) 
+Auxiliary Peg: (Disk: 1) (Disk: 4) (Disk: 5) 
+    Dest Peg: (Disk: 3) (Disk: 6) 
+        Move: 37
+  Source Peg: 
+Auxiliary Peg: (Disk: 1) (Disk: 4) (Disk: 5) 
+    Dest Peg: (Disk: 2) (Disk: 3) (Disk: 6) 
+        Move: 38
+  Source Peg: 
+Auxiliary Peg: (Disk: 4) (Disk: 5) 
+    Dest Peg: (Disk: 1) (Disk: 2) (Disk: 3) (Disk: 6) 
+        Move: 39
+  Source Peg: (Disk: 4) 
+Auxiliary Peg: (Disk: 5) 
+    Dest Peg: (Disk: 1) (Disk: 2) (Disk: 3) (Disk: 6) 
+        Move: 40
+  Source Peg: (Disk: 1) (Disk: 4) 
+Auxiliary Peg: (Disk: 5) 
+    Dest Peg: (Disk: 2) (Disk: 3) (Disk: 6) 
+        Move: 41
+  Source Peg: (Disk: 1) (Disk: 4) 
+Auxiliary Peg: (Disk: 2) (Disk: 5) 
+    Dest Peg: (Disk: 3) (Disk: 6) 
+        Move: 42
+  Source Peg: (Disk: 4) 
+Auxiliary Peg: (Disk: 1) (Disk: 2) (Disk: 5) 
+    Dest Peg: (Disk: 3) (Disk: 6) 
+        Move: 43
+  Source Peg: (Disk: 3) (Disk: 4) 
+Auxiliary Peg: (Disk: 1) (Disk: 2) (Disk: 5) 
+    Dest Peg: (Disk: 6) 
+        Move: 44
+  Source Peg: (Disk: 3) (Disk: 4) 
+Auxiliary Peg: (Disk: 2) (Disk: 5) 
+    Dest Peg: (Disk: 1) (Disk: 6) 
+        Move: 45
+  Source Peg: (Disk: 2) (Disk: 3) (Disk: 4) 
+Auxiliary Peg: (Disk: 5) 
+    Dest Peg: (Disk: 1) (Disk: 6) 
+        Move: 46
+  Source Peg: (Disk: 1) (Disk: 2) (Disk: 3) (Disk: 4) 
+Auxiliary Peg: (Disk: 5) 
+    Dest Peg: (Disk: 6) 
+        Move: 47
+  Source Peg: (Disk: 1) (Disk: 2) (Disk: 3) (Disk: 4) 
+Auxiliary Peg: 
+    Dest Peg: (Disk: 5) (Disk: 6) 
+        Move: 48
+  Source Peg: (Disk: 2) (Disk: 3) (Disk: 4) 
+Auxiliary Peg: (Disk: 1) 
+    Dest Peg: (Disk: 5) (Disk: 6) 
+        Move: 49
+  Source Peg: (Disk: 3) (Disk: 4) 
+Auxiliary Peg: (Disk: 1) 
+    Dest Peg: (Disk: 2) (Disk: 5) (Disk: 6) 
+        Move: 50
+  Source Peg: (Disk: 3) (Disk: 4) 
+Auxiliary Peg: 
+    Dest Peg: (Disk: 1) (Disk: 2) (Disk: 5) (Disk: 6) 
+        Move: 51
+  Source Peg: (Disk: 4) 
+Auxiliary Peg: (Disk: 3) 
+    Dest Peg: (Disk: 1) (Disk: 2) (Disk: 5) (Disk: 6) 
+        Move: 52
+  Source Peg: (Disk: 1) (Disk: 4) 
+Auxiliary Peg: (Disk: 3) 
+    Dest Peg: (Disk: 2) (Disk: 5) (Disk: 6) 
+        Move: 53
+  Source Peg: (Disk: 1) (Disk: 4) 
+Auxiliary Peg: (Disk: 2) (Disk: 3) 
+    Dest Peg: (Disk: 5) (Disk: 6) 
+        Move: 54
+  Source Peg: (Disk: 4) 
+Auxiliary Peg: (Disk: 1) (Disk: 2) (Disk: 3) 
+    Dest Peg: (Disk: 5) (Disk: 6) 
+        Move: 55
+  Source Peg: 
+Auxiliary Peg: (Disk: 1) (Disk: 2) (Disk: 3) 
+    Dest Peg: (Disk: 4) (Disk: 5) (Disk: 6) 
+        Move: 56
+  Source Peg: 
+Auxiliary Peg: (Disk: 2) (Disk: 3) 
+    Dest Peg: (Disk: 1) (Disk: 4) (Disk: 5) (Disk: 6) 
+        Move: 57
+  Source Peg: (Disk: 2) 
+Auxiliary Peg: (Disk: 3) 
+    Dest Peg: (Disk: 1) (Disk: 4) (Disk: 5) (Disk: 6) 
+        Move: 58
+  Source Peg: (Disk: 1) (Disk: 2) 
+Auxiliary Peg: (Disk: 3) 
+    Dest Peg: (Disk: 4) (Disk: 5) (Disk: 6) 
+        Move: 59
+  Source Peg: (Disk: 1) (Disk: 2) 
+Auxiliary Peg: 
+    Dest Peg: (Disk: 3) (Disk: 4) (Disk: 5) (Disk: 6) 
+        Move: 60
+  Source Peg: (Disk: 2) 
+Auxiliary Peg: (Disk: 1) 
+    Dest Peg: (Disk: 3) (Disk: 4) (Disk: 5) (Disk: 6) 
+        Move: 61
+  Source Peg: 
+Auxiliary Peg: (Disk: 1) 
+    Dest Peg: (Disk: 2) (Disk: 3) (Disk: 4) (Disk: 5) (Disk: 6) 
+        Move: 62
+  Source Peg: 
+Auxiliary Peg: 
+    Dest Peg: (Disk: 1) (Disk: 2) (Disk: 3) (Disk: 4) (Disk: 5) (Disk: 6) 
+        Move: 63
+Expect minimum move: 63
+Priority Queue took 8600ms.
+
+Test-run the game with 6 disks(Stack):
 
 6
 
   Source Peg: (5) (4) (3) (2) (1) 
-Auxilary Peg: (6) 
+Auxiliary Peg: (6) 
     Dest Peg: 
         Move: 1
 
   Source Peg: (4) (3) (2) (1) 
-Auxilary Peg: (6) 
+Auxiliary Peg: (6) 
     Dest Peg: (5) 
         Move: 2
 
   Source Peg: (4) (3) (2) (1) 
-Auxilary Peg: 
+Auxiliary Peg: 
     Dest Peg: (6) (5) 
         Move: 3
 
   Source Peg: (3) (2) (1) 
-Auxilary Peg: (4) 
+Auxiliary Peg: (4) 
     Dest Peg: (6) (5) 
         Move: 4
 
   Source Peg: (6) (3) (2) (1) 
-Auxilary Peg: (4) 
+Auxiliary Peg: (4) 
     Dest Peg: (5) 
         Move: 5
 
   Source Peg: (6) (3) (2) (1) 
-Auxilary Peg: (5) (4) 
+Auxiliary Peg: (5) (4) 
     Dest Peg: 
         Move: 6
 
   Source Peg: (3) (2) (1) 
-Auxilary Peg: (6) (5) (4) 
+Auxiliary Peg: (6) (5) (4) 
     Dest Peg: 
         Move: 7
 
   Source Peg: (2) (1) 
-Auxilary Peg: (6) (5) (4) 
+Auxiliary Peg: (6) (5) (4) 
     Dest Peg: (3) 
         Move: 8
 
   Source Peg: (2) (1) 
-Auxilary Peg: (5) (4) 
+Auxiliary Peg: (5) (4) 
     Dest Peg: (6) (3) 
         Move: 9
 
   Source Peg: (5) (2) (1) 
-Auxilary Peg: (4) 
+Auxiliary Peg: (4) 
     Dest Peg: (6) (3) 
         Move: 10
 
   Source Peg: (6) (5) (2) (1) 
-Auxilary Peg: (4) 
+Auxiliary Peg: (4) 
     Dest Peg: (3) 
         Move: 11
 
   Source Peg: (6) (5) (2) (1) 
-Auxilary Peg: 
+Auxiliary Peg: 
     Dest Peg: (4) (3) 
         Move: 12
 
   Source Peg: (5) (2) (1) 
-Auxilary Peg: (6) 
+Auxiliary Peg: (6) 
     Dest Peg: (4) (3) 
         Move: 13
 
   Source Peg: (2) (1) 
-Auxilary Peg: (6) 
+Auxiliary Peg: (6) 
     Dest Peg: (5) (4) (3) 
         Move: 14
 
   Source Peg: (2) (1) 
-Auxilary Peg: 
+Auxiliary Peg: 
     Dest Peg: (6) (5) (4) (3) 
         Move: 15
 
   Source Peg: (1) 
-Auxilary Peg: (2) 
+Auxiliary Peg: (2) 
     Dest Peg: (6) (5) (4) (3) 
         Move: 16
 
   Source Peg: (6) (1) 
-Auxilary Peg: (2) 
+Auxiliary Peg: (2) 
     Dest Peg: (5) (4) (3) 
         Move: 17
 
   Source Peg: (6) (1) 
-Auxilary Peg: (5) (2) 
+Auxiliary Peg: (5) (2) 
     Dest Peg: (4) (3) 
         Move: 18
 
   Source Peg: (1) 
-Auxilary Peg: (6) (5) (2) 
+Auxiliary Peg: (6) (5) (2) 
     Dest Peg: (4) (3) 
         Move: 19
 
   Source Peg: (4) (1) 
-Auxilary Peg: (6) (5) (2) 
+Auxiliary Peg: (6) (5) (2) 
     Dest Peg: (3) 
         Move: 20
 
   Source Peg: (4) (1) 
-Auxilary Peg: (5) (2) 
+Auxiliary Peg: (5) (2) 
     Dest Peg: (6) (3) 
         Move: 21
 
   Source Peg: (5) (4) (1) 
-Auxilary Peg: (2) 
+Auxiliary Peg: (2) 
     Dest Peg: (6) (3) 
         Move: 22
 
   Source Peg: (6) (5) (4) (1) 
-Auxilary Peg: (2) 
+Auxiliary Peg: (2) 
     Dest Peg: (3) 
         Move: 23
 
   Source Peg: (6) (5) (4) (1) 
-Auxilary Peg: (3) (2) 
+Auxiliary Peg: (3) (2) 
     Dest Peg: 
         Move: 24
 
   Source Peg: (5) (4) (1) 
-Auxilary Peg: (6) (3) (2) 
+Auxiliary Peg: (6) (3) (2) 
     Dest Peg: 
         Move: 25
 
   Source Peg: (4) (1) 
-Auxilary Peg: (6) (3) (2) 
+Auxiliary Peg: (6) (3) (2) 
     Dest Peg: (5) 
         Move: 26
 
   Source Peg: (4) (1) 
-Auxilary Peg: (3) (2) 
+Auxiliary Peg: (3) (2) 
     Dest Peg: (6) (5) 
         Move: 27
 
   Source Peg: (1) 
-Auxilary Peg: (4) (3) (2) 
+Auxiliary Peg: (4) (3) (2) 
     Dest Peg: (6) (5) 
         Move: 28
 
   Source Peg: (6) (1) 
-Auxilary Peg: (4) (3) (2) 
+Auxiliary Peg: (4) (3) (2) 
     Dest Peg: (5) 
         Move: 29
 
   Source Peg: (6) (1) 
-Auxilary Peg: (5) (4) (3) (2) 
+Auxiliary Peg: (5) (4) (3) (2) 
     Dest Peg: 
         Move: 30
 
   Source Peg: (1) 
-Auxilary Peg: (6) (5) (4) (3) (2) 
+Auxiliary Peg: (6) (5) (4) (3) (2) 
     Dest Peg: 
         Move: 31
 
   Source Peg: 
-Auxilary Peg: (6) (5) (4) (3) (2) 
+Auxiliary Peg: (6) (5) (4) (3) (2) 
     Dest Peg: (1) 
         Move: 32
 
   Source Peg: 
-Auxilary Peg: (5) (4) (3) (2) 
+Auxiliary Peg: (5) (4) (3) (2) 
     Dest Peg: (6) (1) 
         Move: 33
 
   Source Peg: (5) 
-Auxilary Peg: (4) (3) (2) 
+Auxiliary Peg: (4) (3) (2) 
     Dest Peg: (6) (1) 
         Move: 34
 
   Source Peg: (6) (5) 
-Auxilary Peg: (4) (3) (2) 
+Auxiliary Peg: (4) (3) (2) 
     Dest Peg: (1) 
         Move: 35
 
   Source Peg: (6) (5) 
-Auxilary Peg: (3) (2) 
+Auxiliary Peg: (3) (2) 
     Dest Peg: (4) (1) 
         Move: 36
 
   Source Peg: (5) 
-Auxilary Peg: (6) (3) (2) 
+Auxiliary Peg: (6) (3) (2) 
     Dest Peg: (4) (1) 
         Move: 37
 
   Source Peg: 
-Auxilary Peg: (6) (3) (2) 
+Auxiliary Peg: (6) (3) (2) 
     Dest Peg: (5) (4) (1) 
         Move: 38
 
   Source Peg: 
-Auxilary Peg: (3) (2) 
+Auxiliary Peg: (3) (2) 
     Dest Peg: (6) (5) (4) (1) 
         Move: 39
 
   Source Peg: (3) 
-Auxilary Peg: (2) 
+Auxiliary Peg: (2) 
     Dest Peg: (6) (5) (4) (1) 
         Move: 40
 
   Source Peg: (6) (3) 
-Auxilary Peg: (2) 
+Auxiliary Peg: (2) 
     Dest Peg: (5) (4) (1) 
         Move: 41
 
   Source Peg: (6) (3) 
-Auxilary Peg: (5) (2) 
+Auxiliary Peg: (5) (2) 
     Dest Peg: (4) (1) 
         Move: 42
 
   Source Peg: (3) 
-Auxilary Peg: (6) (5) (2) 
+Auxiliary Peg: (6) (5) (2) 
     Dest Peg: (4) (1) 
         Move: 43
 
   Source Peg: (4) (3) 
-Auxilary Peg: (6) (5) (2) 
+Auxiliary Peg: (6) (5) (2) 
     Dest Peg: (1) 
         Move: 44
 
   Source Peg: (4) (3) 
-Auxilary Peg: (5) (2) 
+Auxiliary Peg: (5) (2) 
     Dest Peg: (6) (1) 
         Move: 45
 
   Source Peg: (5) (4) (3) 
-Auxilary Peg: (2) 
+Auxiliary Peg: (2) 
     Dest Peg: (6) (1) 
         Move: 46
 
   Source Peg: (6) (5) (4) (3) 
-Auxilary Peg: (2) 
+Auxiliary Peg: (2) 
     Dest Peg: (1) 
         Move: 47
 
   Source Peg: (6) (5) (4) (3) 
-Auxilary Peg: 
+Auxiliary Peg: 
     Dest Peg: (2) (1) 
         Move: 48
 
   Source Peg: (5) (4) (3) 
-Auxilary Peg: (6) 
+Auxiliary Peg: (6) 
     Dest Peg: (2) (1) 
         Move: 49
 
   Source Peg: (4) (3) 
-Auxilary Peg: (6) 
+Auxiliary Peg: (6) 
     Dest Peg: (5) (2) (1) 
         Move: 50
 
   Source Peg: (4) (3) 
-Auxilary Peg: 
+Auxiliary Peg: 
     Dest Peg: (6) (5) (2) (1) 
         Move: 51
 
   Source Peg: (3) 
-Auxilary Peg: (4) 
+Auxiliary Peg: (4) 
     Dest Peg: (6) (5) (2) (1) 
         Move: 52
 
   Source Peg: (6) (3) 
-Auxilary Peg: (4) 
+Auxiliary Peg: (4) 
     Dest Peg: (5) (2) (1) 
         Move: 53
 
   Source Peg: (6) (3) 
-Auxilary Peg: (5) (4) 
+Auxiliary Peg: (5) (4) 
     Dest Peg: (2) (1) 
         Move: 54
 
   Source Peg: (3) 
-Auxilary Peg: (6) (5) (4) 
+Auxiliary Peg: (6) (5) (4) 
     Dest Peg: (2) (1) 
         Move: 55
 
   Source Peg: 
-Auxilary Peg: (6) (5) (4) 
+Auxiliary Peg: (6) (5) (4) 
     Dest Peg: (3) (2) (1) 
         Move: 56
 
   Source Peg: 
-Auxilary Peg: (5) (4) 
+Auxiliary Peg: (5) (4) 
     Dest Peg: (6) (3) (2) (1) 
         Move: 57
 
   Source Peg: (5) 
-Auxilary Peg: (4) 
+Auxiliary Peg: (4) 
     Dest Peg: (6) (3) (2) (1) 
         Move: 58
 
   Source Peg: (6) (5) 
-Auxilary Peg: (4) 
+Auxiliary Peg: (4) 
     Dest Peg: (3) (2) (1) 
         Move: 59
 
   Source Peg: (6) (5) 
-Auxilary Peg: 
+Auxiliary Peg: 
     Dest Peg: (4) (3) (2) (1) 
         Move: 60
 
   Source Peg: (5) 
-Auxilary Peg: (6) 
+Auxiliary Peg: (6) 
     Dest Peg: (4) (3) (2) (1) 
         Move: 61
 
   Source Peg: 
-Auxilary Peg: (6) 
+Auxiliary Peg: (6) 
     Dest Peg: (5) (4) (3) (2) (1) 
         Move: 62
 
   Source Peg: 
-Auxilary Peg: 
+Auxiliary Peg: 
     Dest Peg: (6) (5) (4) (3) (2) (1) 
         Move: 63
 
