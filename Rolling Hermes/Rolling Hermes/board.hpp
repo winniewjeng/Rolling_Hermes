@@ -17,7 +17,6 @@ enum BOARD_ERROR {
 };
 
 class board {
-    
 private:
     arrPriorityQueue<disk*, int> src;
     arrPriorityQueue<disk*, int> aux;
@@ -63,8 +62,9 @@ public:
     // Return type: arrPriorityQueue
     // Paramaters: none
     
-    // Board Class Delegate
+    // Board Class Modifier
     void init();
+<<<<<<< HEAD
     // Function: initalize board
     // Description: initializes stacks. Populates src stack with disks
     // Return type: void
@@ -93,7 +93,36 @@ public:
     // Description: checks if the game still keeps going
     // Return type: boolean
     // Paramaters: none
+=======
+    /* Board initialize
+    *  Initialize new disks and push into source queue.
+    *  Will resize the queue if needed.
+    */
+
+    void fromOneToAnother(arrPriorityQueue<disk*, int>& from, arrPriorityQueue<disk*, int>& to);
+     /* Make move
+     *  Pop a disk from one disk and push into another.
+     *
+     */
     
+    void autoMove(bool finishTheGame = false, bool print = false);
+    /* Automatically perform the next move.
+     * Make the next move based on the current move number.
+     * True - finish the entire game.
+     * False - one step only.
+     */
+    
+    bool inProgress();
+    /* Boolean:
+     * Tells if the game is in progress or finished
+     * Return true if src and aux are empty.
+     */
+>>>>>>> 49a6de37d29fa9e2ce0572a260ef63eac41a3f05
+    
+    void printBoard();
+    /* Display the disks in all queues.
+     *
+     */
     
 };
 #endif /* board_hpp */

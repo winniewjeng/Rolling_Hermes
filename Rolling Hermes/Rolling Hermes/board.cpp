@@ -63,15 +63,6 @@ board& board::operator =(const board& other) {
     return *this;
 }
 
-void board::adjustDiskNum(bool more) {
-    if (more && diskNumber <= 8)
-        diskNumber ++;
-    else if (diskNumber > 3)
-        diskNumber --;
-    
-    *this = board(diskNumber);
-}
-
 void board::init () {
     // Enlarge the array first if diskNumber exceeds.
     if (diskNumber > 5) {
@@ -87,35 +78,19 @@ void board::init () {
     }
 }
 
-void board::changeDiskNumber(int newDisk) {
-    *this = board(newDisk);
-}
-
-void board::printBoard() {
-    cout << "  Source Peg: ";
-    for (int i = 0; i < src.getSize(); ++ i)
-        std::cout << "(" << *(src.at(i) -> data) <<") ";
-    cout << "\nAuxilary Peg: ";
-    for (int i = 0; i < aux.getSize(); ++ i)
-        std::cout << "(" << *(aux.at(i) -> data) <<") ";
-    cout << "\n    Dest Peg: ";
-    for (int i = 0; i < des.getSize(); ++ i)
-        std::cout << "(" << *(des.at(i) -> data) <<") ";
-    cout << "\n        Move: " << move << endl;
-}
-
 void board::fromOneToAnother(arrPriorityQueue<disk*, int>& from, arrPriorityQueue<disk*, int>& to) {
     if (from.peekPriority() < to.peekPriority())
         throw ILLEGAL_MOVE;
     if (from.empty())
         throw PEG_EMPTY;
     int tempP = from.peekPriority();
-    
-    disk* tempD = new disk(*from.deque());
+
+    disk* tempD = new disk(*from.peek());
+    from.deque();
     to.enqueue(tempD, tempP);
 }
 
-void board::autoMove(bool finishTheGame) {
+void board::autoMove(bool finishTheGame, bool print) {
     int i = 0;
     int forLaterUse = 0;
     int modNum[diskNumber];
@@ -131,7 +106,6 @@ void board::autoMove(bool finishTheGame) {
     }
     
     do {
-        cout << endl;
         if (!inProgress())
             break;
         ++move;
@@ -143,10 +117,10 @@ void board::autoMove(bool finishTheGame) {
                 break;
         }
         
-        // 然后判断i是单双数，是否preferred
-        // 然后 step减去InitMove[i] + 1， 再Modulo modNum[i]
-        // 然后divide interval[i]，
-        // 看结果：
+        // Then tell if i is odd or even，preferred (odd) or not
+        // step - InitMove[i] + 1， Modulo modNum[i]
+        // then divide interval[i]，
+        // Look at the result：
         // Preferred：SD DA AS
         // Unpreferred：SA AD DS
         
@@ -185,7 +159,8 @@ void board::autoMove(bool finishTheGame) {
             default:
                 break;
         }
-        printBoard();
+        
+        (print)? printBoard():void();
 
     } while (finishTheGame);
     cout << "Expect minimum move: " << pow(2, diskNumber) - 1 << endl;
@@ -194,3 +169,17 @@ void board::autoMove(bool finishTheGame) {
 bool board::inProgress() {
     return !(src.empty() && aux.empty());
 }
+
+void board::printBoard() {
+    cout << "  Source Peg: ";
+    for (int i = 0; i < src.getSize(); ++ i)
+        std::cout << "(" << *(src.at(i) -> data) <<") ";
+    cout << "\nAuxilary Peg: ";
+    for (int i = 0; i < aux.getSize(); ++ i)
+        std::cout << "(" << *(aux.at(i) -> data) <<") ";
+    cout << "\n    Dest Peg: ";
+    for (int i = 0; i < des.getSize(); ++ i)
+        std::cout << "(" << *(des.at(i) -> data) <<") ";
+    cout << "\n        Move: " << move << endl;
+}
+

@@ -27,6 +27,10 @@ template <class Data, class Priority>
 class arrPriorityQueue {
 private:
     element<Data, Priority>* autoInsert(element<Data, Priority>* head, Priority p, int size);
+    // Function: Auto insert
+    // Description: This function uses binary search to find the correct position
+    //                where the new data should be inserted. Recursively called.
+    // Returns the pointer where should be inserted before.
     
     element<Data, Priority>* head;
     unsigned int size;
@@ -57,6 +61,7 @@ public:
     // Function: get array size
     // Description: accessor, returns the private member size
     // Return type: unsigned int
+<<<<<<< HEAD
     // Paramaters: none
     
     unsigned int getCapacity() const {return capacity;}
@@ -70,8 +75,27 @@ public:
     // Description: accessor, return the private member head's data
     // Return type: Data
     // Paramaters: none
-    element<Data, Priority>* at(const unsigned int i) {return (head + i);}
+=======
     
+    
+    unsigned int getCapacity() const {return capacity;}
+    // Function: get capacity
+    // Description: Accessor
+    // Return type: Unsigned int
+    
+    
+    Data& peek() {return head -> data;}
+    // Function: Peek
+    // Description: Look at the first item's data without popping it.
+    // Return type: Data
+    
+>>>>>>> 49a6de37d29fa9e2ce0572a260ef63eac41a3f05
+    element<Data, Priority>* at(const unsigned int i) {return (head + i);}
+    // Function: at
+    // Description: Look at the i'th item's data without popping it. (works like [])
+    // Return type: element<Data, Priority>*
+    
+<<<<<<< HEAD
     Priority& peekPriority() const {return head -> priority;}
     // Function: peek first priority of the queue
     // Description: accessor, return the private member head's priority
@@ -120,8 +144,50 @@ public:
     // Description: deque the array with Data
     // Return type: arrPriorityQueue<Data,Priority>&
     // Paramaters: Data&
+=======
+    Priority& peekPriority()const {return head -> priority;}
+    // Function: peek
+    // Description: Look at the first item's priority
+    // Return type: Priority
     
+    void print() const;
+    // Function: print
+    // Description: Print out every item in the queue. (item requires their own ostream operation)
+    
+    // Mutators
+    void clear();
+    // Function: clear
+    // Description: clear the entire queue.
+    
+    void resize(unsigned int s);
+    // Function: resize
+    // Description: copy the entire queue into a new queue with new size s.
+    // Return type: void
+    // Paramaters: unsigned int s
+    
+    void enqueue(Data d, Priority p);
+    // Function: enqueue
+    // Description: same as push, push the item in the queue at it's right position
+    // Paramaters: Data d and Priority p.
+    
+    Data deque();
+    // Function: deque
+    // Description: same as pop(), delete the first item and return its Data
+    // Return type: Data
+    
+    void insertBefore(element<Data, Priority>* beforeThis, const element<Data, Priority>& token);
+    // Function: insertBefore
+    // Description: Insert the item before given pointer.
+    // Paramaters: element<Data, Priority>* key pointer and a element<Data, Priority>& token.
+    
+>>>>>>> 49a6de37d29fa9e2ce0572a260ef63eac41a3f05
+    
+    // Insertion and extraction operator.
+    // Not tested, not being used in this project.
+    arrPriorityQueue<Data,Priority>& operator>>(Data &d);
+
     arrPriorityQueue<Data,Priority>& operator<<(const element<Data, Priority>& e);
+<<<<<<< HEAD
     // Function: overloaded extraction operator
     // Description: enqueue the array with element
     // Return type: arrPriorityQueue<Data,Priority>&
@@ -137,6 +203,9 @@ public:
     friend
     std::istream& operator>>(std::istream &in, arrPriorityQueue<D,P> &q);
 //
+=======
+
+>>>>>>> 49a6de37d29fa9e2ce0572a260ef63eac41a3f05
 };
 
 template <class Data, class Priority>
@@ -213,7 +282,6 @@ template <class Data, class Priority>
 Data arrPriorityQueue<Data, Priority>::deque() {
     if (empty())
         throw PQ_EMPTY;
-//    size--;
     element<Data, Priority>* walker = head;
     element<Data, Priority>* end = head + size;
     Data temp = head -> data;
@@ -240,16 +308,25 @@ void arrPriorityQueue<Data, Priority>::insertBefore(element<Data, Priority>* bef
 // it can look for the correct position to insert the element.
 template <class Data, class Priority>
 element<Data, Priority>* arrPriorityQueue<Data, Priority>::autoInsert(element<Data, Priority>* head, Priority p, int size) {
+    // Return the head if the queue is empty
     if (size == 0)
         return head;
+    // When there's only one item in the queue
+    //  compare the priority, if p is lower or same, put in the back.
     if (size == 1)
         return ((head -> priority) >= p)? (head+1):(head);
     
+    // When the middle value is bigger, move p to right (smaller half of the array)
     if ((head + size/2) -> priority > p)
         head = autoInsert(head + size/2 + 1, p, size/2);
+    
+    // When the middle value is smaller, move p to left (larger half of the array)
     else if ((head + size/2) -> priority < p)
         head = autoInsert(head, p, size/2);
+    // The middle value is the same as p
     else {
+        // incr head until the item in the array is not equal to p
+        //  So that p can be placed at the back of items with the same priority
         while ((head + size/2) -> priority == p) head ++;
         return head + size/2;
     }

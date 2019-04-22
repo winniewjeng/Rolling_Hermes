@@ -19,23 +19,29 @@ void testSB();
 
 int main(int argc, const char * argv[]) {
 
+<<<<<<< HEAD
     UIDelegate ui(7);
     ui.build();
     
+=======
+//    UIDelegate ui(8);
+//    ui.build();
+//
+>>>>>>> 49a6de37d29fa9e2ce0572a260ef63eac41a3f05
 //    board a(6);
 //    auto start_PQ = chrono::high_resolution_clock::now();
-//    a.autoMove(true);
+//    a.autoMove(true,true);
 //    auto stop_PQ = chrono::high_resolution_clock::now();
 //    auto PQDuration = std::chrono::duration_cast<chrono::microseconds>(stop_PQ - start_PQ);
-//
-//
-//    auto start_ST = chrono::high_resolution_clock::now();
-//    testSB();
-//    auto stop_ST = chrono::high_resolution_clock::now();
-//    auto STDuration = std::chrono::duration_cast<chrono::microseconds>(stop_ST - start_ST);
+
+////
+    auto start_ST = chrono::high_resolution_clock::now();
+    testSB();
+    auto stop_ST = chrono::high_resolution_clock::now();
+    auto STDuration = std::chrono::duration_cast<chrono::microseconds>(stop_ST - start_ST);
 //
 //    cout  << "Priority Queue took " << PQDuration.count()  << "ms. " << endl;
-//    cout  << "Stack took " << STDuration.count()  << "ms. " << endl;
+    cout  << "Stack took " << STDuration.count()  << "ms. " << endl;
 
     
 }
@@ -88,6 +94,7 @@ int main(int argc, const char * argv[]) {
  Disk #6 was destroyed!
  */
 
+<<<<<<< HEAD
 //void testSB() {
 //    stackBoard(6);
 //    Stack s(6);
@@ -124,3 +131,40 @@ int main(int argc, const char * argv[]) {
 //    }
 //    cout << "size "<< src.getSize() << endl;
 //}
+=======
+void testSB() {
+    stackBoard(10);
+}
+
+void testPQS() {
+    
+    arrPriorityQueue<disk*, int> qu(10);
+    for (int i = 0; i < 4; ++i) {
+        disk* temp = new disk();  //
+        cout << "temp: " << temp -> getNumber() << " ";
+        cout << "\npriority = " << i << endl;
+        qu.enqueue(temp, i);
+        //        qu.print();
+        cout << endl;
+    }
+    // why some disks end up being nullptrs when doing -i
+    // so going counterintuitively, greater number = greater priority ie priority 4 > priority 1
+    
+    qu.print();
+    
+    // board(5);
+    
+    int s = qu.getSize();
+    Stack src(s);
+    while (!qu.empty()) {
+        src.push(qu.deque());
+    }
+    cout << "\nsize "<< src.getSize() <<endl;
+    while (!src.empty()) {
+        cout << "Bye " << src.peek() <<endl;
+        src.pop();
+        // why is everything destroyed twice?
+    }
+    cout << "size "<< src.getSize() << endl;
+}
+>>>>>>> 49a6de37d29fa9e2ce0572a260ef63eac41a3f05

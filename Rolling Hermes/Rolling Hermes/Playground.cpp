@@ -50,7 +50,10 @@ void UIDelegate::initButton() {
     displayMove.setTitleSize(35);
     displayMove.setHeight(75);
     displayMove.setLength(550);
-    displayMove.setBackGroundColor(darkGreyHighlighted);
+    if (board::inProgress())
+        displayMove.setBackGroundColor(darkGreyHighlighted);
+    else
+        displayMove.setBackGroundColor(lineGreen);
     
     minMove.setPosition(Vector2f(0.05*DEFAULT_W, 0.05*DEFAULT_H + displayMove.getHeight() + 20));
     minMove.setTitle("Expected Minimum Move: " + to_string(board::minMove));
@@ -147,11 +150,16 @@ void UIDelegate::EventDelegate() {
             case sf::Event::KeyPressed:
                 switch (event.key.code) {
                     case sf::Keyboard::Enter:
-                        autoMove();
-                        updateDisks();
+                    case sf::Keyboard::Space:
+                    case sf::Keyboard::Right:
+                        if (inProgress()) {
+                            autoMove(false,true);
+                            updateDisks();
+                        }
+                        break;
+                    default:
                         break;
                 }
-                
             default:
                 break;
         }

@@ -89,6 +89,10 @@ void stackBoard::autoMove(bool finishTheGame) {
             if (forLaterUse % interval[i] == 1)
                 break;
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 49a6de37d29fa9e2ce0572a260ef63eac41a3f05
         
         int operationIndex = forLaterUse / interval[i];
 
