@@ -20,43 +20,75 @@ struct node {
 
 template <class T>
 node<T>* InsertHead(node<T>* &head, const T& item);
+// Function: insert head
+// Description: creates a new node ptr and makes it the head ptr
+// Return: node<T>*
+// Parameter: node<T>*, const T&
 
 template <class T>
 node<T>* InsertBefore(node<T>* &head, node<T>* mark, const T& item);
+// Function: insert before
+// Description: insert a node ptr before the makred node ptr
+// Return: node<T>*
+// Parameter: node<T>*, node<T>*, const T&
 
 template <class T>
 node<T>* InsertAfter(node<T>* &head, node<T>* mark, const T& item);
+// Function: insert after
+// Description: insert a node ptr after the makred node ptr
+// Return: node<T>*
+// Parameter: node<T>*, node<T>*, const T&
 
 template <class U>
 std::ostream& PrintList(std::ostream& outs, node<U>* head_ptr);
+// Function: insert head
+// Description: print out the all nodes' items in the linked list
+// Return: ostream&
+// Parameter:
 
 template <class T>
 T DeleteNode (node<T>*& head, node<T>* marker);
+// Function: delete node
+// Description: delete a marked node ptr from the linked list
+// Return: T
+// Parameter: node<T>*&, node<T>*
 
 template <class T>
 node<T>* CopyList(node<T>* head);
+// Function: copy list
+// Description:
+// Return:
+// Parameter:
 
 template <class T>
 void ClearList(node<T>*& head_ptr);
+// Function:
+// Description:
+// Return:
+// Parameter:
 
 template <class T>
 T& At(node<T>* head, int pos);
+// Function: at
+// Description: finds node ptr at a postion and return its item
+// Return: T&
+// Parameter: node<T>*, pos
 
 template <class T>
 node<T>* end(node<T>* head_ptr);
-
+// Function: end
+// Description: travesres to  end of list and returns last node ptr
+// Return: node<T>*
+// Parameter: node<T>*
 
 template <class T>
 node<T>* InsertHead(node<T>* &head, const T& item) {
     //1. create a new node
     node<T>* temp = new node<T>(item);
-    
     //2. temp's next points to where head points to.
     temp->_next = head;
-    
     //3. point head_ptr to where temo is pointing to.
     head = temp;
-    
     //4. return head pointer.
     return head;
 }

@@ -148,10 +148,10 @@
 				EBD2514A2267EFB500ABAB7D /* Playground.cpp */,
 				EBFC9D1D22684B7C0057972D /* Peg.hpp */,
 				EBFC9D1C22684B7C0057972D /* Peg.cpp */,
-				822D1FE3226B13E80067F5DB /* stackBoard.hpp */,
-				822D1FE2226B13E80067F5DB /* stackBoard.cpp */,
 				EB164A1C2265001700DF00F6 /* board.hpp */,
 				EB164A1B2265001700DF00F6 /* board.cpp */,
+				822D1FE3226B13E80067F5DB /* stackBoard.hpp */,
+				822D1FE2226B13E80067F5DB /* stackBoard.cpp */,
 				EBDF99522264736300507376 /* Disk */,
 				EBBCB1BF226709B400A8CB66 /* Priority Queue */,
 				EB92BB34225ED6CF0085CAE4 /* Stack */,
@@ -396,7 +396,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A4R6VQRKMH;
+				DEVELOPMENT_TEAM = 37CWHKAPJQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
@@ -409,7 +409,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A4R6VQRKMH;
+				DEVELOPMENT_TEAM = 37CWHKAPJQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",

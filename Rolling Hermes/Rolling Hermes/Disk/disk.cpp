@@ -13,13 +13,13 @@ int disk::lastIssued = 0;
 // Incr last issued when a disk is created.
 disk::disk()  {
     number = ++lastIssued;
-    cout << "Disk #" << number << " was created!" << endl;
+//    cout << "Disk #" << number << " was created!" << endl;
 }
 
 // Decr last issued when a disk is destroyed
 disk::~disk() {
     --lastIssued;
-    cout << "Disk #" << number << " was destroyed!" << endl;
+//    cout << "Disk #" << number << " was destroyed!" << endl;
 }
 disk::disk(const disk& other) {
     number = other.number;

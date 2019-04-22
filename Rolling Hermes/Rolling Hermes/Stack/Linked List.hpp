@@ -25,38 +25,55 @@ public:
     LinkedList& operator =(const LinkedList& RHS) {
         return (this == &RHS)? *this:(head = CopyList(RHS.head), *this);
     }
-    T& front() const {
-        return head -> _item;
-    }
-    node<T>* begin() const {
-        return head;
-    }
-    node<T>* end() const {
-        end(head);
-    }
     
-    node<T>* insertHead(const T& item) {
-        return InsertHead(head, item);
-    }
+    T& front() const { return head -> _item; }
+    // Function: front
+    // Description: Returns the front item of the linked list
     
-    bool isEmpty() const {
-        return head == nullptr;
-    }
+    node<T>* begin() const { return head; }
+    // Function: front
+    // Description: Returns the front node of the linked list
+    
+    node<T>* end() const { end(head); }
+    // Function: end
+    // Description: Returns the end node of the linked list
+    
+    node<T>* insertHead(const T& item) { return InsertHead(head, item); }
+    // Function: insert head
+    // Description: adds a new node to the front of linked list
+    // Return: node<T>*
+    // Parameter: T&
+    
+    bool isEmpty() const { return !head; }
+    // Function: is empty
+    // Description: checks if linked list is empty of nodes
+    // Return: bool
+    // Parameter: none
   
-    T removeNode(node<T>* mark) {
-        return DeleteNode(head, mark);
-    }
+    T removeNode(node<T>* mark) { return DeleteNode(head, mark); }
+    // Function: remove node
+    // Description: adds a new node to the front of linked list
+    // Return: node<T>*
+    // Parameter: T&
     
-    void clear() {
-        ClearList(head);
-    }
-    const T& at(unsigned int i) {
-        return At(head, i);
-    }
+    void clear() { ClearList(head);}
+    // Function: clear
+    // Description: deletes all nodes in  the linked list
+    // Return: void
+    // Parameter: none
+    
+    const T& at(unsigned int i) { return At(head, i); }
+    // Function: at
+    // Description: finds the node at a specific location and returns its item
+    // Return: T&
+    // Parameter: unsigned int
     
     std::ostream& print(std::ostream& outs, const LinkedList& print_me) const{
-        return PrintList(outs, print_me.head);
-    }
+        return PrintList(outs, print_me.head); }
+    // Function: print
+    // Description: prints out the items in the  linked list
+    // Return: ostream&
+    // Parameter: ostream&, const LinkedList&
     
 };
 
