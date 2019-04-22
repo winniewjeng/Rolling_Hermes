@@ -81,7 +81,7 @@ public:
     // Description: moves disks from one peg to another peg
     // Return type: void
     // Paramaters: Stack&, Stack&
-    void autoMove(bool finishTheGame = false);
+    void autoMove(bool finishTheGame = false, bool print = false);
     // Function: autoMove
     // Description: while game still runs, determines disk's next move
     // Return type: void
