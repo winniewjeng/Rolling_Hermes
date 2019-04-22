@@ -3,7 +3,7 @@
 //  Rolling Hermes
 //
 //  Created by Winnie Jeng on 4/20/19.
-//  Copyright © 2019 Jack Zhao. All rights reserved.
+//  Copyright © 2019 Winnie Jeng. All rights reserved.
 //
 
 #include <cmath>
@@ -22,12 +22,9 @@ stackBoard::stackBoard(unsigned int _diskNum): diskNumber(_diskNum) {
 }
 
 stackBoard::~stackBoard() {
-    if (!src.empty())
-        src.clear();
-    if (!aux.empty())
-        aux.clear();
-    if (!des.empty())
-        des.clear();
+    src.clear();
+    aux.clear();
+    des.clear();
 }
 
 void stackBoard::init () {
@@ -39,29 +36,30 @@ void stackBoard::init () {
     }
     // Create disk pointers and push them into the stack.
     for (int i = 0; i < diskNumber; ++i) {
-        node<disk>* temp = new node<disk>();
-        src.push(&temp->_item);
-        src.print();
+        disk* temp = new disk();
+        src.push(temp);
     }
 }
 
 void stackBoard::printBoard() {
     cout << "  Source Peg: ";
-    src.print();
+    for (int i = 0; i < src.getSize(); ++ i)
+        std::cout << "(" << (src.at(i) -> getNumber()) <<") ";
     cout << "\nAuxilary Peg: ";
-    aux.print();
+    for (int i = 0; i < aux.getSize(); ++ i)
+        std::cout << "(" << (aux.at(i) -> getNumber()) <<") ";
     cout << "\n    Dest Peg: ";
-    des.print();
+    for (int i = 0; i < des.getSize(); ++ i)
+        std::cout << "(" << (des.at(i) -> getNumber()) <<") ";
     cout << "\n        Move: " << move << endl;
 }
 
-void stackBoard::fromOneToAnother(Stack& from, Stack& to) {
-    if (from.getTop()->_item < to.getTop()->_item)
-        throw BAD_MOVE;
+void stackBoard::fromOneToAnother(Stack<disk*>& from, Stack<disk*>& to) {
     if (from.empty())
         throw EMPTY_PEG;
-    disk* tempD = new disk(from.pop());
-    to.insert_top(tempD);
+    disk* tempD = new disk(*from.peek());
+    from.pop();
+    to.push(tempD);
 }
 
 void stackBoard::autoMove(bool finishTheGame) {

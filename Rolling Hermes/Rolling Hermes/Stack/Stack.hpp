@@ -3,22 +3,21 @@
 //  Rolling Hermes
 //
 //  Created by Winnie Jeng on 4/15/19.
-//  Copyright © 2019 Jack Zhao. All rights reserved.
 //
 
 #ifndef Stack_hpp
 #define Stack_hpp
 
-#include <stdio.h>
+#include "Linked List.hpp"
 #include "disk.hpp"
 #include "Node.hpp"
 
 enum STACK_ERRORS{STACK_EMPTY, STACK_FULL, STACK_BAD_SIZE};
 
-// Linked-list stack
+template <class T>
 class Stack {
 private:
-    node<disk>* _top;
+    LinkedList<T> _head;
     unsigned int _size;
     unsigned int _cap;
     
@@ -34,30 +33,20 @@ public:
     // Return type: node<disk>*
     // Paramaters: const Stack&
     
-    void push(disk* d);
+    void push(const T& item);
     // Function: push
     // Description: Accessor, see if the array is full.
     // Return type: void
-    // Paramaters: disk*
-    void insert_top(disk* d);
-    // Function: insert top
-    // Description: insert node at top of stack
-    // Return type: void
-    // Paramaters: disk*
-    void insert_bottom(disk* d);
-    // Function: insert bottom
-    // Description: insert node at bottom of stack
-    // Return type: void
-    // Paramaters: disk*
-    disk pop();
+    // Paramaters: const T& item
+    const T pop();
     // Function: pop
     // Description: take the top of stack out
-    // Return type: disk
+    // Return type: const T
     // Paramaters: none
-    disk peek();
+    const T& peek();
     // Function: peek
     // Description: checks the disk at top of stack
-    // Return type: checks the top of stack
+    // Return type: T&
     // Paramaters: none
     
     void clear();
@@ -65,11 +54,11 @@ public:
     // Description: clears the stack of nodes
     // Return type: void
     // Paramaters: none
-    void print() const;
+    std::ostream& print(std::ostream& outs) const;
     // Function: print stack
     // Description: prints out all nodes in stack
-    // Return type: void
-    // Paramaters: none
+    // Return type: std::ostream&
+    // Paramaters: std::ostream& outs
     void resize(unsigned int cap);
     // Function: resize
     // Description: enlarges or shrinks stack capacity
@@ -88,31 +77,89 @@ public:
     // Return type: boolean
     // Paramaters: none
     
-    unsigned int getSize() const;
+    unsigned int getSize() const {return _size;}
     // Function: get size
     // Description: returns the size of stack
     // Return type: unsigned int
     // Paramaters: none
-    unsigned int getCap() const;
+    unsigned int getCap() const {return _cap;}
     // Function: get capacity
     // Description: returns the capacity of stack
     // Return type: unsigned int
     // Paramaters: none
-    node<disk>* getTop() const;
-    // Function: get top
-    // Description: returns the top node of stack
-    // Return type: node<disk>*
-    // Paramaters: none
-    
-    // overloaded operators
-    Stack& operator>>(disk& d);
-    Stack& operator<<(const disk& d);
-    
-    // iostream
-    friend std::ostream& operator<<(std::ostream &out, Stack &s);
-    friend std::istream& operator>>(std::istream &in, Stack &q);
-    
+    const T& at(unsigned int i) {return _head.at(i);}
 };
+
+
+template <class T>
+Stack<T>::Stack(unsigned int cap): _cap(cap), _size(0), _head() {}
+
+template <class T>
+Stack<T>::~Stack() {
+    _head.clear();
+}
+
+template <class T>
+Stack<T>::Stack(const Stack& other) {
+    _head = other._head;
+    _size = other._size;
+    _cap = other._cap;
+}
+
+template <class T>
+Stack<T>& Stack<T>::operator=(const Stack& other) {
+    return (this == &other)? (*this):(_head = other._head, *this);
+}
+
+template <class T>
+void Stack<T>::push(const T& item) {
+    if (_size >= _cap)
+        throw STACK_FULL;
+    ++_size;
+    _head.insertHead(item);
+}
+
+template <class T>
+const T Stack<T>::pop() {
+    if (empty())
+        throw STACK_EMPTY;
+    -- _size;
+    return _head.removeNode(_head.begin());
+}
+
+template <class T>
+const T& Stack<T>::peek() {
+    return (_head.front());
+}
+
+template <class T>
+void Stack<T>::clear() {
+    _head.clear();
+    _size = 0;
+}
+
+template <class T>
+std::ostream& Stack<T>::print(std::ostream& outs) const {
+    return _head.print(outs, _head);
+}
+
+template <class T>
+void Stack<T>::resize(unsigned int cap) {
+    _cap = cap;
+}
+
+template <class T>
+bool Stack<T>::empty() {
+    return _size == 0;
+}
+
+template <class T>
+bool Stack<T>::full() {
+    return _size == _cap;
+}
+
+
+
 
 
 

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8212C7C32265492E00DFC11F /* Stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8212C7C22265492E00DFC11F /* Stack.cpp */; };
 		822D1FE4226B13E80067F5DB /* stackBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 822D1FE2226B13E80067F5DB /* stackBoard.cpp */; };
 		EB164A1D2265001700DF00F6 /* board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB164A1B2265001700DF00F6 /* board.cpp */; };
 		EB19408E226819DD007BC15D /* SFML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB19408D226819DD007BC15D /* SFML.framework */; };
@@ -39,7 +38,6 @@
 
 /* Begin PBXFileReference section */
 		8212C7C0226530ED00DFC11F /* Stack.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Stack.hpp; sourceTree = "<group>"; };
-		8212C7C22265492E00DFC11F /* Stack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Stack.cpp; sourceTree = "<group>"; };
 		821DBECC226DE6A000538570 /* Node.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Node.hpp; sourceTree = "<group>"; };
 		822D1FE2226B13E80067F5DB /* stackBoard.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stackBoard.cpp; sourceTree = "<group>"; };
 		822D1FE3226B13E80067F5DB /* stackBoard.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = stackBoard.hpp; sourceTree = "<group>"; };
@@ -51,6 +49,7 @@
 		EB4ED8F4226827AF00B91108 /* SF-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Light.otf"; sourceTree = "<group>"; };
 		EB4ED8F5226827AF00B91108 /* SF-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Regular.otf"; sourceTree = "<group>"; };
 		EBB75F67225C2B0700DA3332 /* ArrayBasedPriorityQueue.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ArrayBasedPriorityQueue.hpp; sourceTree = "<group>"; };
+		EBBAC395226E480B009F503D /* Linked List.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "Linked List.hpp"; sourceTree = "<group>"; };
 		EBC3406E2255A84300381151 /* Rolling Hermes */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Rolling Hermes"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC340712255A84300381151 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		EBD251452267DFD700ABAB7D /* sfml-graphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-graphics.framework"; path = "../../../../../../../../Library/Frameworks/sfml-graphics.framework"; sourceTree = "<group>"; };
@@ -110,8 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				821DBECC226DE6A000538570 /* Node.hpp */,
+				EBBAC395226E480B009F503D /* Linked List.hpp */,
 				8212C7C0226530ED00DFC11F /* Stack.hpp */,
-				8212C7C22265492E00DFC11F /* Stack.cpp */,
 			);
 			path = Stack;
 			sourceTree = "<group>";
@@ -265,7 +264,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8212C7C32265492E00DFC11F /* Stack.cpp in Sources */,
 				EBFC9D0A226839D00057972D /* CGRect.cpp in Sources */,
 				EBFC9D0F22683A5B0057972D /* UIView.cpp in Sources */,
 				EBFC9D1722683AFE0057972D /* constants.cpp in Sources */,
@@ -398,7 +396,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 37CWHKAPJQ;
+				DEVELOPMENT_TEAM = A4R6VQRKMH;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
@@ -411,7 +409,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 37CWHKAPJQ;
+				DEVELOPMENT_TEAM = A4R6VQRKMH;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",

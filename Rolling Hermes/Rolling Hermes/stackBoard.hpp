@@ -3,7 +3,7 @@
 //  Rolling Hermes
 //
 //  Created by Winnie Jeng on 4/20/19.
-//  Copyright © 2019 Jack Zhao. All rights reserved.
+//  Copyright © 2019 Winnie Jeng. All rights reserved.
 //
 
 #ifndef stackBoard_hpp
@@ -17,9 +17,9 @@ enum STACK_BOARD_ERROR {BAD_MOVE, EMPTY_PEG};
 class stackBoard {
     
 private:
-    Stack src;
-    Stack aux;
-    Stack des;
+    Stack<disk*> src;
+    Stack<disk*> aux;
+    Stack<disk*> des;
     unsigned int diskNumber;
     unsigned int move;
     bool preferOdd;
@@ -43,7 +43,7 @@ public:
     // Description: prints out the the disks in each stack peg
     // Return type: void
     // Paramaters: none
-    void fromOneToAnother(Stack& from, Stack& to);
+    void fromOneToAnother(Stack<disk*>& from, Stack<disk*>& to);
     // Function: from one to another
     // Description: moves disks from one peg to another peg
     // Return type: void
