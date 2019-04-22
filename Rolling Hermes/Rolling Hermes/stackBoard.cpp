@@ -44,7 +44,7 @@ void stackBoard::printBoard() {
     cout << "  Source Peg: ";
     for (int i = 0; i < src.getSize(); ++ i)
         std::cout << "(" << (src.at(i) -> getNumber()) <<") ";
-    cout << "\nAuxilary Peg: ";
+    cout << "\nAuxiliary Peg: ";
     for (int i = 0; i < aux.getSize(); ++ i)
         std::cout << "(" << (aux.at(i) -> getNumber()) <<") ";
     cout << "\n    Dest Peg: ";

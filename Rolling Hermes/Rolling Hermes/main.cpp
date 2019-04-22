@@ -25,20 +25,20 @@ int main(int argc, const char * argv[]) {
 //    UIDelegate ui(8);
 //    ui.build();
 //
-    board a(8);
+    board a(6);
     auto start_PQ = chrono::high_resolution_clock::now();
-    a.autoMove(true);
+    a.autoMove(true, true);
     auto stop_PQ = chrono::high_resolution_clock::now();
     auto PQDuration = std::chrono::duration_cast<chrono::microseconds>(stop_PQ - start_PQ);
 
 ////
-    auto start_ST = chrono::high_resolution_clock::now();
-    testSB();
-    auto stop_ST = chrono::high_resolution_clock::now();
-    auto STDuration = std::chrono::duration_cast<chrono::microseconds>(stop_ST - start_ST);
+//    auto start_ST = chrono::high_resolution_clock::now();
+//    testSB();
+//    auto stop_ST = chrono::high_resolution_clock::now();
+//    auto STDuration = std::chrono::duration_cast<chrono::microseconds>(stop_ST - start_ST);
 //
     cout  << "Priority Queue took " << PQDuration.count()  << "ms. " << endl;
-    cout  << "Stack took " << STDuration.count()  << "ms. " << endl;
+//    cout  << "Stack took " << STDuration.count()  << "ms. " << endl;
 
     
 }
