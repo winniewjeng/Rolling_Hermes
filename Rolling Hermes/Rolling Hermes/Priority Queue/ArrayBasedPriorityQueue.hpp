@@ -114,17 +114,13 @@ public:
     // Description: Insert the item before given pointer.
     // Paramaters: element<Data, Priority>* key pointer and a element<Data, Priority>& token.
     
-    arrPriorityQueue<Data,Priority>& operator>>(Data &d);
-    // Function:
-    // Description:
-    // Return type:
-    // Paramaters:
     
+    // Insertion and extraction operator.
+    // Not tested, not being used in this project.
+    arrPriorityQueue<Data,Priority>& operator>>(Data &d);
+
     arrPriorityQueue<Data,Priority>& operator<<(const element<Data, Priority>& e);
-    // Function:
-    // Description:
-    // Return type:
-    // Paramaters:
+
 };
 
 template <class Data, class Priority>
@@ -201,7 +197,6 @@ template <class Data, class Priority>
 Data arrPriorityQueue<Data, Priority>::deque() {
     if (empty())
         throw PQ_EMPTY;
-//    size--;
     element<Data, Priority>* walker = head;
     element<Data, Priority>* end = head + size;
     Data temp = head -> data;
@@ -228,16 +223,25 @@ void arrPriorityQueue<Data, Priority>::insertBefore(element<Data, Priority>* bef
 // it can look for the correct position to insert the element.
 template <class Data, class Priority>
 element<Data, Priority>* arrPriorityQueue<Data, Priority>::autoInsert(element<Data, Priority>* head, Priority p, int size) {
+    // Return the head if the queue is empty
     if (size == 0)
         return head;
+    // When there's only one item in the queue
+    //  compare the priority, if p is lower or same, put in the back.
     if (size == 1)
         return ((head -> priority) >= p)? (head+1):(head);
     
+    // When the middle value is bigger, move p to right (smaller half of the array)
     if ((head + size/2) -> priority > p)
         head = autoInsert(head + size/2 + 1, p, size/2);
+    
+    // When the middle value is smaller, move p to left (larger half of the array)
     else if ((head + size/2) -> priority < p)
         head = autoInsert(head, p, size/2);
+    // The middle value is the same as p
     else {
+        // incr head until the item in the array is not equal to p
+        //  So that p can be placed at the back of items with the same priority
         while ((head + size/2) -> priority == p) head ++;
         return head + size/2;
     }

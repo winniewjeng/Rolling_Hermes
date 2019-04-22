@@ -55,7 +55,7 @@ public:
      *
      */
     
-    void autoMove(bool finishTheGame = false);
+    void autoMove(bool finishTheGame = false, bool print = false);
     /* Automatically perform the next move.
      * Make the next move based on the current move number.
      * True - finish the entire game.

@@ -102,13 +102,7 @@ void stackBoard::autoMove(bool finishTheGame) {
             if (forLaterUse % interval[i] == 1)
                 break;
         }
-        
-        // 然后判断i是单双数，是否preferred
-        // 然后 step减去InitMove[i] + 1， 再Modulo modNum[i]
-        // 然后divide interval[i]，
-        // 看结果：
-        // Preferred：SD DA AS
-        // Unpreferred：SA AD DS
+
         
         int operationIndex = forLaterUse / interval[i];
         // Increment i in order to correct the index number to the disk number
