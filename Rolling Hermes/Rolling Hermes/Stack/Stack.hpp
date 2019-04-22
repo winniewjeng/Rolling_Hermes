@@ -11,18 +11,9 @@
 
 #include <stdio.h>
 #include "disk.hpp"
+#include "Node.hpp"
 
 enum STACK_ERRORS{STACK_EMPTY, STACK_FULL, STACK_BAD_SIZE};
-
-// Node struct
-template <typename T>
-struct node {
-    T _item;
-    node* _next;
-    node* _prev;
-    // ctor
-    node(T item = T()): _item(item), _next(nullptr),  _prev(nullptr) {}
-};
 
 // Linked-list stack
 class Stack {

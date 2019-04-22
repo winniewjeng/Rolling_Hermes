@@ -40,6 +40,7 @@
 /* Begin PBXFileReference section */
 		8212C7C0226530ED00DFC11F /* Stack.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Stack.hpp; sourceTree = "<group>"; };
 		8212C7C22265492E00DFC11F /* Stack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Stack.cpp; sourceTree = "<group>"; };
+		821DBECC226DE6A000538570 /* Node.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Node.hpp; sourceTree = "<group>"; };
 		822D1FE2226B13E80067F5DB /* stackBoard.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stackBoard.cpp; sourceTree = "<group>"; };
 		822D1FE3226B13E80067F5DB /* stackBoard.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = stackBoard.hpp; sourceTree = "<group>"; };
 		EB164A1B2265001700DF00F6 /* board.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = board.cpp; sourceTree = "<group>"; };
@@ -108,6 +109,7 @@
 		EB92BB34225ED6CF0085CAE4 /* Stack */ = {
 			isa = PBXGroup;
 			children = (
+				821DBECC226DE6A000538570 /* Node.hpp */,
 				8212C7C0226530ED00DFC11F /* Stack.hpp */,
 				8212C7C22265492E00DFC11F /* Stack.cpp */,
 			);
