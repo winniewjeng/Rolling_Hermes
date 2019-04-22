@@ -1,3 +1,6 @@
+CS 8 Spring 2019 Test 1 - Tower of Hanoi
+
+Team Members: Zijian Zhao, Wei Jeng
 
 Comment:
 
@@ -5,9 +8,9 @@ The Tower of Hanoi assignment is completed by Mr. Zhao and Ms. Jeng. Each person
 
 The game optimizes for the minimum game moves by using the algorithm that relies the even and odd number of disks in the game and also the even or odd disk number on the peg. The UI part is built with with imported functions from the SFML library.
 
-Test-run the game with 6 disks:
+Test-run:
 
-6
+6 disks
 
   Source Peg: (5) (4) (3) (2) (1) 
 Auxilary Peg: (6) 
