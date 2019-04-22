@@ -25,7 +25,7 @@ int main(int argc, const char * argv[]) {
 //    UIDelegate ui(8);
 //    ui.build();
 //
-    board a(6);
+    board a(8);
     auto start_PQ = chrono::high_resolution_clock::now();
     a.autoMove(true);
     auto stop_PQ = chrono::high_resolution_clock::now();
@@ -91,42 +91,6 @@ int main(int argc, const char * argv[]) {
  Disk #6 was destroyed!
  */
 
-//void testSB() {
-//    stackBoard(6);
-//    Stack s(6);
-//    node<disk>* hi = new node<disk>;
-//
-//    s.push(&(hi->_item));
-//}
-//
-//void testPQS() {
-//
-//    arrPriorityQueue<disk*, int> qu(10);
-//    for (int i = 0; i < 4; ++i) {
-//        disk* temp = new disk();  //
-//        cout << "temp: " << temp -> getNumber() << " ";
-//        cout << "\npriority = " << i << endl;
-//        qu.enqueue(temp, i);
-//        //        qu.print();
-//        cout << endl;
-//    }
-//
-//    qu.print();
-//
-//    // board(5);
-//
-//    int s = qu.getSize();
-//    Stack src(s);
-//    while (!qu.empty()) {
-//        src.push(qu.deque());
-//    }
-//    cout << "\nsize "<< src.getSize() <<endl;
-//    while (!src.empty()) {
-//        cout << "Bye " << src.peek() <<endl;
-//        src.pop();
-//    }
-//    cout << "size "<< src.getSize() << endl;
-//}
 
 void testSB() {
     stackBoard s(6);
