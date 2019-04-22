@@ -1,9 +1,20 @@
 
 Comment:
 
-The Tower of Hanoi assignment is completed by Mr. Zhao and Ms. Jeng. Each person made contributions to the skeletal (data structure) parts of the project, i.e. the priority queue, stack, board, stackBoard, disks, and nodes, although it should be noted that Mr. Zhao designed and built the UI and Ms. Jeng does not wish to claim the extra credit.
+The Tower of Hanoi assignment is completed by Mr. Zhao and Ms. Jeng. Each person made contributions to the skeletal (data structure) parts of the project, i.e. the priority queue, stack, linkedList, board, stackBoard, disks, and nodes, although it should be noted that Mr. Zhao designed and built the UI.
 
-The game optimizes for the minimum game moves by using the algorithm that relies the even and odd number of disks in the game and also the even or odd disk number on the peg. The UI part is built with with imported functions from the SFML library.
+The game optimizes for the minimum game moves by using the algorithm that relies the even and odd number of disks in the game and also the even or odd disk number on the peg. The UI part is built with with imported functions from the SFML frameworks.
+
+
+Timed run: (no cout)
+
+Expect minimum move: 63
+Priority Queue took 47ms. 
+Stack took 17ms. 
+
+
+
+Test Run with Console output:
 
 Test-run the game with 6 disks(Priority Queue): 
 
@@ -261,6 +272,9 @@ Auxiliary Peg:
         Move: 63
 Expect minimum move: 63
 Priority Queue took 8600ms.
+
+
+
 
 Test-run the game with 6 disks(Stack):
 
