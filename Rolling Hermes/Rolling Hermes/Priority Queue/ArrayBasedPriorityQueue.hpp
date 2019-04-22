@@ -46,81 +46,102 @@ public:
     
     bool full() const {return size == capacity;};
     // Function: full
-    // Description: Accessor, see if the array is full.
-    // Return type: Boolean
-    // Paramaters: None.
+    // Description: checks if the array is full.
+    // Return type: boolean
+    // Paramaters: none
     
     const bool empty() const {return size == 0;};
     // Function: empty
-    // Description: see if the array is empty.
-    // Return type: Boolean
-    // Paramaters: None
+    // Description: checks if the array is empty.
+    // Return type: boolean
+    // Paramaters: none
     
     // Accessors
     unsigned int getSize() const {return size;};
-    // Function: get array size.
-    // Description: accessor, return the private member: size
+    // Function: get array size
+    // Description: accessor, returns the private member size
     // Return type: unsigned int
-    
+    // Paramaters: none
     
     unsigned int getCapacity() const {return capacity;}
-    // Function: get capacity
-    // Description: Accessor
-    // Return type: Unsigned int
-    
+    // Function: gets array capacity
+    // Description: accessor, returns the private member capacity
+    // Return type: unsigned int
+    // Paramaters: none
     
     Data& peek() {return head -> data;}
-    // Function: Peek
-    // Description: Look at the first item's data without popping it.
+    // Function: peek first data of the array
+    // Description: accessor, return the private member head's data
     // Return type: Data
+    // Paramaters: none
     
+ 
     element<Data, Priority>* at(const unsigned int i) {return (head + i);}
     // Function: at
     // Description: Look at the i'th item's data without popping it. (works like [])
     // Return type: element<Data, Priority>*
     
-    Priority& peekPriority()const {return head -> priority;}
-    // Function: peek
-    // Description: Look at the first item's priority
-    // Return type: Priority
+    Priority& peekPriority() const {return head -> priority;}
+    // Function: peek first priority of the queue
+    // Description: accessor, return the private member head's priority
+    // Return type: integer
+    // Paramaters: none
     
     void print() const;
-    // Function: print
-    // Description: Print out every item in the queue. (item requires their own ostream operation)
+    // Function: print the queue
+    // Description: prints each element's Data and Priority in the array
+    // Return type: void
+    // Paramaters: none
     
     // Mutators
     void clear();
-    // Function: clear
-    // Description: clear the entire queue.
+    // Function: clear the queue
+    // Description: clears all elements in the queue
+    // Return type: void
+    // Paramaters: none
     
     void resize(unsigned int s);
-    // Function: resize
-    // Description: copy the entire queue into a new queue with new size s.
+    // Function: resize the array
+    // Description: enlarges or shrinks the array capacity
     // Return type: void
-    // Paramaters: unsigned int s
+    // Paramaters: unsigned int
     
     void enqueue(Data d, Priority p);
     // Function: enqueue
-    // Description: same as push, push the item in the queue at it's right position
-    // Paramaters: Data d and Priority p.
+    // Description: adds an element with data and priority to the queue
+    // Return type: void
+    // Paramaters: Data, Priority
     
     Data deque();
     // Function: deque
-    // Description: same as pop(), delete the first item and return its Data
+    // Description: removes the first element in the queue
     // Return type: Data
+    // Paramaters: None
     
     void insertBefore(element<Data, Priority>* beforeThis, const element<Data, Priority>& token);
-    // Function: insertBefore
-    // Description: Insert the item before given pointer.
-    // Paramaters: element<Data, Priority>* key pointer and a element<Data, Priority>& token.
-    
-    
-    // Insertion and extraction operator.
-    // Not tested, not being used in this project.
-    arrPriorityQueue<Data,Priority>& operator>>(Data &d);
-
+    // Function: insert before
+    // Description: insert element (token) in queue at a marked position (beforeThis)
+    // Return type: void
+    // Paramaters: element<Data, Priority>*, const element<Data, Priority>&
     arrPriorityQueue<Data,Priority>& operator<<(const element<Data, Priority>& e);
+    // Function: overloaded extraction operator
+    // Description: enqueue the array with element
+    // Return type: arrPriorityQueue<Data,Priority>&
+    // Paramaters: Data&
+    arrPriorityQueue<Data,Priority>& operator>>(Data& d);
+    // Function: overloaded insertion operator
+    // Description: deque the array with Data
+    // Return type: arrPriorityQueue<Data,Priority>&
+    // Paramaters: Data&
 
+    // iostream
+    template<typename D,typename P>
+    friend std::ostream& operator<<(std::ostream &out, const arrPriorityQueue<D,P> &q);
+    
+    template<typename D,typename P>
+    friend std::istream& operator>>(std::istream &in, arrPriorityQueue<D,P> &q);
+    
+//
 };
 
 template <class Data, class Priority>

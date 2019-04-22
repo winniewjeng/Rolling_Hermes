@@ -25,15 +25,12 @@ Stack::Stack(const Stack& other) {
 
 Stack& Stack::operator=(const Stack& other) {
     
-    if (this == &other)
-        return *this;
-    
-    clear();
-    //    _top = copy(other);
-    _cap = other._cap;
-    _size = other._size;
-    _top = copy(other);
-    // copy the disks over - not yet implemented
+    if (this != &other)  {
+        clear();
+        _cap = other._cap;
+        _size = other._size;
+        _top = copy(other);
+    }
     
     return *this;
 }
@@ -98,6 +95,10 @@ disk Stack::peek() {
 }
 
 void Stack::clear() {
+    while (!empty()) {
+        pop();
+    }
+    delete _top;
     _top = nullptr;
     _size = 0;
     _cap = 5;

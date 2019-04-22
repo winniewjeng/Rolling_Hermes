@@ -12,10 +12,7 @@
 #include "disk.hpp"
 #include "Stack.hpp"
 
-enum STACK_BOARD_ERROR {
-    BAD_MOVE,
-    EMPTY_PEG
-};
+enum STACK_BOARD_ERROR {BAD_MOVE, EMPTY_PEG};
 
 class stackBoard {
     
@@ -33,21 +30,34 @@ public:
     stackBoard(const stackBoard& other);
     stackBoard& operator =(const stackBoard& other);
     
-    // accessor
-    unsigned int getMove();
-    unsigned int getDiskNumber();
-    Stack& getSourcePeg() {return src;}
-    Stack& getAuxilaryPeg() {return aux;}
-    Stack& getDestinationPeg() {return des;}
-    
     // Board Class Delegate
     void init();
+    // Function: initalize board
+    // Description: initializes stacks. Populates src stack with disks
+    // Return type: void
+    // Paramaters: none
+    
     // Board initialize
     void printBoard();
+    // Function: print board
+    // Description: prints out the the disks in each stack peg
+    // Return type: void
+    // Paramaters: none
     void fromOneToAnother(Stack& from, Stack& to);
+    // Function: from one to another
+    // Description: moves disks from one peg to another peg
+    // Return type: void
+    // Paramaters: Stack&, Stack&
     void autoMove(bool finishTheGame = false);
-    
+    // Function: autoMove
+    // Description: while game still runs, determines disk's next move
+    // Return type: void
+    // Paramaters: Boolean
     bool inProgress();
+    // Function: in progress
+    // Description: checks if the game still keeps going
+    // Return type: boolean
+    // Paramaters: none
     
 };
 #endif /* stackBoard_hpp */

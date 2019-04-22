@@ -19,6 +19,10 @@ void testSB();
 
 int main(int argc, const char * argv[]) {
 
+
+    UIDelegate ui(7);
+    ui.build();
+    
 //    UIDelegate ui(8);
 //    ui.build();
 //
@@ -87,6 +91,43 @@ int main(int argc, const char * argv[]) {
  src size = 1
  Disk #6 was destroyed!
  */
+
+//void testSB() {
+//    stackBoard(6);
+//    Stack s(6);
+//    node<disk>* hi = new node<disk>;
+//
+//    s.push(&(hi->_item));
+//}
+//
+//void testPQS() {
+//
+//    arrPriorityQueue<disk*, int> qu(10);
+//    for (int i = 0; i < 4; ++i) {
+//        disk* temp = new disk();  //
+//        cout << "temp: " << temp -> getNumber() << " ";
+//        cout << "\npriority = " << i << endl;
+//        qu.enqueue(temp, i);
+//        //        qu.print();
+//        cout << endl;
+//    }
+//
+//    qu.print();
+//
+//    // board(5);
+//
+//    int s = qu.getSize();
+//    Stack src(s);
+//    while (!qu.empty()) {
+//        src.push(qu.deque());
+//    }
+//    cout << "\nsize "<< src.getSize() <<endl;
+//    while (!src.empty()) {
+//        cout << "Bye " << src.peek() <<endl;
+//        src.pop();
+//    }
+//    cout << "size "<< src.getSize() << endl;
+//}
 
 void testSB() {
     stackBoard(10);
