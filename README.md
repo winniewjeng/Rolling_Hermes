@@ -21,7 +21,7 @@ In order to analyze how the computer "make moves", we recorded every move that t
 Again, the **goal** is to find out the **Next Move** from current move.<br/>
 
 _p.s. From now, the size (index) of disk will be noted as disk#, and the total number of disks will be noted as DiskNum._ <br/>
-_p.p.s. Also, the three pegs will be named as Source, Auxilary (Aux) and Destination (Dest)._
+_p.p.s. Also, the three pegs will be named as Source, Auxiliary (Aux) and Destination (Dest)._
 
 ### Patterns 
 When DiskNum is **odd**, the next pole which **odd** numbered disk# always moves to is **(Dest - Aux - Source)**; <br/>
@@ -31,8 +31,8 @@ When DiskNum is **even**, the next pole which **odd** numbered disk# always move
 Getting there? <br/>
 Notice that when _DiskNum_ and _disk#_ are the both odd or even, the moving cycle is **(Dest - Aux - Source)**, otherwise **(Aux - Dest - Source)**. The next step would be simple, just find the relationship between disk# and current move. <br/>
 
-### Priority Queue VS. Stack
-![screenshot_0](https://github.com/winniewjeng/Rolling_Hermes/blob/master/Rolling%20Hermes/Rolling%20Hermes/UIKit/Resources/Screen%20Shot%202019-04-21%20at%2001.19.48.png)
+### Priority Queue VS. Stack (no console output)
+![screenshot_0](https://github.com/winniewjeng/Rolling_Hermes/blob/master/Rolling%20Hermes/Rolling%20Hermes/UIKit/Resources/Screen%20Shot%202019-04-22%20at%2018.16.56.png)
 <br/>
 
 ## UIKit (ripoff)
